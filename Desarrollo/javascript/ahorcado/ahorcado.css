@@ -1,0 +1,15 @@
+body{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#empezar{
+    justify-content: center;
+}
+
+#comprobar{
+    display: none;
+}
+table{
+    border: black 2px solid;
+}
