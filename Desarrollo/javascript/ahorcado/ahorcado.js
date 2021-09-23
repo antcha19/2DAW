@@ -1,27 +1,20 @@
 window.onload = function () {
+    //variables globales
+
     //boton empezar 
     let empezar = document.getElementById("empezar");
+    let comprobar = document.getElementById("botoncomprobar");
 
 
     empezar.addEventListener("click", empezarjuego, true);
+    comprobar.addEventListener("click", comprobarletra, true);
 
 }
 
 function empezarjuego() {
-    //vamos introducir la palabra
     var palabraintroducida = prompt("Introduce palabra");
-
-
-   
-
-    console.log(palabraintroducida);
-
-    for (var i = 0; i < palabraintroducida.length; i++) {
-
-        document.getElementById("contenedor").innerHTML += palabraintroducida[i];
-    }
-
-
+    //palabradivida = [palabraintroducida.split("")];
+    document.getElementById("contenedor").innerHTML = palabraintroducida;
 
     //mostara al pulsar empezar juego
     var comprobar = document.getElementById("comprobar");
@@ -30,6 +23,33 @@ function empezarjuego() {
     //ocultamos el boton de empezar juego 
     let empezar_oculto = document.getElementById("empezar");
     empezar_oculto.style.display = "none";
+}
+
+function comprobarletra() {
+    console.log('click en comprobar ');
+    var pa_recogida = document.getElementById("contenedor").innerHTML;
+    var array = [];
+
+    var palabradivida = pa_recogida.split("");
+    array = palabradivida;
+
+    var buscaletra = document.getElementById("buscaletra").value;
+    console.log("buscar " + buscaletra);
+    var contador = 0;
+    var palabrautilizada = buscaletra;
+    for (var i = 0; i < array.length; i++) {
+        console.log(array[i]);
+      
+        if (array[i] == buscaletra) {
+            console.log("letra encontrada " + buscaletra + contador);
+
+        }
+        contador++;
+
+    }
+    console.log("palabra utilizada" + palabrautilizada)
+
+
 
 
 
