@@ -10,11 +10,18 @@ window.onload = function () {
 function empezarjuego() {
     //vamos introducir la palabra
     var palabraintroducida = prompt("Introduce palabra");
+
+
+   
+
+    console.log(palabraintroducida);
+
     for (var i = 0; i < palabraintroducida.length; i++) {
-        document.getElementById("contenedor").innerHTML += palabraintroducida[i].replace("_");
+
+        document.getElementById("contenedor").innerHTML += palabraintroducida[i];
     }
 
-    
+
 
     //mostara al pulsar empezar juego
     var comprobar = document.getElementById("comprobar");
