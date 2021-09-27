@@ -1,0 +1,32 @@
+body{
+    background-color: #E0E0E0;
+}
+.titulo{
+    font-size: 3em;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.subtitulo{
+    background-color: darkgray;
+    font-size: 40px;
+    color: white;
+    margin: 50px;
+}
+
+.parrafos{
+    margin: 70px;
+    font-size: 20px;
+}
+img{
+  float: left;
+}
+.cambiocolor{
+    color: red;
+    
+}
+.recomendacion{
+    color: black;
+    background-color: white;
+    font-weight: bold;
+}

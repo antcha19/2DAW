@@ -1,0 +1,47 @@
+.content {
+    margin-left: 20px;
+    width: 30%;
+   
+    text-align: justify;
+    background-color: bisque;
+    padding: 50px;
+    border: 2px solid red;
+    float: left;
+    border-radius: 10px;
+}
+
+.cabecera {
+    font-family: Verdana;
+    font-size: 3em;
+    
+}
+.cabecera:hover{
+   color: lightsalmon;
+}
+
+.fin_float {
+    clear: left;
+}
+
+.pie {
+    background: lemonchiffon;
+    margin-top: 30px;
+    width: auto;
+}
+/*Cambia la primera palabra del un parrafo*/
+P:first-letter {
+    font-size: 200%;
+    color: red;
+    font-weight: bold;
+}
+
+.fijo{
+    position: absolute;
+    left: 850px;
+    top: 10px;
+    background: red;
+    border-radius: 9px;
+   
+    color: wheat;
+    
+}
