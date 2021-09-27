@@ -14,7 +14,8 @@ window.onload = function () {
 function empezarjuego() {
     var palabraintroducida = prompt("Introduce palabra");
     //palabradivida = [palabraintroducida.split("")];
-    document.getElementById("contenedor").innerHTML = palabraintroducida;
+    var pa_guiones = palabraintroducida.replace(/./g,"_ ");
+    document.getElementById("contenedor").innerHTML = pa_guiones;
 
     //mostara al pulsar empezar juego
     var comprobar = document.getElementById("comprobar");
@@ -28,9 +29,12 @@ function empezarjuego() {
 function comprobarletra() {
     console.log('click en comprobar ');
     var pa_recogida = document.getElementById("contenedor").innerHTML;
+    
+    
     var array = [];
 
-    var palabradivida = pa_recogida.split("");
+    var palabradivida = pa_recogida.split('');
+    
     array = palabradivida;
 
     var buscaletra = document.getElementById("buscaletra").value;
@@ -47,7 +51,7 @@ function comprobarletra() {
         contador++;
 
     }
-    console.log("palabra utilizada" + palabrautilizada)
+    console.log("palabra utilizada " + palabrautilizada)
 
 
 
