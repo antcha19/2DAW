@@ -5,24 +5,37 @@
 <link href="ahorcado.css" rel="stylesheet" type="text/css">
 
 <head>
-    <title>Ejemplo de JavaScript</title>
+    <title>Ahorcado</title>
     <meta charset="UTF-8">
 </head>
 
 <body>
+    <h1>Juego del ahorcado</h1>
     <button id="empezar" type="button" class="btn btn-dark">Empezar Juego</button>
 
     <div id="comprobar" class="mb-3">
 
         <label id="contenedor"></label>
-       
-        <table >
-            <td></td>
-        </table>
+
+
         <br>
-        <label for="exampleFormControlInput1" class="form-label">Palabra elegida</label>
-        <input id="buscaletra" type="text" class="form-control" id="exampleFormControlInput1">
-        <button id="botoncomprobar" type="submit" class="btn btn-primary">Comprobar</button>
+        <div class="centrar">
+            <img  id="imagen" src="corazon2.jpeg"  alt=""><label id="vidas"  type="text" > Vidas </label>
+            <br>
+            <label for="exampleFormControlInput1" class="form-label">Palabra elegida</label>
+            <br>
+            <input id="buscaletra" maxlength="1" type="text" class="form-control" id="exampleFormControlInput1">
+            <br>
+            <button id="botoncomprobar" type="submit" class="btn btn-primary">Comprobar</button>
+
+
+
+
+        </div>
+
+        <label id="utilizada" maxlength="1" type="text" > Palabras utlizadas  </label>
+        <br>
+        
     </div>
 
 
