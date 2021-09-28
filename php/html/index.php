@@ -1,12 +1,25 @@
-<h3>elige la tabla</h3>
+<?php require 'upload.php' ?>
+<html>
+<link href="imagenes.css" rel="stylesheet" type="text/css">
+<form method="post" enctype="multipart/form-data">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
-<?php
 
-for ($i = 1; $i <= 10; $i++) {
+   <input type="file" name="foto"><br>
+   <input type="submit" name="Enviar" value="Enviar">
 
-   echo "<a class='btn btn-primary' href='tabla.php?tabla=$i'>$i</a>";
-    
+
+   <?php
+   $ruta = scandir("imagenes");
+   for ($i = 0; $i < count($ruta); $i++) {
+      if ($i > 1) {
+         echo " <img src=imagenes/$ruta[$i]>";
+      }
    }
-?>
+
+
+   ?>
+   <?= $error ?? '' ?>
+</form>
+
+</html>
