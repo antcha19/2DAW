@@ -14,16 +14,30 @@ window.onload = function () {
 
     function empezarjuego() {
         var palabraintroducida = prompt("Introduce palabra");
+       const palabraSeparadaLabel= document.getElementById("contenedor");
 
 
 
         //  palabradivida = palabraintroducida.split(' ');
 
+        //prueba
+        const palabrasSeparadas = palabraSeparadaLabel.value.split("")
+        let palabraAConstruir = palabrasSeparadas[0];
+        let lineas = "";
+        for (let index = 0; index < palabrasSeparadas.length; index++) {
+          if(index !== 0) {
+             lineas = lineas + ",___"
+          }
+        }
+        palabraAConstruir = palabraAConstruir + lineas
+
+        palabraSeparadaLabel.innerText = palabraAConstruir
+
+
 
         //reemplaza la palabra por guines"_"
         // const pa_guiones = palabraintroducida.replace(/./g, "_ ");
         //document.getElementById("contenedor").innerHTML = palabradivida;
-
         document.getElementById("contenedor").innerHTML = palabraintroducida;
 
         //mostara al pulsar empezar juego
@@ -45,11 +59,7 @@ window.onload = function () {
         var array = [];
         //divido la palabra
         var palabradivida = pa_recogida.split(' ');
-
         array = palabradivida;
-
-
-
         var buscaletra = document.getElementById("buscaletra").value;
         console.log("buscar " + buscaletra);
         var contador = 0;
@@ -58,8 +68,8 @@ window.onload = function () {
         var contadorvidas_boolean = 8;
         document.getElementById("vidas").value = contadorvidas;
 
-
-        var palabrautilizada = buscaletra;
+        //guardo la letra utilizada para que me la muestre
+        var letras_utilizadas = buscaletra;
         //recorro el array para buscar si existe la letra
         for (var i = 0; i < array.length; i++) {
             console.log(array[i]);
@@ -70,7 +80,7 @@ window.onload = function () {
 
 
             } else {
-                //quita vidad si es verdadero
+                //quita vidas si no encuentra 
                 contadorvidas_boolean = true;
             }
             contador++;
@@ -83,11 +93,11 @@ window.onload = function () {
         document.getElementById("utilizada").innerHTML += buscaletra + ", ";
         if (contadorvidas_boolean == true) {
             contadorvidas--;
-            document.getElementById("vidas").innerHTML += contadorvidas;
+            document.getElementById("vidas").innerHTML = contadorvidas;
         }
 
 
-        console.log("palabra utilizada " + palabrautilizada);
+        console.log("palabra utilizada " + letras_utilizadas);
         //vacio el input de busca palabra
         buscaletra = document.getElementById("buscaletra").value = "";
     }
