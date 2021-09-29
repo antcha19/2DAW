@@ -15,7 +15,7 @@ window.onload = function () {
         document.write("Tu letra del dni es " + letra_obtenida +
             " y tu dni completo es " + dni + letra_obtenida);
     } else {
-       
+
         document.write("El dni es incorrecto");
     }
 
@@ -27,5 +27,3 @@ window.onload = function () {
 
 
 }
-
-
