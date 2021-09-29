@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(200, 226, 236);
+}
+
+h1{
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 40px;
+}
+.subtitulo{
+    background-color: #2f6ca5;
+}
+
+.h3{
+    background-color: rgb(89, 185, 230);
+    color: white;
+}
+
+pre{
+    background-color: white;
+    font-weight: bold;
+}
+#final{
+    background-color: violet;
+}
