@@ -2,44 +2,43 @@ window.onload = function () {
 
     window.addEventListener("keyup", mover, true);
 
-
-
-
-
 }
+
+
 
 function mover(elevento) {
 
     var div = document.getElementById("cambia");
-    div.style.margin = "200px 200px 200px 200px";
-    
 
+    var left = div.offsetLeft;
+    var top = div.offsetTop;
+    
     
     var evento = elevento;
-    console.log(evento.keyCode);
+
 
     //arribar
     if (evento.keyCode == "38") {
+
         console.log("has pulsado la arriba " + evento.keyCode);
-        console.log(div.style.marginTop);
-        div.style.marginTop =  div.style.marginTop -20;
+        div.style.top = top - 20 + "px";
     }
-    /*
+
     //abajo 40
     if (evento.keyCode == "40") {
         console.log("has pulsado la abajo " + evento.keyCode);
-        //div.style.margin = "-20px";
+        div.style.top = top + 20 + "px";
     }
     //derecha 39
     if (evento.keyCode == "39") {
         console.log("has pulsado la derecha " + evento.keyCode);
-        //div.style.margin = "-20px";
+        div.style.left = left + 20 + "px";
     }
-     //izquierda 37
+    //izquierda 37
     if (evento.keyCode == "37") {
         console.log("has pulsado la izquierda " + evento.keyCode);
-        //div.style.margin = "-20px";
+        div.style.left = left - 20 + "px";
     }
-    */
-   
+
+
 }

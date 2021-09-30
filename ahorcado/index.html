@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Juego del Ahorcado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script type="text/javascript" src="js/ahorcado.js"></script>
+</head>
+<body>
+
+    <div id="tituloJuego">
+        <h1 id="titleJuego">Juego del ahorcado</h1>
+    </div>
+    <br><br>
+
+    <div id="reglasJuego">
+        <h2 id="reglasTitulo">Reglas: </h2>
+        <p id="reglas">
+            -Tienes 8 intentos para adivinar la palabra<br>
+            -No puedes repetir letras<br>
+            -Las palabras no son compuestas<br>
+            -No puedes introducir mas de una letra a la vez<br><br>
+        </p>
+    </div>
+
+    <button id="botonJugar"><strong>A JUGAR</strong></button>
+    <br>
+    <br>
+
+    <div id="inputLetras">
+        <p>Numero de letras: </p><p id="numLetras"></p>
+        Introduce una letra:
+        <input type="text" id="introducirLetras" maxlength="1" size="2">
+    </div>
+    <button id="botonComprobar"><strong>Comprobar letra</strong></button>
+    <br>
+    <br>
+    <div id="contenedorLetras"><input id="sitioLetras" readonly size="5"></div>
+    <br>
+    <br>
+
+</body>
+</html>
