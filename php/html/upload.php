@@ -1,6 +1,7 @@
 <?php
 if (isset($_POST['Enviar']) && $f = $_FILES['foto'] ?? []) {
 
+    $subir = $_FILES['foto'];
     if ($f['error'])
 
         $error = "Error al subir  fichero";
@@ -8,12 +9,24 @@ if (isset($_POST['Enviar']) && $f = $_FILES['foto'] ?? []) {
     else { //tenemos el fichero
 
         //subir fichero
-        $destino = 'imagenes/' . $f['name'];
+        $destino = 'imagenes/'. $f['name'];
 
-        if (!move_uploaded_file($f['tmp_name'], $destino)) {
-            $error = "error al mover el fichero";
-        } else {
-            $error = "Subida correctamente";
+
+       /* for ($i = 0; $i < 5; $i++) {
+            if (!move_uploaded_file($f['tmp_name'], $destino)) {
+                $error = "error al mover el fichero";
+            } else {
+                $error = "Subida correctamente";
+            }
+            
+        }*/
+
+        for ($i = 0; $i < 5; $i++) {
+            if (move_uploaded_file($subir[$i], $destino)) {
+                $error = "Subida correctamente";
+            } else {
+                $error = "error al mover el fichero";
+            }
         }
     }
     echo "<pre>";
@@ -33,11 +46,12 @@ if (isset($_POST['Enviar']) && $f = $_FILES['foto'] ?? []) {
 
     <?php
 
-    //   for ($i = 0; $i < 5; $i++) {
-    //     echo "<input type=file name=foto[]><br>";
-    //}
+    for ($i = 0; $i < 5; $i++) {
+        echo "<input type=file name=foto[] ><br>";
+    }
+   // <input type="file" name="foto"><br>
     ?>
-    <input type=file name=foto><br>
+   
     <input type="submit" name="Enviar" value="Enviar">
 
 
