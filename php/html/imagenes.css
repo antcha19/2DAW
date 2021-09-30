@@ -3,3 +3,18 @@ img {
    float: left;
    padding: 40px;
 }
+
+body{
+    background-color: antiquewhite;
+}
+
+.cuadrado{
+    width: 50px;
+    height: 50px;
+    border: 2px;
+    border-color: black;
+}
+
+h1{
+    text-align: center;
+}
