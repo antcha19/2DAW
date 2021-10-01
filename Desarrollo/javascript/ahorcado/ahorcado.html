@@ -11,28 +11,43 @@
 
 <body>
     <h1>Juego del ahorcado</h1>
-    <button id="empezar" type="button" class="btn btn-dark">Empezar Juego</button>
+    <br>
+    <div class="centrar">
+        <button id="empezar" type="button" class="btn btn-dark">Empezar Juego</button>
+    </div>
+
 
     <div id="comprobar" class="mb-3">
 
-        <label id="contenedor"></label>
 
+        <img id="imagen" src="corazon2.jpeg" alt=""><label id="vidas" type="text"> Vidas </label>
 
         <br>
         <div class="centrar">
-            <img  id="imagen" src="corazon2.jpeg"  alt=""><label id="vidas"  type="text" > Vidas </label>
+            <label id="contenedor"></label>
             <br>
             <label for="exampleFormControlInput1" class="form-label">Palabra elegida</label>
             <br>
             <input id="buscaletra" maxlength="1" type="text" class="form-control" id="exampleFormControlInput1">
             <br>
+            <label id="utilizada" maxlength="1" type="text"> Palabras utlizadas </label>
+            <br>
+            <br>
+           
             <button id="botoncomprobar" type="submit" class="btn btn-primary">Comprobar</button>
+
+
+
 
         </div>
 
-        <label id="utilizada" maxlength="1" type="text" > Palabras utlizadas  </label>
-        <br>
-        
+        <div class="centrar">
+            <br>
+            <br>
+            <button id="reiniciar" type="submit" class="btn btn-primary">Reiniciar</button>
+
+        </div>
+
     </div>
 
 
