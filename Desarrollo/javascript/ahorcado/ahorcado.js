@@ -8,7 +8,7 @@ window.onload = function () {
     let comprobar = document.getElementById("botoncomprobar");
     let reiniciar = document.getElementById("reiniciar");
     //desabilito el boton empezar hasta que termine de jugar
-    reiniciar.setAttribute("disabled","false");
+    reiniciar.setAttribute("disabled","true");
 
 
     empezar.addEventListener("click", empezarjuego, true);
@@ -121,5 +121,8 @@ window.onload = function () {
         buscaletra = document.getElementById("buscaletra").value = "";
     }
 
+    reiniciar.addEventListener('click',()=>{
+        window.location.reload();
+    })
     
 }
