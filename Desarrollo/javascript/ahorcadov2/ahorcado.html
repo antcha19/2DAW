@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<link href="ahorcado.css" rel="stylesheet" type="text/css">
+
+<head>
+    <title>Ahorcado</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Juego del ahorcado</h1>
+    <br>
+    <div class="centrar">
+        <button id="empezar" type="button" class="btn btn-dark">Empezar Juego</button>
+    </div>
+
+
+    <div id="comprobar" class="mb-3">
+
+
+        <img id="imagen" src="corazon2.jpeg" alt=""><label id="vidas" type="text"> Vidas </label>
+
+        <br>
+        <div class="centrar">
+            <label id="contenedor"></label>
+            <br>
+            <label for="exampleFormControlInput1" class="form-label">Palabra elegida</label>
+            <br>
+            <input id="buscaletra" maxlength="1" type="text" class="form-control" id="exampleFormControlInput1">
+            <br>
+            <label id="utilizada" maxlength="1" type="text"> Palabras utlizadas </label>
+            <br>
+            <br>
+           
+            <button id="botoncomprobar" type="submit" class="btn btn-primary">Comprobar</button>
+
+
+
+
+        </div>
+
+        <div class="centrar">
+            <br>
+            <br>
+            <button id="reiniciar" type="submit" class="btn btn-primary">Reiniciar</button>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</body>
+<script type="module" src="ahorcado.js" ></script>
+
+</html>

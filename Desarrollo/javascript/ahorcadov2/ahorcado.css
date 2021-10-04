@@ -1,0 +1,27 @@
+h1{
+    text-align: center;
+}
+
+#empezar{
+    justify-content: center;
+    
+}
+
+#comprobar{
+    display: none;
+}
+table{
+    border: black 2px solid;
+}
+
+.centrar{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+img{
+    width:50px;
+    height:50px;
+    overflow: hidden;
+    } 
