@@ -1,8 +1,11 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<?php 
+ require "ima_cabecera.php";
+?>
 
 <?php
 if (isset($_POST['botonborrar'])) {
 
+    
     $imagenes = $_POST["ima_nombre"];
     if ($f['error'])
 
@@ -10,7 +13,7 @@ if (isset($_POST['botonborrar'])) {
 
     else { //tenemos el fichero
 
-        echo "click en borrar";
+        $error = "click en borrar";
         for ($i = 0; $i < count($imagenes); $i++) {
             unlink($imagenes[$i]);
         }
@@ -18,4 +21,30 @@ if (isset($_POST['botonborrar'])) {
 }
 
 
+
+
+//header("Location: index.php");
+
 ?>
+<button class="btn btn-large btn-primary" data-toggle="confirmation"
+        data-btn-ok-label="Continue" data-btn-ok-class="btn-success"
+        data-btn-ok-icon-class="material-icons" data-btn-ok-icon-content="check"
+        data-btn-cancel-label="Stoooop!" data-btn-cancel-class="btn-danger"
+        data-btn-cancel-icon-class="material-icons" data-btn-cancel-icon-content="close"
+        data-title="Is it ok?" data-content="This might be dangerous">
+  Confirmation
+</button>
+
+    <pre>
+    <?php
+
+    echo "GET:";
+    var_dump($_GET);
+    echo "POST:";
+    var_dump($_POST);
+
+
+    ?>
+</body>
+
+</html>

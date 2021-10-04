@@ -1,34 +1,32 @@
 <?php
+require "ima_cabecera.php";
+?>
+
+<?php
 if (isset($_POST['Enviar']) && $f = $_FILES['foto'] ?? []) {
 
     $subir = $_FILES['foto'];
-    if ($f['error'])
-
-        $error = "Error al subir  fichero";
-
-    else { //tenemos el fichero
-
-        //subir fichero
-        $destino = 'imagenes/'. $f['name'];
 
 
-       /* for ($i = 0; $i < 5; $i++) {
-            if (!move_uploaded_file($f['tmp_name'], $destino)) {
-                $error = "error al mover el fichero";
-            } else {
-                $error = "Subida correctamente";
-            }
-            
-        }*/
+    for ($i = 0; $i < 5; $i++) {
 
-        for ($i = 0; $i < 5; $i++) {
-            if (move_uploaded_file($subir[$i], $destino)) {
+        if ($f['error'][$i])
+
+            $error = "Error al subir  fichero";
+
+        else { //ten
+            //subir fichero
+            //cambia de destino por cada foto
+            $destino = 'imagenes/' . $f['name'][$i];
+
+            if (move_uploaded_file($subir['tmp_name'][$i], $destino)) {
                 $error = "Subida correctamente";
             } else {
                 $error = "error al mover el fichero";
             }
         }
     }
+
     echo "<pre>";
     var_dump($_FILES);
     var_dump($_POST);
@@ -38,9 +36,7 @@ if (isset($_POST['Enviar']) && $f = $_FILES['foto'] ?? []) {
 
 
 
-<html>
-<link href="imagenes.css" rel="stylesheet" type="text/css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
 
 <form method="post" enctype="multipart/form-data">
 
@@ -49,9 +45,9 @@ if (isset($_POST['Enviar']) && $f = $_FILES['foto'] ?? []) {
     for ($i = 0; $i < 5; $i++) {
         echo "<input type=file name=foto[] ><br>";
     }
-   // <input type="file" name="foto"><br>
+    
     ?>
-   
+
     <input type="submit" name="Enviar" value="Enviar">
 
 
@@ -59,7 +55,12 @@ if (isset($_POST['Enviar']) && $f = $_FILES['foto'] ?? []) {
 
 
 
-    <?= $error ?? '' ?>
+
+    <?= $error ?? ''
+
+
+    ?>
+
 </form>
 
 </html>

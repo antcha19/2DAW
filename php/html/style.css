@@ -1,0 +1,18 @@
+img {
+    width: 200px;
+    height: 200px;
+    float: left;
+    border-radius: 200px;
+    border-color: black;
+    border: 200px
+}
+
+
+#galeria{
+    text-align: left;
+   
+}
+#botones{
+  float: right;
+  margin-top: -49px;
+}
