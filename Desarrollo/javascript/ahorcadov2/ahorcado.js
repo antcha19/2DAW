@@ -1,3 +1,4 @@
+//import toda la funciones
 import empezarjuego from './empezajuego.js';
 import
 introduccion
@@ -24,7 +25,9 @@ window.onload = function () {
 
 
     empezar.addEventListener('click', () => {
+        //recogo el array con las variables que necesito
         arr_return = introduccion();
+        //obtengo la posicion 0 que tiene guardada la varia palabraoriginal
         palabraoriginal = arr_return[0];
         lineas = arr_return[1]
         empezarjuego();
