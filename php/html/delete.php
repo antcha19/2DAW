@@ -1,11 +1,15 @@
-<?php 
- require "ima_cabecera.php";
+<?php
+require "ima_cabecera.php";
 ?>
 
+
+
+
+
 <?php
+/*
 if (isset($_POST['botonborrar'])) {
 
-    
     $imagenes = $_POST["ima_nombre"];
     if ($f['error'])
 
@@ -19,29 +23,27 @@ if (isset($_POST['botonborrar'])) {
         }
     }
 }
-
-
-
-
+*/
 //header("Location: index.php");
-
 ?>
-<button class="btn btn-large btn-primary" data-toggle="confirmation"
-        data-btn-ok-label="Continue" data-btn-ok-class="btn-success"
-        data-btn-ok-icon-class="material-icons" data-btn-ok-icon-content="check"
-        data-btn-cancel-label="Stoooop!" data-btn-cancel-class="btn-danger"
-        data-btn-cancel-icon-class="material-icons" data-btn-cancel-icon-content="close"
-        data-title="Is it ok?" data-content="This might be dangerous">
-  Confirmation
-</button>
 
-    <pre>
+
+
+
+<h3> Confirmar si quieres borrar</h3>
+<input type="submit" name="confirmarsi" value="Si">
+<input type="submit" name="confirmarno" value="No">
+
+
+<pre>
     <?php
 
     echo "GET:";
     var_dump($_GET);
     echo "POST:";
     var_dump($_POST);
+
+
 
 
     ?>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="es" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Intranet CPM de Valencia</title>
+    <!-- Font Awesome Icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="ej.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div class=cabecera>
+        <span class="logo">
+            <img src="" height="43px">
+        </span>
+
+        <span class=anoacad>
+            <i class="fa fa-backward"> </i>
+            Curso 2021/2022
+            <i class="fa fa-forward"></i>
+        </span>
+        <span class='nombrecentro'>
+            CPM de Valencia
+        </span>
+        <span class='usuario'>
+            MARIA
+        </span>
+    </div>
+    
+        <div class="sidebar">
+            <form method="get" class="sidebar-form">
+                <div class="search" style='margin:0em 0em 0em 0em !important'>
+                    <input type="text" id='sbuscar' name="s" class="form-control" style='height:35px !important'
+                        placeholder="Nombre, NIA, Curso,..." />
+                    <span class="x">
+                        <button type='submit' name='search'><i class="fa fa-search"></i></button>
+                    </span>
+            </form>
+        </div>
+        <div class=side>
+            <ul class="side-menu">
+                <li><i class="fa fa-building"></i> <span>Centro</span> </li>
+                <li><a href="#"><i class="fa fa-group"></i> <span>Alumnos</span>
+                <li><a href="#"><i class="fa fa-calendar"></i> <span>Prematrícula</span> <span
+                            class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <li><a href="#"><i class="fa fa-graduation-cap"></i> <span>Profesores</span> <span
+                            class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <li><a href="#"><i class="fa fa-upload"></i> <span>Importar Datos</span> <span
+                            class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <li><a href="#"> <span>Aulas y Materiales</span></a></li>
+                <li><a href="#"><i class="fa fa-gear"></i> <span>Configuración</span> <span
+                            class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <li><a href="#"><i class="fa fa-question-circle"></i> <span>Ayuda</span> <span
+                            class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+            </ul>
+        </div>
+   
+
+
+    <div class="content">
+        <div class="content-header">
+            <h1>Profesores</h1>
+            <ul class="breadcrumb">
+                <li>Home</li>
+                <li>Profesores</li>
+                <li>Modificar</li>
+            </ul>
+
+            <button class="baccion" href="#"><i class="fa fa-bars "></i>&nbsp; Acciones </button>
+            <ul class="acdropdown-content nav" id="yw2">
+        </div>
+
+        <form enctype="multipart/form-data" autocomplete="off" class="form" id="profesores-form" action="xxx"
+            method="post">
+            <div class="xform">
+                <div class="foto">
+                    <img id='foto' border=0 src='images/usuario.png' class='fotousu'>
+
+                    <a class="btn btn-primary" href="#"><i class="fa fa-pencil"></i></a>
+                </div>
+                <div class="campos">
+                    <div class='field'>
+                        <label>Nombre </label>
+                        <input maxlength="40" class="form-control" name="Profesores[nombre]" type="text"
+                            value="Miguel" /></div>
+                    </div>
+                    <div class='field'>
+                        <label>Apellidos </label>
+                        <input maxlength="40" class="form-control" name="Profesores[nombre]" type="text" value="Miguel" />
+                    </div>
+                    <div class='field'>
+                        <label>Usuario </label>
+                        <input maxlength="40" class="form-control" name="Profesores[usuario]" type="text" value="Miguel" />
+                    </div>
+                    <div class='field'>
+                        <label>Fecha Alta </label>
+                        <input type="date" class="form-control" name="Profesores[fecha]" type="text" value="Miguel" />
+                    </div>
+                    <div class='field'>
+                        <label>Sede </label>
+                        <select >
+
+                            <option>New York </option>
+                            <option selected="yes">Bucharest</option>
+                            <option>Madrid</option>
+                        
+                        </select>
+                    </div>
+                    <div class='field'>
+                        <label>Departamento </label>
+                        <select >
+
+                            <option>New York </option>
+                            <option selected="yes">Bucharest</option>
+                            <option>Madrid</option>
+                        
+                        </select>
+                    </div>
+                    <div class='field'>
+                        <label>Categoria </label>
+                        <select >
+
+                            <option>New York </option>
+                            <option selected="yes">Bucharest</option>
+                            <option>Madrid</option>
+                        
+                        </select>
+                    </div>
+            </div>
+            <div class="confirma">
+                <button class="x" type="submit" name="yt0"> Guardar</button>
+            </div>
+    </div>
+    </div>
+    </form>
+
+    </div><!-- content -->
+
+
+</body>
+
+</html>

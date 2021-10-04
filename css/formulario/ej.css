@@ -1,0 +1,19 @@
+.cabecera{
+    background-color: #a9a9a9;
+    font-size: 20px;
+    text-align: center;
+}
+
+.content{
+    float: right;
+}
+
+.side{
+    float: left;
+    background-color: rgb(173, 160, 160);
+}
+
+.sidebar{
+    background-color: rgb(173, 160, 160);
+   
+}
