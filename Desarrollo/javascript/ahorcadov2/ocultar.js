@@ -1,4 +1,4 @@
-  function empezarjuego() {
+  function ocultar() {
       
       //mostara al pulsar empezar juego
       var comprobar = document.getElementById("comprobar");
@@ -9,4 +9,4 @@
       empezar_oculto.style.display = "none";
   }
 
-  export default empezarjuego;
+  export default ocultar;

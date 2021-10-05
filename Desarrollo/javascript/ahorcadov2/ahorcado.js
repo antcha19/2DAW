@@ -1,128 +1,61 @@
-//import toda la funciones
-import empezarjuego from './empezajuego.js';
-import
-introduccion
-from './pa_introducida.js';
+   //import toda la funciones
+   import introduccion from './pa_introducida.js';
+   import ocultar_botones from './ocultar.js';
 
-window.onload = function () {
+   import comprobar_letra from './comprobar.js';
 
 
 
 
-    //variables globales
-    // var palabraoriginal;
-    let lineas = "";
-    // declarcion de los botones y todo lo que necesito
-    let input = document.getElementById("buscaletra");
-    let empezar = document.getElementById("empezar");
-    let comprobar = document.getElementById("botoncomprobar");
-    let reiniciar = document.getElementById("reiniciar");
-    let arr_return = "";
-    let palabraoriginal = "";
-    //desabilito el boton empezar hasta que termine de jugar
-    reiniciar.setAttribute("disabled", "true");
 
 
-
-    empezar.addEventListener('click', () => {
-        //recogo el array con las variables que necesito
-        arr_return = introduccion();
-        //obtengo la posicion 0 que tiene guardada la varia palabraoriginal
-        palabraoriginal = arr_return[0];
-        lineas = arr_return[1]
-        empezarjuego();
-
-    })
-
-
-    comprobar.addEventListener("click", comprobarletra, true);
+   window.onload = function () {
 
 
 
 
-    function comprobarletra() {
+       //variables globales
+       // var palabraoriginal;
+       let lineas = "";
+       // declarcion de los botones y todo lo que necesito
+      
+       let empezar = document.getElementById("empezar");
+       let comprobar = document.getElementById("botoncomprobar");
+       let reiniciar = document.getElementById("reiniciar");
 
-        //recoge la palabra
+       let arr_return = "";
+       let palabraoriginal = "";
+       //desabilito el boton empezar hasta que termine de jugar
+       reiniciar.setAttribute("disabled", "true");
 
-        console.log("palabra recogida " + palabraoriginal);
-        var array = [];
-        //divido la palabra
-        //    var palabradivida = palabraoriginal.split(' ');
-        // array = palabradivida;
 
-        var buscaletra = document.getElementById("buscaletra").value;
-        console.log("buscar " + buscaletra);
-        var contador = 0;
-        //contador de vidas:
-        var contadorvidas = 8;
-        var contadorvidas_boolean = false;
-        document.getElementById("vidas").value = contadorvidas;
 
-        //guardo la letra utilizada para que me la muestre
-        var letras_utilizadas = buscaletra;
-        //recorro el array para buscar si existe la letra
-        let arrlineas = lineas.split('');
 
-        let ganar;
 
-        //Bucle para comprobar
-        for (var i = 0; i < palabraoriginal.length; i++) {
-            console.log(palabraoriginal[i]);
+       empezar.addEventListener('click', () => {
+           //recogo el array con las variables que necesito
+           arr_return = introduccion();
+           //obtengo la posicion 0 que tiene guardada la varia palabraoriginal
+           palabraoriginal = arr_return[0];
+           lineas = arr_return[1]
+           ocultar_botones();
+       })
 
-            if (palabraoriginal[i] == buscaletra) {
-                //encuentra letra
-                arrlineas[i] = buscaletra; //cambia guión por letra
-            } else {
-                //quita vidas si no encuentra 
-                contadorvidas_boolean = true;
+       comprobar.addEventListener('click', () => {
+           //recogo los datos de la palabara original
+            //paso el array
+           comprobar_letra(arr_return);
+       })
 
-            }
-            contador++;
-        }
-        console.log(contadorvidas + "resta vidas")
-        //array de guiones cambiado convertido a cadena
-        lineas = arrlineas.join('');
-        //cambiar palabra con guiones a palabra con letras cambiadas
-        document.getElementById('contenedor').innerText = lineas;
+       //  comprobar.addEventListener("click", comprobarletra, true);
 
-        // añado las palabras utilizadas
-        document.getElementById("utilizada").innerHTML += buscaletra + ", ";
-        if (contadorvidas_boolean == true) {
-            if (contadorvidas == 0) {
-                //si las vidas son 0 muestra mensaje de perder
-                document.getElementById("vidas").innerHTML = "Has perdido la partida";
-                //Deshabilitar todo
-            }
 
-        }
-        if (contadorvidas_boolean == false) {
-            //Si aún tienes vidas
-            contadorvidas--;
-            console.log(contadorvidas);
-            //cambiar nº vidas
-            document.getElementById("vidas").innerText = contadorvidas;
-            contadorvidas_boolean = false;
-        }
-        //si has encontrado letra se comprueba si la palabra ya esta completa
-        if (palabraoriginal == lineas) {
-            console.log(palabraoriginal)
-            console.log(lineas);
-            document.getElementById("vidas").innerHTML = "Has ganado la partida";
-            //habilito el boton cuando gane o pierda
-            reiniciar.removeAttribute("disabled");
-            //desabilito boton comprobar
-            comprobar.setAttribute("disabled", "true");
-            input.setAttribute("disabled", "true");
-        }
-        console.log(palabraoriginal)
-        console.log(lineas);
-        console.log("palabra utilizada " + letras_utilizadas);
-        //vacio el input de busca palabra
-        buscaletra = document.getElementById("buscaletra").value = "";
-    }
 
-    reiniciar.addEventListener('click', () => {
-        window.location.reload();
-    })
 
-}
+
+
+       reiniciar.addEventListener('click', () => {
+           window.location.reload();
+       })
+
+   }

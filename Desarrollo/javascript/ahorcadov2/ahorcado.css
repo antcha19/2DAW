@@ -1,27 +1,33 @@
-h1{
+h1 {
     text-align: center;
 }
 
-#empezar{
+#empezar {
     justify-content: center;
-    
+
 }
 
-#comprobar{
+#comprobar {
     display: none;
 }
-table{
+
+table {
     border: black 2px solid;
 }
 
-.centrar{
+.centrar {
     text-align: center;
     justify-content: center;
     align-items: center;
-    
+
 }
-img{
-    width:50px;
-    height:50px;
+
+img {
+    width: 50px;
+    height: 50px;
     overflow: hidden;
-    } 
+}
+.buscaletra{
+    width: 200px;
+    margin: 0 auto;
+}
