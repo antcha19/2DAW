@@ -25,7 +25,7 @@ function comprobarletra(arr_return) {
     //recorro el array para buscar si existe la letra
     let arrlineas = lineas.split('');
 
-   
+
     //Bucle para comprobar
     for (var i = 0; i < palabraoriginal.length; i++) {
         console.log(palabraoriginal[i]);
@@ -33,21 +33,23 @@ function comprobarletra(arr_return) {
         if (palabraoriginal[i] == buscaletra) {
             //encuentra letra
             arrlineas[i] = buscaletra; //cambia guión por letra
+            contadorvidas_boolean = false;
         } else {
             //quita vidas si no encuentra 
             contadorvidas_boolean = true;
-
+         
         }
         contador++;
     }
+   
     console.log(contadorvidas + "resta vidas")
     //array de guiones cambiado convertido a cadena
     lineas = arrlineas.join('');
     //cambiar palabra con guiones a palabra con letras cambiadas
     document.getElementById('contenedor').innerText = lineas;
-
+    var paaa= document.getElementById("utilizadas").innerText += buscaletra + "";
     // añado las palabras utilizadas
-    document.getElementById("utilizada").innerHTML += buscaletra + ", ";
+    //  document.getElementById("utilizada").innerHTML += buscaletra + ", ";
     if (contadorvidas_boolean == true) {
         if (contadorvidas == 0) {
             //si las vidas son 0 muestra mensaje de perder
@@ -57,12 +59,13 @@ function comprobarletra(arr_return) {
 
     }
     if (contadorvidas_boolean == false) {
+        console.log("ha entrado aqui");
         //Si aún tienes vidas
         contadorvidas--;
         console.log(contadorvidas);
         //cambiar nº vidas
         document.getElementById("vidas").innerText = contadorvidas;
-        contadorvidas_boolean = false;
+      //  contadorvidas_boolean = false;
     }
     //si has encontrado letra se comprueba si la palabra ya esta completa
     if (palabraoriginal == lineas) {
@@ -75,13 +78,9 @@ function comprobarletra(arr_return) {
         comprobar.setAttribute("disabled", "true");
         input.setAttribute("disabled", "true");
     }
+
     
-    console.log("palabra utilizada " + letras_utilizadas);
-    for (let i = 0; i < letras_utilizadas.length; i++) {
-        const element = letras_utilizadas[i];
-        console.log(letras_utilizadas.length);
-        
-    }
+   
     //vacio el input de busca palabra
     buscaletra = document.getElementById("buscaletra").value = "";
 
