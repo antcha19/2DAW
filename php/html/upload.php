@@ -18,7 +18,7 @@ if (isset($_POST['Enviar']) && $f = $_FILES['foto'] ?? []) {
             //subir fichero
             //cambia de destino por cada foto
             $destino = 'imagenes/' . $f['name'][$i];
-
+//validamos si  se trata de un archivo pjg/gif/png
             if (move_uploaded_file($subir['tmp_name'][$i], $destino)) {
                 $error = "Subida correctamente";
             } else {

@@ -20,6 +20,10 @@ require "ima_cabecera.php";
       }
    }
 
+ /*  foreach($ruta as $r){
+      echo "</input> <img src=imagenes/$r></div>";
+   }*/
+
 
 
 
