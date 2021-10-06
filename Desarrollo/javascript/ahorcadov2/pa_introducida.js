@@ -7,7 +7,7 @@ function introduccion() {
     contenedor.value = palabraintroducida;
     console.log("pa intro " + palabraintroducida);
     console.log(contenedor.value);
-   var palabraoriginal = contenedor.value;
+    var palabraoriginal = contenedor.value;
 
     //   console.log(palabraoriginal);
 

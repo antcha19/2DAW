@@ -52,23 +52,24 @@ function comprobarletra(arr_return) {
     var paaa = document.getElementById("utilizadas").innerText += buscaletra + "";
     // añado las palabras utilizadas
     //  document.getElementById("utilizada").innerHTML += buscaletra + ", ";
-    if (contadorvidas_boolean == true) {
-        if (contadorvidas == 0) {
-            //si las vidas son 0 muestra mensaje de perder
-            document.getElementById("vidas").innerHTML = "Has perdido la partida";
-            //Deshabilitar todo
-        }
+
+
+    for (let i = 0; i < paaa.length; i++) {
+        console.log("tamaño " + paaa.length);
 
     }
-    if (contadorvidas_boolean == false) {
-        console.log("ha entrado aqui");
-        //Si aún tienes vidas
-        contadorvidas--;
-        console.log(contadorvidas);
-        //cambiar nº vidas
-        document.getElementById("vidas").innerText = contadorvidas;
-        //  contadorvidas_boolean = false;
+
+    console.log("tamaño " + paaa.length);
+    console.log("tamaño " + contadorvidas);
+
+    if (paaa.length == contadorvidas) {
+        //si las vidas son 0 muestra mensaje de perder
+        document.getElementById("vidas").innerHTML = "Has perdido la partida";
+        document.getElementById("imagen").scr = "corazon4.jpeg";
+
+        //Deshabilitar todo
     }
+
     //si has encontrado letra se comprueba si la palabra ya esta completa
     if (palabraoriginal == lineas) {
         console.log(palabraoriginal)
