@@ -31,35 +31,37 @@
             MARIA
         </span>
     </div>
-    
-        <div class="sidebar">
-            <form method="get" class="sidebar-form">
-                <div class="search" style='margin:0em 0em 0em 0em !important'>
-                    <input type="text" id='sbuscar' name="s" class="form-control" style='height:35px !important'
-                        placeholder="Nombre, NIA, Curso,..." />
-                    <span class="x">
-                        <button type='submit' name='search'><i class="fa fa-search"></i></button>
-                    </span>
-            </form>
-        </div>
-        <div class=side>
-            <ul class="side-menu">
-                <li><i class="fa fa-building"></i> <span>Centro</span> </li>
-                <li><a href="#"><i class="fa fa-group"></i> <span>Alumnos</span>
-                <li><a href="#"><i class="fa fa-calendar"></i> <span>Prematrícula</span> <span
-                            class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-                <li><a href="#"><i class="fa fa-graduation-cap"></i> <span>Profesores</span> <span
-                            class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-                <li><a href="#"><i class="fa fa-upload"></i> <span>Importar Datos</span> <span
-                            class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-                <li><a href="#"> <span>Aulas y Materiales</span></a></li>
-                <li><a href="#"><i class="fa fa-gear"></i> <span>Configuración</span> <span
-                            class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-                <li><a href="#"><i class="fa fa-question-circle"></i> <span>Ayuda</span> <span
-                            class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-            </ul>
-        </div>
-   
+
+    <div class="sidebar">
+        <form method="get" class="sidebar-form">
+            <div class="search" style='margin:0em 0em 0em 0em !important'>
+                <input type="text" id='sbuscar' name="s" class="form-control" style='height:35px !important'
+                    placeholder="Nombre, NIA, Curso,..." />
+                <span class="x">
+                    <button type='submit' name='search'><i class="fa fa-search"></i></button>
+                </span>
+        </form>
+    </div>
+    <div class=side>
+        <ul class="side-menu">
+            <li> <a href="#"></a><i class="fa fa-building"></i> <span>Centro</span><span
+                class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a> </li>
+            <li><a href="#"><i class="fa fa-group"></i> <span>Alumnos<span
+                class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a></span>
+            <li><a href="#"><i class="fa fa-calendar"></i> <span>Prematrícula</span> <span
+                        class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+            <li><a href="#"><i class="fa fa-graduation-cap"></i> <span>Profesores</span> <span
+                        class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+            <li><a href="#"><i class="fa fa-upload"></i> <span>Importar Datos</span> <span
+                        class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+            <li><a href="#"> <span>Aulas y Materiales</span></a></li>
+            <li><a href="#"><i class="fa fa-gear"></i> <span>Configuración</span> <span class="pull-right-container"><i
+                            class="fa fa-angle-left pull-right"></i></span></a>
+            <li><a href="#"><i class="fa fa-question-circle"></i> <span>Ayuda</span> <span
+                        class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        </ul>
+    </div>
+
 
 
     <div class="content">
@@ -77,65 +79,129 @@
 
         <form enctype="multipart/form-data" autocomplete="off" class="form" id="profesores-form" action="xxx"
             method="post">
+
+
             <div class="xform">
                 <div class="foto">
-                    <img id='foto' border=0 src='images/usuario.png' class='fotousu'>
+                    <img id='foto' border=0 src='foto.png' class='fotousu'>
 
                     <a class="btn btn-primary" href="#"><i class="fa fa-pencil"></i></a>
                 </div>
                 <div class="campos">
                     <div class='field'>
                         <label>Nombre </label>
-                        <input maxlength="40" class="form-control" name="Profesores[nombre]" type="text"
-                            value="Miguel" /></div>
+                        <input maxlength="40" class="form-control" name="Profesores[nombre]" type="text" />
                     </div>
+
                     <div class='field'>
                         <label>Apellidos </label>
-                        <input maxlength="40" class="form-control" name="Profesores[nombre]" type="text" value="Miguel" />
+                        <input maxlength="40" class="form-control" name="Profesores[nombre]" type="text" />
                     </div>
+
                     <div class='field'>
                         <label>Usuario </label>
-                        <input maxlength="40" class="form-control" name="Profesores[usuario]" type="text" value="Miguel" />
+                        <input maxlength="40" class="form-control" name="Profesores[usuario]" type="text" />
                     </div>
+
                     <div class='field'>
                         <label>Fecha Alta </label>
-                        <input type="date" class="form-control" name="Profesores[fecha]" type="text" value="Miguel" />
+                        <input type="date" class="form-control" name="Profesores[fecha]" type="text" />
                     </div>
+
                     <div class='field'>
                         <label>Sede </label>
-                        <select >
-
+                        <select>
+                            <option>Selecciona</option>
                             <option>New York </option>
-                            <option selected="yes">Bucharest</option>
+                            <option>Bucharest</option>
                             <option>Madrid</option>
-                        
+
                         </select>
                     </div>
                     <div class='field'>
                         <label>Departamento </label>
-                        <select >
-
+                        <select>
+                            <option>Selecciona </option>
                             <option>New York </option>
-                            <option selected="yes">Bucharest</option>
+                            <option>Bucharest</option>
                             <option>Madrid</option>
-                        
+
                         </select>
                     </div>
                     <div class='field'>
                         <label>Categoria </label>
-                        <select >
-
+                        <select>
+                            <option>Selecciona </option>
                             <option>New York </option>
-                            <option selected="yes">Bucharest</option>
+                            <option>Bucharest</option>
                             <option>Madrid</option>
-                        
+
                         </select>
                     </div>
+
+                    <div class='field'>
+                        <label>DNI* </label>
+                        <input maxlength="40" class="form-control" name="Profesores[dni]" type="text" />
+                    </div>
+
+                    <div class='field'>
+                        <label>Telf.fijo </label>
+                        <input maxlength="40" class="form-control" name="Profesores[fijo]" type="number" />
+                    </div>
+
+                    <div class='field'>
+                        <label>Telf.móvil </label>
+                        <input maxlength="40" class="form-control" name="Profesores[movil]" type="number" />
+                    </div>
+
+                    <div class='field'>
+                        <label>Telf.fijo </label>
+                        <input maxlength="40" class="form-control" name="Profesores[fijo]" type="number" />
+                    </div>
+
+                    <div class='field'>
+                        <label>Email personal </label>
+                        <input maxlength="40" class="form-control" name="Profesores[fijo]" type="email" />
+                    </div>
+
+                    <div class='field'>
+                        <label>Email </label>
+                        <input maxlength="40" class="form-control" name="Profesores[fijo]" type="email" />
+                    </div>
+
+                    <div class='field'>
+                        <label>Idioma predet. </label>
+                        <select>
+                            <option>Selecciona </option>
+                            <option>Castellano </option>
+                            <option>Valencià</option>
+                            <option>Ingles</option>
+
+                        </select>
+                    </div>
+
+                    <div class='field'>
+                        <label>Roles </label>
+                        <select>
+                            <option>Selecciona </option>
+                            <option>Prefosor</option>
+                            <option>tut@r</option>
+                       
+
+                        </select>
+                    </div>
+
+                    <div class="confirma">
+                        <button class="x" type="submit" name="yt0"> Guardar</button>
+                    </div>
+
+                    <div class="confirma">
+                        <button class="x" type="submit" name="yt0"> Cancelar</button>
+                    </div>
+
+                </div>
+
             </div>
-            <div class="confirma">
-                <button class="x" type="submit" name="yt0"> Guardar</button>
-            </div>
-    </div>
     </div>
     </form>
 

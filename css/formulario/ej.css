@@ -1,19 +1,42 @@
 .cabecera{
     background-color: #a9a9a9;
     font-size: 20px;
-    text-align: center;
+    text-align: center;  
+    height: 40px;
+    color: white;
 }
 
 .content{
     float: right;
+    background-color: white;
 }
+/*apartado profesores*/
 
-.side{
+
+.side, .sidebar{
     float: left;
     background-color: rgb(173, 160, 160);
+    width: 220px;
 }
 
-.sidebar{
-    background-color: rgb(173, 160, 160);
-   
+
+.baccion{
+    background-color: rgb(56, 113, 219);
+}
+li{
+    list-style: none;
+}
+/*buscardor*/
+.sidebar-form{
+    background-color: white;
+}
+
+/*campo nombre, apellidos, etc.....*/
+
+.campos{
+    background-color: rgb(212, 201, 201);
+    text-align: left;
+}
+.xform{
+    padding-right: 10px;
 }
