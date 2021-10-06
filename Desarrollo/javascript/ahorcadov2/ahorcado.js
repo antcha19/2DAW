@@ -18,7 +18,7 @@
        // var palabraoriginal;
        let lineas = "";
        // declarcion de los botones y todo lo que necesito
-      
+
        let empezar = document.getElementById("empezar");
        let comprobar = document.getElementById("botoncomprobar");
        let reiniciar = document.getElementById("reiniciar");
@@ -43,19 +43,32 @@
 
        comprobar.addEventListener('click', () => {
            //recogo los datos de la palabara original
-            //paso el array
+           //paso el array
            arr_return = comprobar_letra(arr_return);
        })
 
-       //  comprobar.addEventListener("click", comprobarletra, true);
 
 
 
 
-
-
+       //boton reiniciaar
        reiniciar.addEventListener('click', () => {
            window.location.reload();
        })
+
+       //
+       window.addEventListener('keyup', teclado,true);
+
+       function teclado(elevento) {
+           var evento = elevento;
+           console.log("has pulsado " + evento.keyCode);
+           if(evento.keyCode == "13"){
+                //paso el array
+         comprobar_letra(arr_return);
+           }
+       }
+
+
+
 
    }
