@@ -44,7 +44,7 @@
        comprobar.addEventListener('click', () => {
            //recogo los datos de la palabara original
             //paso el array
-           comprobar_letra(arr_return);
+           arr_return = comprobar_letra(arr_return);
        })
 
        //  comprobar.addEventListener("click", comprobarletra, true);

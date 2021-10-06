@@ -1,6 +1,7 @@
 //recibo el array ej comprobarletra(arr_return) 
 function comprobarletra(arr_return) {
     let input = document.getElementById("buscaletra");
+    let comprobar = document.getElementById("botoncomprobar");
 
     var palabraoriginal = arr_return[0];
     var lineas = arr_return[1];
@@ -37,17 +38,18 @@ function comprobarletra(arr_return) {
         } else {
             //quita vidas si no encuentra 
             contadorvidas_boolean = true;
-         
+
         }
         contador++;
     }
-   
+
     console.log(contadorvidas + "resta vidas")
     //array de guiones cambiado convertido a cadena
+    console.log("array lines" + arrlineas)
     lineas = arrlineas.join('');
     //cambiar palabra con guiones a palabra con letras cambiadas
     document.getElementById('contenedor').innerText = lineas;
-    var paaa= document.getElementById("utilizadas").innerText += buscaletra + "";
+    var paaa = document.getElementById("utilizadas").innerText += buscaletra + "";
     // añado las palabras utilizadas
     //  document.getElementById("utilizada").innerHTML += buscaletra + ", ";
     if (contadorvidas_boolean == true) {
@@ -65,7 +67,7 @@ function comprobarletra(arr_return) {
         console.log(contadorvidas);
         //cambiar nº vidas
         document.getElementById("vidas").innerText = contadorvidas;
-      //  contadorvidas_boolean = false;
+        //  contadorvidas_boolean = false;
     }
     //si has encontrado letra se comprueba si la palabra ya esta completa
     if (palabraoriginal == lineas) {
@@ -79,11 +81,13 @@ function comprobarletra(arr_return) {
         input.setAttribute("disabled", "true");
     }
 
-    
-   
+
+
     //vacio el input de busca palabra
     buscaletra = document.getElementById("buscaletra").value = "";
-
+    //sobreescribir lineas para pasarlo a ahorcadojs
+    arr_return[1] = lineas;
+    return arr_return;
 }
 
 export default comprobarletra;
