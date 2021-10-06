@@ -45,11 +45,8 @@
            //recogo los datos de la palabara original
            //paso el array
            arr_return = comprobar_letra(arr_return);
+
        })
-
-
-
-
 
        //boton reiniciaar
        reiniciar.addEventListener('click', () => {
@@ -57,16 +54,26 @@
        })
 
        //
-       window.addEventListener('keyup', teclado,true);
+       window.addEventListener('keyup', teclado, true);
 
        function teclado(elevento) {
            var evento = elevento;
            console.log("has pulsado " + evento.keyCode);
-           if(evento.keyCode == "13"){
-                //paso el array
-         comprobar_letra(arr_return);
+           if (evento.keyCode == "13") {
+               //paso el array
+               comprobar_letra(arr_return);
            }
        }
+
+       //mensaje al pasar el 
+       comprobar.addEventListener('mouseover', () => {
+
+           comprobar = alert("Puedes pulsar la tecla ENTER");
+       })
+     
+
+
+
 
 
 
