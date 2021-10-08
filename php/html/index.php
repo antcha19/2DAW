@@ -1,13 +1,12 @@
 <?php
+$ima_nombre = [];
 require "ima_cabecera.php";
 ?>
-
-
-
 <form method="post" action="delete.php" enctype="multipart/form-data">
 
    <!--<a class='btn btn-primary' href='upload.php?'>Subir imagenes</a> -->
    <?php
+
    $ruta = scandir("imagenes");
    for ($i = 0; $i < count($ruta); $i++) {
       if ($i > 1) {
