@@ -7,10 +7,6 @@ require "ima_cabecera.php";
 <form method="post" action="delete.php" enctype="multipart/form-data">
 
    <!--<a class='btn btn-primary' href='upload.php?'>Subir imagenes</a> -->
-
-
-
-
    <?php
    $ruta = scandir("imagenes");
    for ($i = 0; $i < count($ruta); $i++) {
@@ -19,13 +15,6 @@ require "ima_cabecera.php";
          echo "</input> <img src=imagenes/$ruta[$i]></div>";
       }
    }
-
- /*  foreach($ruta as $r){
-      echo "</input> <img src=imagenes/$r></div>";
-   }*/
-
-
-
 
    ?>
 

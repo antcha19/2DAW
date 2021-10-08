@@ -7,10 +7,14 @@
 }
 
 .content{
-    float: right;
+    
     background-color: white;
 }
 /*apartado profesores*/
+.content-header{
+    background-color: red;
+    
+}
 
 
 .side, .sidebar{
@@ -22,6 +26,7 @@
 
 .baccion{
     background-color: rgb(56, 113, 219);
+  
 }
 li{
     list-style: none;
@@ -32,11 +37,16 @@ li{
 }
 
 /*campo nombre, apellidos, etc.....*/
-
 .campos{
     background-color: rgb(212, 201, 201);
     text-align: left;
 }
+/*todo el formulario NOmbre.....*/
 .xform{
     padding-right: 10px;
+}
+
+/*cambio de color el asterisco*/
+.asterisco{
+    color: red;
 }

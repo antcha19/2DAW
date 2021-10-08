@@ -41,24 +41,14 @@ if (isset($_POST['Enviar']) && $f = $_FILES['foto'] ?? []) {
 <form method="post" enctype="multipart/form-data">
 
     <?php
-
     for ($i = 0; $i < 5; $i++) {
         echo "<input type=file name=foto[] ><br>";
     }
-    
     ?>
 
     <input type="submit" name="Enviar" value="Enviar">
-
-
     <a class=btn btn-primary href=index.php?>Inicio</a>
-
-
-
-
     <?= $error ?? ''
-
-
     ?>
 
 </form>

@@ -44,10 +44,10 @@
     </div>
     <div class=side>
         <ul class="side-menu">
-            <li> <a href="#"></a><i class="fa fa-building"></i> <span>Centro</span><span
-                class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a> </li>
-            <li><a href="#"><i class="fa fa-group"></i> <span>Alumnos<span
-                class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a></span>
+            <li> <a href="#"></a><i class="fa fa-building"></i> <span>Centro</span><span class="pull-right-container"><i
+                        class="fa fa-angle-left pull-right"></i></span></a> </li>
+            <li><a href="#"><i class="fa fa-group"></i> <span>Alumnos<span class="pull-right-container"><i
+                                class="fa fa-angle-left pull-right"></i></span></a></span>
             <li><a href="#"><i class="fa fa-calendar"></i> <span>Prematrícula</span> <span
                         class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
             <li><a href="#"><i class="fa fa-graduation-cap"></i> <span>Profesores</span> <span
@@ -72,9 +72,10 @@
                 <li>Profesores</li>
                 <li>Modificar</li>
             </ul>
+             <button class="baccion" href="#"><i class="fa fa-bars "></i>&nbsp; Acciones </button>
+                <ul class="acdropdown-content nav" id="yw2">
+            
 
-            <button class="baccion" href="#"><i class="fa fa-bars "></i>&nbsp; Acciones </button>
-            <ul class="acdropdown-content nav" id="yw2">
         </div>
 
         <form enctype="multipart/form-data" autocomplete="off" class="form" id="profesores-form" action="xxx"
@@ -89,12 +90,12 @@
                 </div>
                 <div class="campos">
                     <div class='field'>
-                        <label>Nombre </label>
+                        <label>Nombre<span class="asterisco">*</span> </label>
                         <input maxlength="40" class="form-control" name="Profesores[nombre]" type="text" />
                     </div>
 
                     <div class='field'>
-                        <label>Apellidos </label>
+                        <label>Apellidos <span class="asterisco">*</span> </label>
                         <input maxlength="40" class="form-control" name="Profesores[nombre]" type="text" />
                     </div>
 
@@ -140,7 +141,7 @@
                     </div>
 
                     <div class='field'>
-                        <label>DNI* </label>
+                        <label>DNI <span class="asterisco">*</span> </label>
                         <input maxlength="40" class="form-control" name="Profesores[dni]" type="text" />
                     </div>
 
@@ -186,7 +187,7 @@
                             <option>Selecciona </option>
                             <option>Prefosor</option>
                             <option>tut@r</option>
-                       
+
 
                         </select>
                     </div>
