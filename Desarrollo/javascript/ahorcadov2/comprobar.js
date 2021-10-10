@@ -49,37 +49,52 @@ function comprobarletra(arr_return) {
     lineas = arrlineas.join('');
     //cambiar palabra con guiones a palabra con letras cambiadas
     document.getElementById('contenedor').innerText = lineas;
-    var paaa = document.getElementById("utilizadas").innerText += buscaletra + "";
     // añado las palabras utilizadas
-    //  document.getElementById("utilizada").innerHTML += buscaletra + ", ";
+    var paaa = document.getElementById("utilizadas").innerText += buscaletra + "";
 
 
-    for (let i = 0; i < paaa.length; i++) {
-        console.log("tamaño " + paaa.length);
-
-    }
 
     console.log("tamaño " + paaa.length);
     console.log("tamaño " + contadorvidas);
 
+
+    if (paaa.length == 1) {
+        //si las vidas son 0 muestra mensaje de perder
+        document.getElementById("vidas").innerHTML = "Tienes 7 vidas";
+    }
+    if (paaa.length == 2) {
+        //si las vidas son 0 muestra mensaje de perder
+        document.getElementById("vidas").innerHTML = "Tienes 6 vidas";
+    }
+    if (paaa.length == 3) {
+        //si las vidas son 0 muestra mensaje de perder
+        document.getElementById("vidas").innerHTML = "Tienes 5 vidas";
+    }
+    if (paaa.length == 4) {
+        //si las vidas son 0 muestra mensaje de perder
+        document.getElementById("vidas").innerHTML = "Tienes 4 vidas";
+    }
+    if (paaa.length == 5) {
+        //si las vidas son 0 muestra mensaje de perder
+        document.getElementById("vidas").innerHTML = "Tienes 3 vidas";
+    }
+    if (paaa.length == 6) {
+        //si las vidas son 0 muestra mensaje de perder
+        document.getElementById("vidas").innerHTML = "Tienes 2 vidas";
+    }
+    if (paaa.length == 7) {
+        //si las vidas son 0 muestra mensaje de perder
+        document.getElementById("vidas").innerHTML = "Tienes 2 vidas";
+    }
     if (paaa.length == contadorvidas) {
         //si las vidas son 0 muestra mensaje de perder
         document.getElementById("vidas").innerHTML = "Has perdido la partida";
-        document.getElementById("imagen").scr = "corazon4.jpeg";
-
-        //Deshabilitar todo
-    }
-
-    //si has encontrado letra se comprueba si la palabra ya esta completa
-    if (palabraoriginal == lineas) {
-        console.log(palabraoriginal)
-        console.log(lineas);
-        document.getElementById("vidas").innerHTML = "Has ganado la partida";
         //habilito el boton cuando gane o pierda
         reiniciar.removeAttribute("disabled");
         //desabilito boton comprobar
         comprobar.setAttribute("disabled", "true");
         input.setAttribute("disabled", "true");
+        document.getElementById("imagen").src = "corazon4.jpeg";
     }
 
 
