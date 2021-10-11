@@ -1,53 +1,74 @@
-.cabecera{
+.cabecera {
     background-color: #a9a9a9;
     font-size: 20px;
-    text-align: center;  
+    text-align: center;
     height: 40px;
     color: white;
 }
 
-.content{
-    
+.content {
+
     background-color: white;
+    float: right;
+
+
+
 }
+
 /*apartado profesores*/
-.content-header{
+.content-header {
+
+
     background-color: red;
-    
-}
-   
 
 
-.side, .sidebar{
-    float: left;
-    background-color: rgb(173, 160, 160);
-    width: 220px;
 }
 
+.side {
 
-.baccion{
+}
+
+.side-menu {
+    width: 10%;
+}
+
+
+.baccion {
     background-color: rgb(56, 113, 219);
-  
+
 }
-li{
+
+li {
     list-style: none;
 }
+
 /*buscardor*/
-.sidebar-form{
+.sidebar-form {
     background-color: white;
 }
 
 /*campo nombre, apellidos, etc.....*/
-.campos{
-    background-color: rgb(212, 201, 201);
+.campos {
+    background-color: rgb(49, 52, 90);
     text-align: left;
+
+
 }
+
 /*todo el formulario NOmbre.....*/
-.xform{
-    padding-right: 10px;
+.xform {
+    display: inline;
 }
 
 /*cambio de color el asterisco*/
-.asterisco{
+.asterisco {
     color: red;
+}
+
+/*quitar subrayado enlaces*/
+a:link,
+a:visited,
+a:active {
+
+    text-decoration: none;
 }
