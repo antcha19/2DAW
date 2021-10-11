@@ -18,6 +18,10 @@ if (isset($_POST['confirmarsi'])) {
     }
     die;
 }
+if (isset($_POST['confirmarno'])) {
+
+    header('Location: index.php');
+}
 
 
 //
@@ -28,18 +32,15 @@ if (isset($_POST['ima_nombre'])) {
         echo "</input> <img src=$ruta></div>";
     }
 } else {
+    //vuelve al inicio si no has ninguna foto seleccionada
     header('Location: index.php');
 }
-
-
-
-
 
 ?>
 <br>
 <br>
 <form method="POST">
-    <a href="index.php"><input type="submit" name="confirmarsi" value="Si"></input></a>
+    <input type="submit" name="confirmarsi" value="Si"></input>
     <a href="index.php"><input type="submit" name="confirmarno" value="No"></input></a>
 
     <?php

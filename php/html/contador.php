@@ -1,18 +1,17 @@
 <?php
 
-$texto = "Me gusta la música";
+$texto = "Me gusta la música la me gustas dfg adfg ";
+$array = explode(' ', $texto);
 
-
-
+$texto = array_count_values($array);
 
 
 $contador = 0;
-echo preg_match(" ", $texto);
-
+array_sum($texto);
 
 echo "<pre>";
 var_dump($texto);
-var_dump($_POST);
+
 
 
 ?>
@@ -24,7 +23,7 @@ var_dump($_POST);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contador</title>
 </head>
 
 <body>
