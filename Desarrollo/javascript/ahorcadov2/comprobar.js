@@ -1,5 +1,7 @@
 //recibo el array ej comprobarletra(arr_return) 
+var contador= 8;
 function comprobarletra(arr_return) {
+    
     let input = document.getElementById("buscaletra");
     let comprobar = document.getElementById("botoncomprobar");
 
@@ -15,17 +17,13 @@ function comprobarletra(arr_return) {
 
     var buscaletra = document.getElementById("buscaletra").value;
     console.log("buscar " + buscaletra);
-    var contador = 0;
+    
     //contador de vidas:
     var contadorvidas = 8;
-    var contadorvidas_boolean = false;
-    document.getElementById("vidas").value = contadorvidas;
 
-    //guardo la letra utilizada para que me la muestre
-    var letras_utilizadas = buscaletra;
+    document.getElementById("vidas").value = contadorvidas;
     //recorro el array para buscar si existe la letra
     let arrlineas = lineas.split('');
-
 
     //Bucle para comprobar
     for (var i = 0; i < palabraoriginal.length; i++) {
@@ -34,14 +32,21 @@ function comprobarletra(arr_return) {
         if (palabraoriginal[i] == buscaletra) {
             //encuentra letra
             arrlineas[i] = buscaletra; //cambia guión por letra
-            contadorvidas_boolean = false;
-        } else {
-            //quita vidas si no encuentra 
-            contadorvidas_boolean = true;
 
         }
-        contador++;
     }
+    var comprueba = palabraoriginal.includes(buscaletra);
+
+   
+    if (comprueba === false) {
+        
+        contador = contador - 1;
+        document.getElementById("vidas").innerHTML = "Tienes " + contador +" vidas"; 
+    }
+
+    console.log("sdfdg " + contador);
+
+
 
     console.log(contadorvidas + "resta vidas")
     //array de guiones cambiado convertido a cadena
@@ -51,13 +56,16 @@ function comprobarletra(arr_return) {
     document.getElementById('contenedor').innerText = lineas;
     // añado las palabras utilizadas
     var paaa = document.getElementById("utilizadas").innerText += buscaletra + "";
-   
-    
+    //Bucle para comprobar
+
+
+
 
 
     console.log("tamaño " + paaa.length);
     console.log("tamaño " + contadorvidas);
-    if (paaa.length == contadorvidas) {
+
+    if (contador == 0) {
         //si las vidas son 0 muestra mensaje de perder
         document.getElementById("vidas").innerHTML = "Has perdido la partida";
         //habilito el boton cuando gane o pierda
@@ -68,17 +76,17 @@ function comprobarletra(arr_return) {
         document.getElementById("imagen").src = "corazon4.jpeg";
     }
 
-//si has encontrado letra se comprueba si la palabra ya esta completa
-if (palabraoriginal == lineas) {
-    console.log(palabraoriginal)
-    console.log(lineas);
-    document.getElementById("vidas").innerHTML = "Has ganado la partida";
-    //habilito el boton cuando gane o pierda
-    reiniciar.removeAttribute("disabled");
-    //desabilito boton comprobar
-    comprobar.setAttribute("disabled","true");
-    input.setAttribute("disabled","true");
-}
+    //si has encontrado letra se comprueba si la palabra ya esta completa
+    if (palabraoriginal == lineas) {
+        console.log(palabraoriginal)
+        console.log(lineas);
+        document.getElementById("vidas").innerHTML = "Has ganado la partida";
+        //habilito el boton cuando gane o pierda
+        reiniciar.removeAttribute("disabled");
+        //desabilito boton comprobar
+        comprobar.setAttribute("disabled", "true");
+        input.setAttribute("disabled", "true");
+    }
 
     //vacio el input de busca palabra
     buscaletra = document.getElementById("buscaletra").value = "";

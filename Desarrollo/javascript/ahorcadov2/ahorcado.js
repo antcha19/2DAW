@@ -15,6 +15,7 @@
        let reiniciar = document.getElementById("reiniciar");
        let arr_return = "";
        let palabraoriginal = "";
+       
 
        //desabilito el boton empezar hasta que termine de jugar
        reiniciar.setAttribute("disabled", "true");
