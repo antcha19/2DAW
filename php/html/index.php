@@ -14,7 +14,6 @@ require "ima_cabecera.php";
          echo "</input> <img src=imagenes/$ruta[$i]></div>";
       }
    }
-
    ?>
 
    <?= $error ?? '' ?>

@@ -34,10 +34,6 @@ if (isset($_POST['Enviar']) && $f = $_FILES['foto'] ?? []) {
 
 ?>
 
-
-
-
-
 <form method="post" enctype="multipart/form-data">
 
     <?php
@@ -49,8 +45,7 @@ if (isset($_POST['Enviar']) && $f = $_FILES['foto'] ?? []) {
     <input type="submit" name="Enviar" value="Enviar">
     <a class=btn btn-primary href=index.php?>Inicio</a>
     <?= $error ?? ''
-    ?>
-
+ ?>
 </form>
 
 </html>
