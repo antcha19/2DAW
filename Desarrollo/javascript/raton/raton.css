@@ -4,4 +4,8 @@ body{
 img{
     width: 80px;
     height: 80px;
+    margin-top: 300px;
+}
+.btnreiniciar{
+    text-align: right;
 }

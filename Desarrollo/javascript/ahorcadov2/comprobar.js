@@ -74,6 +74,7 @@ function comprobarletra(arr_return) {
         comprobar.setAttribute("disabled", "true");
         input.setAttribute("disabled", "true");
         document.getElementById("imagen").src = "corazon4.jpeg";
+        document.getElementById('contenedor').innerText = "La palabra introducida es: " + palabraoriginal;
     }
 
     //si has encontrado letra se comprueba si la palabra ya esta completa
