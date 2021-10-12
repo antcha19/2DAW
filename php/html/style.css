@@ -1,10 +1,11 @@
+
+
 img {
+  
     width: 200px;
     height: 200px;
     float: left;
     border-radius: 200px;
-    border-color: black;
-    border: 200px
 }
 
 
@@ -15,4 +16,29 @@ img {
 #botones{
   float: right;
   margin-top: -49px;
+  
+}
+
+.btnborrar{
+  margin-top: 200%;
+  float: inline-end;
+
+}
+.mensajeerror{
+  text-align: center;
+  font-size: 30px;
+
+  
+}
+.inputsubida{
+  text-align: center;
+}
+.enviar{
+  text-align: center;
+  color: aqua;
+}
+h3{
+  text-align: center;
+  font-size: 30px;
+  
 }

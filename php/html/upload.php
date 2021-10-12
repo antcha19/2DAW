@@ -7,29 +7,24 @@ if (isset($_POST['Enviar']) && $f = $_FILES['foto'] ?? []) {
 
     $subir = $_FILES['foto'];
 
-
-    for ($i = 0; $i < 5; $i++) {
-
-        if ($f['error'][$i])
-
-            $error = "Error al subir  fichero";
-
-        else { //ten
-            //subir fichero
-            //cambia de destino por cada foto
+    if (!$subir['name'] == null) {
+        echo "<div class=mensajeerror>No tienes ninguna foto para subir</div>";
+    }
+    if ($subir) {
+        for ($i = 0; $i < 5; $i++) {
+            //cambia de destino por cada foto , subir la foto
             $destino = 'imagenes/' . $f['name'][$i];
-//validamos si  se trata de un archivo pjg/gif/png
             if (move_uploaded_file($subir['tmp_name'][$i], $destino)) {
                 $error = "Subida correctamente";
-            } else {
-                $error = "error al mover el fichero";
+                header('Location: index.php');
             }
+
         }
     }
 
-    echo "<pre>";
-    var_dump($_FILES);
-    var_dump($_POST);
+    /*   echo "<pre>";
+var_dump($_FILES);
+var_dump($_POST);*/
 }
 
 ?>
@@ -37,15 +32,16 @@ if (isset($_POST['Enviar']) && $f = $_FILES['foto'] ?? []) {
 <form method="post" enctype="multipart/form-data">
 
     <?php
-    for ($i = 0; $i < 5; $i++) {
-        echo "<input type=file name=foto[] ><br>";
-    }
-    ?>
+for ($i = 0; $i < 5; $i++) {
+    echo "<div class=inputsubida><input type=file name=foto[] ></div><br>";
+}
+?>
 
-    <input type="submit" name="Enviar" value="Enviar">
-    <a class=btn btn-primary href=index.php?>Inicio</a>
-    <?= $error ?? ''
- ?>
+    <div class="enviar">
+        <input   type="submit" name="Enviar" value="Enviar">
+    </div>
+    <?=$error ?? ''
+?>
 </form>
 
 </html>

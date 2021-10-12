@@ -4,9 +4,10 @@ require "ima_cabecera.php";
 ?>
 <form method="post" action="delete.php" enctype="multipart/form-data">
 
-   <!--<a class='btn btn-primary' href='upload.php?'>Subir imagenes</a> -->
+  
    <?php
 
+//muestra las imagenes en el index.php
    $ruta = scandir("imagenes");
    for ($i = 0; $i < count($ruta); $i++) {
       if ($i > 1) {
@@ -17,7 +18,10 @@ require "ima_cabecera.php";
    ?>
 
    <?= $error ?? '' ?>
-   <input type="submit" name="Enviar" value="Borra imageness">
+   <div class0="btnborrar">
+   <input type="submit" name="Enviar" value="Borra imagenes">
+   </div>
+   
 </form>
 </body>
 
