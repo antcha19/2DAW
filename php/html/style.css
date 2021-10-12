@@ -1,42 +1,71 @@
 
 
 img {
+  float: left;
+  width: 200px;
+  height: 200px;
   
-    width: 200px;
-    height: 200px;
-    float: left;
-    border-radius: 200px;
+  border-radius: 200px;
+
+  border: 3px solid rgb(0, 0, 0);
 }
 
 
+
+/*div con la imagen y el checkbox*/
+.cuadrado {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  overflow: auto;
+  float: left;
+  text-align: center;
+}
+
+.colorbtn{
+  background-color: white; 
+  color: black; 
+  border: 3px solid #008CBA;
+}
+
+/*boton borrar y confirmar*/
+.btnborrar{
+  clear: left;
+ text-align: center;
+
+ }
+
+
+/*div galerias*/
 #galeria{
-    text-align: left;
+    text-align: center;
+  
+    color: #218cad;
    
 }
+/*botnes subir e inicio*/
 #botones{
   float: right;
   margin-top: -49px;
   
 }
 
-.btnborrar{
-  margin-top: 200%;
-  float: inline-end;
 
-}
 .mensajeerror{
   text-align: center;
   font-size: 30px;
 
   
 }
+/*subir imagenes*/
 .inputsubida{
   text-align: center;
 }
+
 .enviar{
   text-align: center;
   color: aqua;
 }
+
 h3{
   text-align: center;
   font-size: 30px;

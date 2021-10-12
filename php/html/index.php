@@ -11,15 +11,15 @@ require "ima_cabecera.php";
    $ruta = scandir("imagenes");
    for ($i = 0; $i < count($ruta); $i++) {
       if ($i > 1) {
-         echo " <div class=cuadrado><input  type=checkbox name=ima_nombre[] value=imagenes/$ruta[$i] > ";
-         echo "</input> <img src=imagenes/$ruta[$i]></div>";
+         echo " <div class=cuadrado><input  type=checkbox name=ima_nombre[] value=imagenes/$ruta[$i] ></input> <img  src=imagenes/$ruta[$i]></div> ";
+        // echo "</input> <img src=imagenes/$ruta[$i]></div>";
       }
    }
    ?>
 
    <?= $error ?? '' ?>
-   <div class0="btnborrar">
-   <input type="submit" name="Enviar" value="Borra imagenes">
+   <div class="btnborrar">
+   <input class="colorbtn" type="submit" name="Enviar" value="Borrar imagenes">
    </div>
    
 </form>

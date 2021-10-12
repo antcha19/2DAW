@@ -9,7 +9,7 @@
     </div>
 
     <div id="botones">
-    <a class="btn btn-secondary" href='index.php?' id="subir_ima">Inicio</a>
+          <a class="btn btn-secondary" href='index.php?' id="subir_ima">Inicio</a>
         <a class="btn btn-secondary" href='upload.php?' id="subir_ima">Subir imagenes</a>
 
     </div>
