@@ -1,74 +1,164 @@
-.cabecera {
+body{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+/*cabecera de la pagina*/
+.cabecera{
     background-color: #a9a9a9;
     font-size: 20px;
     text-align: center;
-    height: 40px;
+    height: 25px;
     color: white;
+    padding: 1%;
 }
 
-.content {
-
-    background-color: white;
+/*usuario de la cabecera*/
+.usuario{
     float: right;
+    font-size: 15px;
+    padding: -2%;
+}
 
+/*foto usuario*/
+.fotousuario{
+    width: 15px;
+}
 
+.sidebar-form, .side{
+    position: absolute;
+    float: left;
+    background-color: #e0e0e0;
+}
 
+/*compos nombre, apellidos, etc*/
+.campos{
+    display: block;
+    padding: 5%;
+    margin-top: 1%;
+    margin-left: 30%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    border: 1px solid rgb(156, 173, 190);
+    border-radius: 5%;
+    background-color: #f5f5f5;
+}
+
+.sidebar{
+    margin: 1%;
+}
+
+.side{
+    margin-top: 5%;
+    
+}
+
+.sidebar-form{
+    position: relative;
+    float: left;
 }
 
 /*apartado profesores*/
-.content-header {
+.content{
+    margin-left: 14%;
+    margin-right: auto;
+    background-color: rgb(248, 245, 245);
+    position: relative;
+    float: left;
+    width: 90%;
+    margin-top: -3%;
+   
+}
 
+.content-header h1{
+    margin-bottom: 0%;
+}
 
-    background-color: red;
-
+/*apartado solo profesores, home,acciones, etc...*/
+.content-header{
 
 }
 
-.side {
-
+.content-header>ul, .content-header>h1, .content-header>li{
+    display: inline-block;
+    width: auto;
+}
+/*logo*/
+.logo{
+    float: left;
+    margin-left: 5%;
 }
 
-.side-menu {
-    width: 10%;
-}
-
-
-.baccion {
-    background-color: rgb(56, 113, 219);
-
-}
-
-li {
-    list-style: none;
-}
-
-/*buscardor*/
-.sidebar-form {
-    background-color: white;
-}
-
-/*campo nombre, apellidos, etc.....*/
-.campos {
-    background-color: rgb(49, 52, 90);
-    text-align: left;
-
-
-}
-
-/*todo el formulario NOmbre.....*/
-.xform {
+.content-header h1 ul li {
     display: inline;
 }
+.content-header>ul>li {
+    display: inline;
+}
+/*apartado de la home, profesores*/
+.breadcrumb{
+    float: right;
+    bottom: 0;
+}
+/*boton acciones*/
+.baccion{
+    float: right;
+}
+
+.baccion,  .foto>a>i{
+    background-color: #2c96d3;
+    color: white;
+    border-radius: 5%;
+    border: none;
+    padding: 2%;
+}
+
+
+.foto>a>i{
+    border-radius: 8%;
+    padding: 10%;
+}
+
+li{
+    /*quitar puntos a los
+    elementos de lista*/
+    list-style: none;
+    
+}
+/*quitar subrayado pero no funciona */
+li {
+    text-decoration: none;
+}
+
+/*btones confirma*/
+.confirma{
+    float: left;
+    margin: 0 5% 0 5%;
+    background-color: #2c96d3;
+}
+
+
+.foto{
+    display: block;
+    float: left;
+}
+
+
+
+.campos>.field{
+    margin: 1%;
+}
+
+
+/*todo el formulario NOmbre.....*/
+.xform{
+    display: inline;
+    margin-right: 500%;
+}
+
 
 /*cambio de color el asterisco*/
 .asterisco {
     color: red;
-}
-
-/*quitar subrayado enlaces*/
-a:link,
-a:visited,
-a:active {
-
-    text-decoration: none;
 }
