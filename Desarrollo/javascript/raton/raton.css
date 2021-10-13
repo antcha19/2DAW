@@ -1,14 +1,15 @@
+/*todo el documento*/
 #todo {
     text-align: center;
     color: rgb(44, 173, 173);
 }
-
+/*tamaño de la imagen*/
 img {
     width: 100%;
 
 
 }
-
+/*div del raton*/
 #idraton {
     width: 10%;
     height: 10%;
