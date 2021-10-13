@@ -1,11 +1,19 @@
-body{
+#todo {
     text-align: center;
+    color: rgb(44, 173, 173);
 }
-img{
-    width: 80px;
-    height: 80px;
-    margin-top: 300px;
+
+img {
+    width: 100%;
+
+
 }
-.btnreiniciar{
-    text-align: right;
+
+#idraton {
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  
 }
