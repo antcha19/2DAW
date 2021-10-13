@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(107, 102, 102);
+
+}
+
+h1 {
+    font-size: 30px;
+    color: white;
+}
+
+.btninicio {
+    font-size: 30px;
+
+    
+}
+li{
+    
+    
+    display: flex;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/*Titulo con el h1*/
+.snav navbar-nav {
+    display: inline-block;
+}
+
+#cuadrado {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    padding: 10px;
+}
+
+#cuadrado div {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    width: 2px;
+    height: 30px;
+}
