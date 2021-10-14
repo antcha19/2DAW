@@ -33,6 +33,9 @@ body {
 .sidebar {
     margin-top: -1%;
 }
+.side-menu{
+    margin-bottom: 1%;
+}
 
 .sidebar-form,
 .side {
