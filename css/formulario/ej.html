@@ -45,19 +45,34 @@
     </div>
     <div class=side>
         <ul class="side-menu">
-            <li> <a href="#"></a><i class="fa fa-building"></i> <span>Centro</span><span class="pull-right-container"><i
-                        class="fa fa-angle-left pull-right"></i></span></a> </li>
+            <li> <a href="#"><i class="fa fa-building"></i> <span>Centro</span><span class="pull-right-container"><i
+                            class="fa fa-angle-left pull-right"></i></span></a> </li>
             <li><a href="#"><i class="fa fa-group"></i> <span>Alumnos<span class="pull-right-container"><i
                                 class="fa fa-angle-left pull-right"></i></span></a></span>
+
             <li><a href="#"><i class="fa fa-calendar"></i> <span>Prematrícula</span> <span
                         class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
             <li><a href="#"><i class="fa fa-graduation-cap"></i> <span>Profesores</span> <span
                         class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+            <li><a href="#"><i class="fa fa-check"></i> <span>Sala de Guardia<span class="pull-right-container"><i
+                                class="fa fa-angle-left pull-right"></i></span></a></span>
+            <li><a href="#"><i class="fa fa-user"></i> <span>Personal no docente<span class="pull-right-container"><i
+                                class="fa fa-angle-left pull-right"></i></span></a></span>
+            <li><a href="#"><i class="fa fa-group"></i> <span>Grupos de Usuarios<span class="pull-right-container"><i
+                                class="fa fa-angle-left pull-right"></i></span></a></span>
             <li><a href="#"><i class="fa fa-upload"></i> <span>Importar Datos</span> <span
                         class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-            <li><a href="#"> <span>Aulas y Materiales</span></a></li>
+            <li><a href="#"><i class="fa fa-file"></i> <span>Documentos<span class="pull-right-container"><i
+                                class="fa fa-angle-left pull-right"></i></span></a></span>
+            <li><a href="#"><i class="fa fa-group"></i> <span>Reservas Espacios y Mat.<span
+                            class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a></span>
+            <li><a href="#"><i class="fa fa-align-justify"></i> <span>Formularios y Encuestas<span
+                            class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a></span>
+
             <li><a href="#"><i class="fa fa-gear"></i> <span>Configuración</span> <span class="pull-right-container"><i
                             class="fa fa-angle-left pull-right"></i></span></a>
+            <li><a href="#"><i class="fa fa-list"></i> <span>Listados</span> <span
+                        class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
             <li><a href="#"><i class="fa fa-question-circle"></i> <span>Ayuda</span> <span
                         class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
         </ul>
@@ -67,15 +82,17 @@
 
     <div class="content">
         <div class="content-header">
-            <h1>Profesores</h1>
+            <h1>Profesores </h1>
             <ul class="breadcrumb">
-                <li>Home</li>
-                <li>Profesores</li>
-                <li>Modificar</li>
+                <li>Home > </li>
+                <li>Profesores > </li>
+                <li>Miguel Almarche Pons > </li>
+                <li><span class="modificar">Modificar </span> </li>
             </ul>
-             <button class="baccion" href="#"><i class="fa fa-bars "></i>&nbsp; Acciones </button>
-                <ul class="acdropdown-content nav" id="yw2">
-            
+            <hr>
+            <button class="baccion" href="#"><i class="fa fa-bars "></i>&nbsp; Acciones </button>
+            <ul class="acdropdown-content nav" id="yw2">
+
 
         </div>
 
@@ -85,24 +102,24 @@
 
             <div class="xform">
                 <div class="foto">
-                    <img id='foto'  src='foto.png' class='fotousu'>
+                    <img id='foto' src='foto.png' class='fotousu'>
 
                     <a class="btn btn-primary" href="#"><i class="fa fa-pencil"></i></a>
                 </div>
                 <div class="campos">
                     <div class='field'>
                         <label>Nombre<span class="asterisco">*</span> </label>
-                        <input maxlength="40" class="form-control" name="Profesores[nombre]" type="text" />
+                        <input maxlength="30" size="15" class="form-control" name="Profesores[nombre]" type="text" />
                     </div>
 
                     <div class='field'>
                         <label>Apellidos <span class="asterisco">*</span> </label>
-                        <input maxlength="40" class="form-control" name="Profesores[nombre]" type="text" />
+                        <input maxlength="30" class="form-control" name="Profesores[nombre]" type="text" />
                     </div>
 
                     <div class='field'>
                         <label>Usuario </label>
-                        <input maxlength="40" class="form-control" name="Profesores[usuario]" type="text" />
+                        <input maxlength="20" size="10" class="form-control" name="Profesores[usuario]" type="text" />
                     </div>
 
                     <div class='field'>
@@ -143,32 +160,29 @@
 
                     <div class='field'>
                         <label>DNI <span class="asterisco">*</span> </label>
-                        <input maxlength="40" class="form-control" name="Profesores[dni]" type="text" />
+                        <input maxlength="9" size="9" class="form-control" name="Profesores[dni]" type="text" />
                     </div>
 
                     <div class='field'>
                         <label>Telf.fijo </label>
-                        <input maxlength="40" class="form-control" name="Profesores[fijo]" type="number" />
+                        <input maxlength="9" size="10" class="form-control" name="Profesores[fijo]" type="text" />
                     </div>
 
                     <div class='field'>
                         <label>Telf.móvil </label>
-                        <input maxlength="40" class="form-control" name="Profesores[movil]" type="number" />
+                        <input maxlength="30" size="10" class="form-control" name="Profesores[movil]" type="text" />
                     </div>
 
-                    <div class='field'>
-                        <label>Telf.fijo </label>
-                        <input maxlength="40" class="form-control" name="Profesores[fijo]" type="number" />
-                    </div>
+
 
                     <div class='field'>
                         <label>Email personal </label>
-                        <input maxlength="40" class="form-control" name="Profesores[fijo]" type="email" />
+                        <input maxlength="30" class="form-control" name="Profesores[fijo]" type="email" />
                     </div>
 
                     <div class='field'>
                         <label>Email </label>
-                        <input maxlength="40" class="form-control" name="Profesores[fijo]" type="email" />
+                        <input maxlength="30" class="form-control" name="Profesores[fijo]" type="email" />
                     </div>
 
                     <div class='field'>
@@ -192,13 +206,23 @@
 
                         </select>
                     </div>
+                    <div class='field'>
+                        <label>Situación </label>
+                        <select>
+
+                            <option selected>Activo</option>
+                            <option>Baja</option>
+
+
+                        </select>
+                    </div>
 
                     <div class="confirma">
                         <button class="x" type="submit" name="yt0"> Guardar</button>
                     </div>
 
                     <div class="confirma">
-                        <button class="x" type="submit" name="yt0"> Cancelar</button>
+                        <button class="y" type="submit" name="yt0"> Cancelar</button>
                     </div>
 
                 </div>
