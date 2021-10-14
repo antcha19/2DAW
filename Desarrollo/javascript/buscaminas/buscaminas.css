@@ -33,13 +33,12 @@ ul {
     display: grid;
     grid-template-columns: auto auto auto;
 
-    padding: 10px;
+    padding: 1%;
 }
 
 #cuadrado div {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    width: 2px;
-    height: 30px;
+  
+   
 }
