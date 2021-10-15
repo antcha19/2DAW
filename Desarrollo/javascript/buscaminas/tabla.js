@@ -1,24 +1,30 @@
- export default class tabla {
-     //creo el constructor para crea el tabla
-     constructor(filas, columnas) {
-         this.x = filas;
-         this.y = columnas;
-     }
+class tabla {
+    //creo el constructor para crea el tabla
+    constructor(filas, columnas) {
+        this.x = filas;
+        this.y = columnas;
+    }
 
 
-     creartabla() {
-         let texto = "";
-         for (let i = 0; i < this.x; i++) {
-             texto += "<tr>";
-             for (let j = 0; j < this.y; j++) {
-                 texto += "<td></td>";
-             }
-             texto += "</tr>";
-             console.log(texto)
-         }
-         
-         document.getElementById("cuadrado").innerHTML = texto;
-         
-     }
+    creartabla() {
+        console.log("prueba");
 
- }
+        var tbl = document.getElementById("cuadrado");
+        var tblBody = document.createElement("tbody");
+        for (var i = 0; i < this.x; i++) {
+            var fila = document.createElement("tr");
+            for (var j = 0; j < this.y; j++) {
+                var celda = document.createElement("td");
+                var textoCelda = document.createTextNode(i + "-" + j);
+                celda.appendChild(textoCelda);
+                fila.appendChild(celda);
+            }
+            tblBody.appendChild(fila);
+        }
+        tbl.appendChild(tblBody);
+        tbl.setAttribute("border", "2");
+    }
+
+}
+
+export default tabla;

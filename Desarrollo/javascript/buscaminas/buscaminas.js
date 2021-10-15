@@ -1,7 +1,7 @@
-import tabla from "./tabla.js";
+import  Tabla  from "./tabla.js";
 
 window.onload = function () {
-
+  
     var btnjugar = document.getElementById("jugar");
     var cuadrado = document.getElementById("cuadrado");
     var filas_input = document.getElementById("filas");
@@ -15,9 +15,8 @@ window.onload = function () {
 
 
     btnjugar.addEventListener('click', () => {
-        var tabla1 = new tabla ();
-        tabla1.creartabla();
-
+       var tabla = new Tabla(filas_input, columas_input);
+        tabla.creartabla();
     })
 
 
