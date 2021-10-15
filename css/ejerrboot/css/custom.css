@@ -1,7 +1,3 @@
-/* 
-    Created on : 11-sept-2019, 19:10:11
-    Author     : Rosa Medina
-*/
 
 body{
   padding-top: 15px;
@@ -66,4 +62,8 @@ img{
 
 .text-light:hover{
   background-color: #343a40 !important;
+}
+
+footer>.container{
+  float: left;
 }
