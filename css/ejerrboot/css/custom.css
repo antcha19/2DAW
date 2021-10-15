@@ -1,0 +1,69 @@
+/* 
+    Created on : 11-sept-2019, 19:10:11
+    Author     : Rosa Medina
+*/
+
+body{
+  padding-top: 15px;
+  padding-bottom: 80px;
+}
+
+body > .container {
+  padding: 60px 15px 0;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+img{
+  padding: 10px;
+}
+
+.card img{
+  max-width: 100%;
+}  
+
+.form-buscar {
+  float: left;
+}
+
+.form-buscar .form-group {
+  padding: 0px;
+}
+
+@media (max-width: 767px) {
+  .form-buscar {
+    float: none;
+  }
+
+  .form-buscar .form-group {
+    padding: 5px 10px;
+  }
+}
+
+.logo{    
+  width: 50px;
+}
+
+.text-light:hover{
+  background-color: #343a40 !important;
+}
