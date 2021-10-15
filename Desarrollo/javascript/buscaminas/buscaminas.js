@@ -1,3 +1,5 @@
+import tabla from "./tabla.js";
+
 window.onload = function () {
 
     var btnjugar = document.getElementById("jugar");
@@ -5,6 +7,7 @@ window.onload = function () {
     var filas_input = document.getElementById("filas");
 
     var columas_input = document.getElementById("columas");
+    
 
 
 
@@ -12,32 +15,11 @@ window.onload = function () {
 
 
     btnjugar.addEventListener('click', () => {
-        //obtengo valores 
-        filasvalor = filas.value;
-        filascolumnas = columnas.value;
-      
-
-        tableto(filasvalor, filascolumnas);
-        obtnerid();
+        var tabla1 = new tabla ();
+        tabla1.creartabla();
 
     })
 
-
-    function tableto(filas, columnas) {
-        console.log("click en jugar");
-        for (let i = 0; i < filas; i++) {
-         
-            for (let j = 0; j < columnas; j++) {
-                console.log("divI " + i + " divJ " + j)
-                let newdiv = document.createElement("button");
-                newdiv.id = i + "," + j;
-                cuadrado.appendChild(newdiv).innerText = "posicion " + i + j;
-
-            }
-
-        }
-
-    }
 
     function obtnerid() {
         //array de botones
