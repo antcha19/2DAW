@@ -28,17 +28,24 @@ ul {
 .snav navbar-nav {
     display: inline-block;
 }
-
-#cuadrado {
-    display: grid;
-    grid-template-columns: auto auto auto;
-
-    padding: 1%;
-}
-
-#cuadrado div {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-  
+/*div de la tabla*/
+#div{
+    background-color: aqua;
    
+}
+/*estilo de la tbla*/
+table, th, td{
+    border: 2px solid black;
+    width: 200px;
+    height: 50px;
+
+}
+table{
+    text-align: center;
+}
+p{
+    text-align: justify;
+    padding-left: 20%;
+    padding-right: 20%;
+    display: none;
 }

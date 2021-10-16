@@ -1,36 +1,56 @@
-import  Tabla  from "./tabla.js";
+import Tabla from "./tabla.js";
 
 window.onload = function () {
-  
+
     var btnjugar = document.getElementById("jugar");
-    var cuadrado = document.getElementById("cuadrado");
     var filas_input = document.getElementById("filas");
-
-    var columas_input = document.getElementById("columas");
-    
-
-
-
-
-
+    var columas_input = document.getElementById("columnas");
+    var btnreglas = document.getElementById("botonreglas");
+    var id_tabla = document.getElementById("idtabla");
+    var p_reglas = document.getElementById("p_reglas");
 
     btnjugar.addEventListener('click', () => {
-       var tabla = new Tabla(filas_input, columas_input);
-        tabla.creartabla();
+        var varia_tabla = new Tabla(filas_input.value, columas_input.value);
+        //genero la tabla
+        varia_tabla.creartabla();
+
+        varia_tabla.minas();
+
+
+        for (let t = 0; t < id_tabla.length; t++) {
+            console.log("entro en el bucle minas");
+            console.log(id_tabla[t]);
+        }
+
+        ocultar();
+    })
+  
+
+    //btn reglas
+    btnreglas.addEventListener('click', () => {
+        texto_reglas();
     })
 
 
-    function obtnerid() {
-        //array de botones
-        var boton = document.getElementsByTagName("button");
-        var id = "";
+    function texto_reglas() {
 
-        for (var i = 0; i < boton.length; i++) {
-            id = boton[i].getAttribute('id');
-        }
+        p_reglas.style.display = "inline";
 
-
+        //tabla
+        id_tabla.style.display = "none";
 
     }
+    function ocultar() {
+
+        p_reglas.style.display = "none";
+
+       
+
+    }
+
+   
+
+
+
 
 }

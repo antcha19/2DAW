@@ -27,21 +27,39 @@
         <div class="btninicio">
             <ul>
                 <li><a href="#" id="jugar">Jugar</a></li>
-                <li><a href="#">Reglas</a></li>
+                <li><a href="#" id="botonreglas">Reglas</a></li>
             </ul>
 
         </div>
-        <input type="text" id="filas">
-        <input type="text" id="columnas">
-
-
+        <input type="number" id="filas" value="5" size="5">
+        <input type="number" id="columnas" value="5" size="5">
     </nav>
 
-    <!-- tablero-->
-    <table id="cuadrado">
+    <div id="div_reglas">
 
-    </table>
-    <div id="div"></div>
+
+        <p id="p_reglas">
+            Comienzas haciendo click encima de cualquier recuadro para despejar un área del campo,
+            podrás ver algunas casillas que están vacías, otras se mantienen ocultas y también
+            encontrarás recuadros con un número. Estos números indican la cantidad de minas que
+            existen en los 8 recuadros de su alrededor (a excepción de ser un recuadro ubicado
+            en una de las esquinas del campo). Los recuadros vacíos no tienen minas alrededor,
+            y los recuadros ocultos debes ir descubriéndolos.
+            <br>
+            <br>
+            Ejemplo:
+            <br>
+            <br>
+            Si ves el numero 1 en un recuadro, quiere decir que solo en uno de los ocho recuadros que bordean el número
+            1, hay una mina; siete recuadros se encuentran libres. Ahora, ¿cómo definimos exactamente en cual recuadro
+            esta la mina?, haciendo comparaciones con otros números. Si existe otro número cercano a los ocho recuadros
+            que bordean el número 1, este me puede dar una mayor referencia para, por medio del razonamiento ir
+            despejando la zona.
+        </p>
+    </div>
+
+    <!-- tablero-->
+    <div id="contenedor"></div>
 
 </body>
 <script src="buscaminas.js" type="module"></script>

@@ -1,30 +1,50 @@
-class tabla {
+
+var div_tabla;
+
+
+class Tabla {
     //creo el constructor para crea el tabla
     constructor(filas, columnas) {
-        this.x = filas;
-        this.y = columnas;
+        this.fila = filas;
+        this.columna = columnas;
     }
+
+
+
 
 
     creartabla() {
-        console.log("prueba");
 
-        var tbl = document.getElementById("cuadrado");
-        var tblBody = document.createElement("tbody");
-        for (var i = 0; i < this.x; i++) {
+        console.log("prueba  fila" + this.fila);
+        console.log("prueba " + this.columna);
+        //obtengo la id del div
+        div_tabla = document.getElementById("contenedor");
+        // creamos la tabla
+        var tabla = document.createElement("table");
+        //ponemos la id a la tabla;
+        tabla.id = "idtabla";
+        for (var f = 0; f < this.columna; f++) {
             var fila = document.createElement("tr");
-            for (var j = 0; j < this.y; j++) {
+            for (var c = 0; c < this.fila; c++) {
+                //crea las celda para cada fila
                 var celda = document.createElement("td");
-                var textoCelda = document.createTextNode(i + "-" + j);
-                celda.appendChild(textoCelda);
-                fila.appendChild(celda);
+                //pongo la id a cada celda;
+                celda.id = f + "," + c;
+                let id = celda.id;
+                
+                celda.innerHTML = id;
+                fila.appendChild(celda ) ;
             }
-            tblBody.appendChild(fila);
+            //agrego la fila a la tabla
+            tabla.appendChild(fila);
         }
-        tbl.appendChild(tblBody);
-        tbl.setAttribute("border", "2");
+        div_tabla.appendChild(tabla);
     }
 
+    minas() {
+        console.log("Entro en minas");
+
+    }
 }
 
-export default tabla;
+export default Tabla;
