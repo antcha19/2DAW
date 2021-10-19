@@ -45,26 +45,27 @@ class Tabla {
         let fila_ale;
         let colum_ale;
         var id;
-        //calculo la cantidas 
+        //calculo la cantidad de minas dependiendo de su tamaño 
         let cant_minas = this.fila * this.columna;
         cant_minas = cant_minas / 8;
 
         console.log("cantidad de minas " + Math.round(cant_minas));
         let minas_total = 0;
-        let tds = document.getElementById("idtabla").getElementsByTagName("td");
+        //obtengo la id de la tabla y todos los tds  
+        let tds = document.getElementsByTagName("td");
 
         while (cant_minas > minas_total) {
-            //obtengo la id de la tabla y todos los tds  
-
-
+            //random de filas y columns
             fila_ale = Math.floor(Math.random() * this.fila);
             colum_ale = Math.floor(Math.random() * this.columna);
             id = fila_ale + "," + colum_ale;
-            console.log(id);
+
             for (let t = 0; t < tds.length; t++) {
-                //si las id coinciden pongo una minia
-                if (tds[t].id == id) {
+                /*si las id coinciden pongo una mina y si en esa posicion ya existe 
+                 una mina no entra en el bucle */
+                if (tds[t].id == id  && tds[t].textContent != "*") {
                     tds[t].textContent = "*";
+                    console.log("mina colocada en la posicion " + id);
                 }
 
             }

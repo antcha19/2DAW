@@ -6,21 +6,22 @@ window.onload = function () {
     var filas_input = document.getElementById("filas");
     var columas_input = document.getElementById("columnas");
     var btnreglas = document.getElementById("botonreglas");
-    var id_tabla = document.getElementById("idtabla");
+
+    var div_tabla = document.getElementById("contenedor");
     var p_reglas = document.getElementById("p_reglas");
 
     btnjugar.addEventListener('click', () => {
         var varia_tabla = new Tabla(filas_input.value, columas_input.value);
         //genero la tabla
         varia_tabla.creartabla();
-       
+
         varia_tabla.minas();
 
 
 
-        ocultar();
+        mos_tabla();
     })
-  
+
 
     //btn reglas
     btnreglas.addEventListener('click', () => {
@@ -33,18 +34,20 @@ window.onload = function () {
         p_reglas.style.display = "inline";
 
         //tabla
-        id_tabla.style.display = "none";
+        div_tabla.style.display = "none";
 
     }
-    function ocultar() {
+
+    function mos_tabla() {
 
         p_reglas.style.display = "none";
+        div_tabla.style.display = "inline";
 
-       
+
 
     }
 
-   
+
 
 
 
