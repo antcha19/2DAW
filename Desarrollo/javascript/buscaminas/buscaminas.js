@@ -9,6 +9,7 @@ window.onload = function () {
     var div_tabla = document.getElementById("contenedor");
     var div_reglas = document.getElementById("div_reglas");
     //var id_imagen = document.getElementById("imagensmile");
+    var idtabla =document.getElementById("tabla");
 
     //chechkbox
     var principante = document.getElementById("principiante");
@@ -25,7 +26,8 @@ window.onload = function () {
     })
 
     //imagen pulsar
-
+   
+     
  
 
     //btn reglas

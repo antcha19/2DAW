@@ -3,7 +3,7 @@ var div_tabla;
 
 class Tabla {
     //creo el constructor para crea el tabla
-    constructor(filas, columnas,cantidad_minas) {
+    constructor(filas, columnas, cantidad_minas) {
         this.fila = filas;
         this.columna = columnas;
         this.cantidad_minas = cantidad_minas;
@@ -32,8 +32,12 @@ class Tabla {
         }
         tabla = tabla + "</tr>";
         div_tabla.innerHTML = tabla;
-    }
 
+     
+
+
+    }
+    
 
     minas() {
         console.log("Entro en minas");
@@ -74,12 +78,11 @@ class Tabla {
             for (let c = 0; c < this.columna; c++) {
                 tabla_bide[f][c] = tds[numeros_tds];
                 numeros_tds++;
-              
+
             }
         }
-        console.log("tablabi" +   tabla_bide)
 
-        
+
         console.log("cantidad de minas " + this.cantidad_minas);
 
         while (this.cantidad_minas > minas_total) {
@@ -97,17 +100,34 @@ class Tabla {
                     if (tabla_bide[f][c].id == id_aleatoria) {
                         tabla_bide[f][c].textContent = "*";
                         console.log("mina colocada en la posicion " + id_aleatoria);
-                        //    console.log(tabla_bide[f][c - 1].id);
-                      
+                        // 
+                        //izquierda ponemos el 1 , tambien comprobamos que no hay una minas
+                        if (((tabla_bide[f][c - 1].value) != "*") && ((c - 1) >= 0)) {
+                            console.log((tabla_bide[f][c - 1]).id);
+                            tabla_bide[f][c - 1].textContent = "1";
+
+                        }
+                        if (((c + 1) <= this.columna - 1)) {
+                            console.log((tabla_bide[f][c - 1]).id);
+                            tabla_bide[f][c - 1].textContent = "1";
+                        }
+
                     }
-                    
+
+
+
                 }
-             
+
             }
             minas_total++;
         }
-     
+
     }
+
+
+
+
+
 }
 
 export default Tabla;
