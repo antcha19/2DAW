@@ -20,8 +20,11 @@
 
 <body>
     <!--Menu-->
-    <nav class="navbar navbar-inverse">
-
+   
+        
+        <!--
+            <input type="number" id="filas" value="5" size="5">
+        <input type="number" id="columnas" value="5" size="5">
         <h1>Buscaminas</h1>
 
         <div class="btninicio">
@@ -31,9 +34,39 @@
             </ul>
 
         </div>
-        <input type="number" id="filas" value="5" size="5">
-        <input type="number" id="columnas" value="5" size="5">
-    </nav>
+      -->
+       
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" id="titulo_pagina"> Buscaminas</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" id="jugar">Jugar <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="botonreglas">Reglas</a>
+                    </li>
+                   
+                </ul>
+                <div id="radio">
+                    <form>
+                        <input type="checkbox" id="principiante">Principiante
+                        <br>
+                        <input type="checkbox" id="intermedio">Intermedio
+                        <br>
+                        <input type="checkbox" id="avanzado">Avanzado
+                        <br>
+                    </form>
+        
+                </div>
+            </div>
+        </nav>
+    
 
     <div id="div_reglas">
 
@@ -59,7 +92,13 @@
     </div>
 
     <!-- tablero-->
-    <div id="contenedor"></div>
+    <div id="contenedor">
+        <!-- <img src="smile2.jpeg" id="imagensmile" alt=""> -->
+
+    </div>
+
+
+
 
 </body>
 <script src="buscaminas.js" type="module"></script>

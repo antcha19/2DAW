@@ -8,11 +8,7 @@ h1 {
     color: white;
 }
 
-.btninicio {
-    font-size: 30px;
 
-    
-}
 li{
     
     
@@ -24,20 +20,16 @@ ul {
     list-style: none;
 }
 
-/*Titulo con el h1*/
-.snav navbar-nav {
-    display: inline-block;
+#div_reglas{
+display: none;
 }
-/*div de la tabla*/
-#div{
-    background-color: aqua;
-   
-}
+
 /*estilo de la tbla*/
 table, th, td{
     border: 2px solid black;
-    width: 200px;
+    width: 400px;
     height: 50px;
+    margin: auto;
 
 }
 table{
@@ -48,4 +40,29 @@ p{
     padding-left: 20%;
     padding-right: 20%;
     display: none;
+}
+
+#radio{
+    padding-left: 40%;
+    color: rgb(93, 129, 117);
+}
+
+/**/
+#jugar{
+    font-size: 40px;
+    color: rgb(93, 129, 117);
+}
+/*boton reglas*/
+#botonreglas{
+    font-size: 40px;
+    color: rgb(93, 129, 117);
+}
+#titulo_pagina{
+    font-size: 60px;
+}
+
+/*emoticono*/
+#imagensmile{
+    width: 5%;
+    
 }
