@@ -1,4 +1,3 @@
-
 var div_tabla;
 
 
@@ -8,9 +7,6 @@ class Tabla {
         this.fila = filas;
         this.columna = columnas;
     }
-
-
-
 
 
     creartabla() {
@@ -31,9 +27,9 @@ class Tabla {
                 //pongo la id a cada celda;
                 celda.id = f + "," + c;
                 let id = celda.id;
-                
-                celda.innerHTML = id;
-                fila.appendChild(celda ) ;
+                //pongo la id a cada celda  
+                //   celda.innerHTML = id;
+                fila.appendChild(celda);
             }
             //agrego la fila a la tabla
             tabla.appendChild(fila);
@@ -41,8 +37,45 @@ class Tabla {
         div_tabla.appendChild(tabla);
     }
 
+
     minas() {
         console.log("Entro en minas");
+        //array minas
+        const minas = [];
+        let fila_ale;
+        let colum_ale;
+        var id;
+        //calculo la cantidas 
+        let cant_minas = this.fila * this.columna;
+        cant_minas = cant_minas / 8;
+
+        console.log("cantidad de minas " + Math.round(cant_minas));
+        let minas_total = 0;
+        let tds = document.getElementById("idtabla").getElementsByTagName("td");
+
+        while (cant_minas > minas_total) {
+            //obtengo la id de la tabla y todos los tds  
+
+
+            fila_ale = Math.floor(Math.random() * this.fila);
+            colum_ale = Math.floor(Math.random() * this.columna);
+            id = fila_ale + "," + colum_ale;
+            console.log(id);
+            for (let t = 0; t < tds.length; t++) {
+                //si las id coinciden pongo una minia
+                if (tds[t].id == id) {
+                    tds[t].textContent = "*";
+                }
+
+            }
+
+            minas_total++;
+        }
+
+
+
+
+
 
     }
 }

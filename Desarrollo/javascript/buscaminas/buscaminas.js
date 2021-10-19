@@ -13,14 +13,10 @@ window.onload = function () {
         var varia_tabla = new Tabla(filas_input.value, columas_input.value);
         //genero la tabla
         varia_tabla.creartabla();
-
+       
         varia_tabla.minas();
 
 
-        for (let t = 0; t < id_tabla.length; t++) {
-            console.log("entro en el bucle minas");
-            console.log(id_tabla[t]);
-        }
 
         ocultar();
     })
