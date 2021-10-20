@@ -105,6 +105,23 @@ class Tabla {
                         console.log("mina colocada en la posicion " + id_aleatoria);
                         console.log("valor " + tabla_bide[f][c].value);
                     }
+                    if (tabla_bide[f][c].value != "*") {
+                        //La celda de la derecha
+                        //izquierda ponemos el 1 , tambien comprobamos que no hay una minas
+                        if (((c - 1) >= 0) && (tabla_bide[f][c - 1].value == "*")) {
+
+                            tabla_bide[f][c].innerHTML = "1";
+                        }
+                        //La celda de abajo
+                        if (((f - 1) >= 0) && (tabla_bide[f - 1][c].value == "*")) {
+
+                            tabla_bide[f][c].innerHTML = "1";
+                        }
+                        //La celda de la izquierda
+                        if (((c + 1) <= this.columna - 1) && (tabla_bide[f][c + 1].value == "*")) {
+                            tabla_bide[f][c].innerHTML = "1";
+                        }
+                    }
                 }
 
 
@@ -112,31 +129,7 @@ class Tabla {
             minas_total++;
         }
 
-        for (let f = 0; f < this.fila; f++) {
-
-            for (let c = 0; c < this.columna; c++) {
-
-                if (tabla_bide[f][c].value != "*") {
-                    //izquierda ponemos el 1 , tambien comprobamos que no hay una minas
-                    if (((c - 1) >= 0) && (tabla_bide[f][c - 1].value == "*")) {
-                        //La celda de la derecha
-                        tabla_bide[f][c].innerHTML = "1";
-                    }
-                    if (((f - 1) >= 0) && (tabla_bide[f - 1][c].value == "*")) {
-                        //La celda de abajo
-                        tabla_bide[f][c].innerHTML = "1";
-                    }
-                    if (((c + 1) <= this.columna - 1) && (tabla_bide[f][c + 1].value == "*")) {
-                        //La celda de la izquierda
-                        tabla_bide[f][c].innerHTML = "1";
-                    }
-                }
-
-
-            }
-
-
-        }
+       
 
 
     }
