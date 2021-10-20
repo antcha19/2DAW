@@ -62,9 +62,15 @@ p{
 }
 
 /*emoticono*/
-#imagensmile{
+.imagensmile{
     width: 5%;
-    
+    margin: auto;
+   
+}
+/*centramos el emoticomo*/
+#imagensmile{
+   text-align: center;
+   
 }
 /*bomba de la tabla*/
 #bomba{

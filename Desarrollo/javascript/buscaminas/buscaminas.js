@@ -3,19 +3,21 @@ import Tabla from "./tabla.js";
 window.onload = function () {
 
     var btnjugar = document.getElementById("jugar");
-  
+
     var btnreglas = document.getElementById("botonreglas");
     //div de la tabla
     var div_tabla = document.getElementById("contenedor");
     var div_reglas = document.getElementById("div_reglas");
-    //var id_imagen = document.getElementById("imagensmile");
-    var idtabla =document.getElementById("tabla");
+    var id_imagen = document.getElementById("imagensmile");
+    var idtabla = document.getElementById("tabla");
 
     //chechkbox
     var principante = document.getElementById("principiante");
     var intermedio = document.getElementById("intermedio");
     var avanzado = document.getElementById("avanzado");
 
+
+    
 
 
     btnjugar.addEventListener('click', () => {
@@ -26,14 +28,15 @@ window.onload = function () {
     })
 
     //imagen pulsar
-   
-     
- 
+    id_imagen.addEventListener('click', () => {
+        pintartabla();
+        mos_tabla();
+    })
 
     //btn reglas
     btnreglas.addEventListener('click', () => {
         texto_reglas();
-        
+
     })
 
     //mostar reglas y ocultar tabla
@@ -45,7 +48,7 @@ window.onload = function () {
         //tabla
         div_tabla.style.display = "none";
         //oculto imagen
-     //   id_imagen.style.display="none";
+        //    id_imagen.style.display="none";
 
     }
 
@@ -55,8 +58,10 @@ window.onload = function () {
         div_reglas.style.display = "none";
         div_tabla.style.display = "inline";
         //muestro imagen
-     //   id_imagen.style.display= "inline";
+        // id_imagen.style.display= "inline";
     }
+
+
     function pintartabla() {
 
         if (principante.checked) {
@@ -74,29 +79,27 @@ window.onload = function () {
             varia_tabla.minas();
         }
         if (avanzado.checked) {
-            avanzado.innerText ="sdfasdfg";
+            avanzado.innerText = "sdfasdfg";
             varia_tabla = new Tabla(31, 16, 99);
             //genero la tabla
             varia_tabla.creartabla();
             //genero las minas
             varia_tabla.minas();
         }
-       
-        if ((avanzado.checked) && (intermedio.checked) && (principante.checked)){
+
+        if ((avanzado.checked) && (intermedio.checked) && (principante.checked)) {
             alert("Solo puedes selecionar uno pero generara la primer check");
-        }else{
-            if ((avanzado.checked) && (intermedio.checked)){
+        } else {
+            if ((avanzado.checked) && (intermedio.checked)) {
                 alert("Solo puedes selecionar uno pero generara la primer check");
             }
         }
-        /*    var varia_tabla = new Tabla(filas_input.value, columas_input.value);
-            //genero la tabla
-            varia_tabla.creartabla();
-    
-            //genero las minas
-            varia_tabla.minas();*/
+     
 
     }
+
+
+
 
 
 
