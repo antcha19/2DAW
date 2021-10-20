@@ -33,11 +33,11 @@ class Tabla {
         tabla = tabla + "</tr>";
         div_tabla.innerHTML = tabla;
 
-     
+
 
 
     }
-    
+
 
     minas() {
         console.log("Entro en minas");
@@ -47,13 +47,13 @@ class Tabla {
         let colum_ale;
         var id;
         //calculo la cantidad de minas dependiendo de su tamaño 
-        let cant_minas = this.fila * this.columna;
-        cant_minas = cant_minas / 8;
+        /*   let cant_minas = this.fila * this.columna;
+           cant_minas = cant_minas / 8;
 
-        console.log("cantidad de minas " + Math.round(cant_minas));
+           console.log("cantidad de minas " + Math.round(cant_minas));**/
         let minas_total = 0;
         //obtengo la id de la tabla y todos los tds  
-        let tds = document.getElementsByTagName("td");
+        let tds = document.getElementById("tabla").getElementsByTagName("td");
 
         /* while (cant_minas > minas_total) {
              //random de filas y columns
@@ -98,29 +98,46 @@ class Tabla {
 
                     //si es igual pongo una mina
                     if (tabla_bide[f][c].id == id_aleatoria) {
-                        tabla_bide[f][c].textContent = "*";
+                        //      tabla_bide[f][c].innerHTML = "<img src=bomba.jpeg id=bomba >";
+                        tabla_bide[f][c].innerHTML = "*";
+
+                        tabla_bide[f][c].value = "*";
                         console.log("mina colocada en la posicion " + id_aleatoria);
-                        // 
-                        //izquierda ponemos el 1 , tambien comprobamos que no hay una minas
-                        if (((tabla_bide[f][c - 1].value) != "*") && ((c - 1) >= 0)) {
-                            console.log((tabla_bide[f][c - 1]).id);
-                            tabla_bide[f][c - 1].textContent = "1";
-
-                        }
-                        if (((c + 1) <= this.columna - 1)) {
-                            console.log((tabla_bide[f][c - 1]).id);
-                            tabla_bide[f][c - 1].textContent = "1";
-                        }
-
+                        console.log("valor " + tabla_bide[f][c].value);
                     }
-
-
-
                 }
+
 
             }
             minas_total++;
         }
+
+        for (let f = 0; f < this.fila; f++) {
+
+            for (let c = 0; c < this.columna; c++) {
+
+                if (tabla_bide[f][c].value != "*") {
+                    //izquierda ponemos el 1 , tambien comprobamos que no hay una minas
+                    if (((c - 1) >= 0) && (tabla_bide[f][c - 1].value == "*")) {
+                        //La celda de la derecha
+                        tabla_bide[f][c].innerHTML = "1";
+                    }
+                    if (((f - 1) >= 0) && (tabla_bide[f - 1][c].value == "*")) {
+                        //La celda de abajo
+                        tabla_bide[f][c].innerHTML = "1";
+                    }
+                    if (((c + 1) <= this.columna - 1) && (tabla_bide[f][c + 1].value == "*")) {
+                        //La celda de la izquierda
+                        tabla_bide[f][c].innerHTML = "1";
+                    }
+                }
+
+
+            }
+
+
+        }
+
 
     }
 
