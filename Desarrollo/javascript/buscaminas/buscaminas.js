@@ -9,7 +9,7 @@ window.onload = function () {
     var div_tabla = document.getElementById("contenedor");
     var div_reglas = document.getElementById("div_reglas");
     var id_imagen = document.getElementById("imagensmile");
-    var idtabla = document.getElementById("tabla");
+
 
     //chechkbox
     var principante = document.getElementById("principiante");
@@ -17,11 +17,8 @@ window.onload = function () {
     var avanzado = document.getElementById("avanzado");
 
 
-    
-
 
     btnjugar.addEventListener('click', () => {
-
 
         pintartabla();
         mos_tabla();
@@ -70,6 +67,10 @@ window.onload = function () {
             varia_tabla.creartabla();
             //genero las minas
             varia_tabla.minas();
+
+            //para hacer click en cada celda
+            clicktabla();
+
         }
         if (intermedio.checked) {
             varia_tabla = new Tabla(16, 16, 40);
@@ -94,14 +95,39 @@ window.onload = function () {
                 alert("Solo puedes selecionar uno pero generara la primer check");
             }
         }
-     
+
 
     }
 
+    /*para hacer click en cada celda y mostrar las imagenes */
+    function clicktabla() {
+        var idtabla = document.getElementById("tabla");
+        let tds = document.getElementsByTagName("td");
+
+        for (let i = 0; i < tds.length; i++) {
+
+            tds[i].addEventListener('click', () => {
+                console.log("click en la celda" + tds[i].value);
+                if (tds[i].value == "*") {
+                    //has hecho un click en una mina asi que has perdido
+                    for (let f = 0; f < tds.length; f++) {
+                        if (tds[f].value == "*") {
+                            tds[f].innerHTML = "<img src=mina_perdida.png id=bomba >";
+                        }
+                    }
+                }
+                //muestro el 1 en la celda
+                if (tds[i].value == "1") {
+                    tds[i].innerHTML = "<img src=1.png id=bomba >";
+
+                }
+            });
 
 
+        }
 
 
+    }
 
 
 

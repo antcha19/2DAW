@@ -53,7 +53,7 @@ class Tabla {
            console.log("cantidad de minas " + Math.round(cant_minas));**/
         let minas_total = 0;
         //obtengo la id de la tabla y todos los tds  
-        let tds = document.getElementById("tabla").getElementsByTagName("td");
+        let tds = document.getElementsByTagName("td");
 
         /* while (cant_minas > minas_total) {
              //random de filas y columns
@@ -91,7 +91,7 @@ class Tabla {
             colum_ale = Math.floor(Math.random() * this.columna);
             //guardo la id aleatoria
             let id_aleatoria = fila_ale + "" + colum_ale;
-            console.log("id aleatoria " + id_aleatoria);
+            //     console.log("id aleatoria " + id_aleatoria);
             for (let f = 0; f < this.fila; f++) {
 
                 for (let c = 0; c < this.columna; c++) {
@@ -99,28 +99,43 @@ class Tabla {
                     //si es igual pongo una mina
                     if (tabla_bide[f][c].id == id_aleatoria) {
                         //      tabla_bide[f][c].innerHTML = "<img src=bomba.jpeg id=bomba >";
-                        tabla_bide[f][c].innerHTML = "*";
-
                         tabla_bide[f][c].value = "*";
+                 //       tabla_bide[f][c].innerHTML = "*";
                         console.log("mina colocada en la posicion " + id_aleatoria);
-                        console.log("valor " + tabla_bide[f][c].value);
+
                     }
+                    /*si no tiene nada me pondra un numero */
                     if (tabla_bide[f][c].value != "*") {
+
                         //La celda de la derecha
                         //izquierda ponemos el 1 , tambien comprobamos que no hay una minas
                         if (((c - 1) >= 0) && (tabla_bide[f][c - 1].value == "*")) {
 
-                            tabla_bide[f][c].innerHTML = "1";
+
+                            tabla_bide[f][c].value = "1";
+                       //     tabla_bide[f][c].innerHTML = "1";
+
                         }
                         //La celda de abajo
                         if (((f - 1) >= 0) && (tabla_bide[f - 1][c].value == "*")) {
 
-                            tabla_bide[f][c].innerHTML = "1";
+                            tabla_bide[f][c].value = "1";
+                       //     tabla_bide[f][c].innerHTML = "1";
+
                         }
                         //La celda de la izquierda
                         if (((c + 1) <= this.columna - 1) && (tabla_bide[f][c + 1].value == "*")) {
-                            tabla_bide[f][c].innerHTML = "1";
+                       //     tabla_bide[f][c].innerHTML = "1";
+                            tabla_bide[f][c].value = "1";
                         }
+                        //La celda de arriba
+                        /* if (((f + 1) >= this.fila-1) && (tabla_bide[f +1][c].value == "*")) {
+
+                             tabla_bide[f][c].innerHTML = "1";
+                         }*/
+
+
+
                     }
                 }
 
@@ -129,7 +144,7 @@ class Tabla {
             minas_total++;
         }
 
-       
+
 
 
     }
