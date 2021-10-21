@@ -2,9 +2,6 @@
 require "ima_cabecera.php";
 ?>
 
-
-
-
 <?php
 
 $ima_nombre = $_POST['ima_nombre'];
