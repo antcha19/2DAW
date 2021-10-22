@@ -45,7 +45,6 @@ class Tabla {
 
         let fila_ale;
         let colum_ale;
-        var id;
         //calculo la cantidad de minas dependiendo de su tamaño 
         /*   let cant_minas = this.fila * this.columna;
            cant_minas = cant_minas / 8;
@@ -71,6 +70,7 @@ class Tabla {
              }
              minas_total++;
          }*/
+        //paso a un array bidimensional
         var tabla_bide = new Array();
         var numeros_tds = 0;
         for (let f = 0; f < this.fila; f++) {
@@ -78,13 +78,9 @@ class Tabla {
             for (let c = 0; c < this.columna; c++) {
                 tabla_bide[f][c] = tds[numeros_tds];
                 numeros_tds++;
-
             }
         }
-
-
         console.log("cantidad de minas " + this.cantidad_minas);
-
         while (this.cantidad_minas > minas_total) {
             //random de filas y columns
             fila_ale = Math.floor(Math.random() * this.fila);
@@ -93,66 +89,70 @@ class Tabla {
             let id_aleatoria = fila_ale + "" + colum_ale;
             //     console.log("id aleatoria " + id_aleatoria);
             for (let f = 0; f < this.fila; f++) {
-
                 for (let c = 0; c < this.columna; c++) {
-
                     //si es igual pongo una mina
                     if (tabla_bide[f][c].id == id_aleatoria) {
-                        //      tabla_bide[f][c].innerHTML = "<img src=bomba.jpeg id=bomba >";
+                        //    tabla_bide[f][c].innerHTML = "<img src=bomba.jpeg id=bomba >";
                         tabla_bide[f][c].value = "*";
-                 //       tabla_bide[f][c].innerHTML = "*";
+                        tabla_bide[f][c].innerHTML = "*";
                         console.log("mina colocada en la posicion " + id_aleatoria);
-
-                    }
-                    /*si no tiene nada me pondra un numero */
-                    if (tabla_bide[f][c].value != "*") {
-
-                        //La celda de la derecha
-                        //izquierda ponemos el 1 , tambien comprobamos que no hay una minas
-                        if (((c - 1) >= 0) && (tabla_bide[f][c - 1].value == "*")) {
-
-
-                            tabla_bide[f][c].value = "1";
-                       //     tabla_bide[f][c].innerHTML = "1";
-
-                        }
-                        //La celda de abajo
-                        if (((f - 1) >= 0) && (tabla_bide[f - 1][c].value == "*")) {
-
-                            tabla_bide[f][c].value = "1";
-                       //     tabla_bide[f][c].innerHTML = "1";
-
-                        }
-                        //La celda de la izquierda
-                        if (((c + 1) <= this.columna - 1) && (tabla_bide[f][c + 1].value == "*")) {
-                       //     tabla_bide[f][c].innerHTML = "1";
-                            tabla_bide[f][c].value = "1";
-                        }
-                        //La celda de arriba
-                        /* if (((f + 1) >= this.fila-1) && (tabla_bide[f +1][c].value == "*")) {
-
-                             tabla_bide[f][c].innerHTML = "1";
-                         }*/
-
-
-
                     }
                 }
-
-
             }
             minas_total++;
         }
 
 
+        //comprobar por que me pone al contrario
+            for (let f = 0; f < this.fila; f++) {
+                 //let numerominas = 0;
+                 for (let c = 0; c < this.columna; c++) {
+                     //comprobamos que no haya minas      
+                     //si no tiene nada me pondra un numero 
+                     if (tabla_bide[f][c].value != "*") {
+                         //La celda de la derecha
+                         if (((c - 1) >= 0) && (tabla_bide[f][c - 1].value == "*")) {
+                             
+                           //  numerominas++;
+                            // tabla_bide[f][c].innerHTML = numerominas;
+                            // tabla_bide[f][c].value = numerominas;
+                               tabla_bide[f][c].value = "1";
+                              tabla_bide[f][c].innerHTML = "1";
+                         }
+                         //La celda de abajo
+                         if (((f - 1) >= 0) && (tabla_bide[f - 1][c].value == "*")) {
+                              tabla_bide[f][c].value = "1";
+                              tabla_bide[f][c].innerHTML = "1";
+                             //numerominas++;
+                             //tabla_bide[f][c].innerHTML = numerominas;
+                             //tabla_bide[f][c].value = numerominas;
+                         }
+                         //La celda de la izquierda
+                         if (((c + 1) <= this.columna - 1) && (tabla_bide[f][c + 1].value == "*")) {
+                             tabla_bide[f][c].innerHTML = "1";
+                              tabla_bide[f][c].value = "1";
+                             //numerominas++;
+                             //tabla_bide[f][c].innerHTML = numerominas;
+                             //tabla_bide[f][c].value = numerominas;
+                         }
+                         //La celda de arriba
+                         if (((f + 1) <= this.fila - 1) && (tabla_bide[f + 1][c].value == "*")) {
+                             tabla_bide[f][c].innerHTML = "1";
+                              tabla_bide[f][c].value = "1";
+                            //numerominas++;
+                             //tabla_bide[f][c].value = numerominas;
+                             //tabla_bide[f][c].innerHTML = numerominas;
+     
+                         }
+                     }
+                    
+                   //  tabla_bide[f][c] = numerominas;
+                 }
+             }
 
 
-    }
 
-
-
-
-
+            }
 }
 
 export default Tabla;

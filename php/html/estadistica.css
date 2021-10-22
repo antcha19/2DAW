@@ -1,0 +1,15 @@
+
+#idtabla{
+    border: 1px solid #ccc;
+    background-color: aqua;
+    overflow-y: auto;
+    width: 30%;
+    height: 30%;
+
+    margin: auto;
+   
+}
+h1{
+    margin: auto;
+    text-align: center;
+}

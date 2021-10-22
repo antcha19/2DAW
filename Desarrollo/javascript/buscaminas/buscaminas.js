@@ -126,10 +126,22 @@ window.onload = function () {
 
         }
 
+        for (let i = 0; i < tds.length; i++) {
+            tds[i].addEventListener('contextmenu', () =>{
+
+                //pongo una bandera 
+                console.log("boton derecho bloqueado" + tds[i]);
+                tds[i].innerHTML = "<img src=bandera.png id=bomba >";
+             
+            })
+            
+        }
+        
+
 
     }
 
-
+    
 
 
 }
