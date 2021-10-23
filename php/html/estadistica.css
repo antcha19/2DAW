@@ -1,15 +1,62 @@
-
-#idtabla{
-    border: 1px solid #ccc;
-    background-color: aqua;
-    overflow-y: auto;
-    width: 30%;
-    height: 30%;
-
-    margin: auto;
-   
+body{
+    background-color: #b3c0bb;
 }
+
 h1{
     margin: auto;
     text-align: center;
+    color: #04AA6D;
 }
+
+#archivo{
+    padding-top: 1%;
+    padding-left: 18%;
+    
+}
+
+
+tr:hover {
+    background-color: rgb(184, 184, 161);
+}
+th {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+
+ td {
+    text-align: center;
+    border: 10px solid rgb(0, 0, 0);
+   
+  }
+
+#idtabla{
+    border: 2px solid rgb(97, 95, 95);
+    
+    overflow-y: auto;
+    width: 31%;
+    height: 30%;
+    margin: auto;
+}
+
+#idtabla2{
+    border: 2px solid rgb(59, 57, 57);
+    overflow-y: auto;
+    width: 20%;
+    height: 10%;
+    margin: auto;
+   
+}
+
+
+tbody{
+    display: block;
+    max-height: 410px;
+    overflow:auto;
+}
+h2{
+    padding-top: 1%;
+    text-align: center;
+    color: #068355;
+}
+
