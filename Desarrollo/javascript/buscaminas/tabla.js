@@ -94,7 +94,7 @@ class Tabla {
                     if (tabla_bide[f][c].id == id_aleatoria) {
                         //    tabla_bide[f][c].innerHTML = "<img src=bomba.jpeg id=bomba >";
                         tabla_bide[f][c].value = "*";
-                        tabla_bide[f][c].innerHTML = "*";
+                       // tabla_bide[f][c].innerHTML = "*";
                         console.log("mina colocada en la posicion " + id_aleatoria);
                     }
                 }
@@ -117,19 +117,19 @@ class Tabla {
                             // tabla_bide[f][c].innerHTML = numerominas;
                             // tabla_bide[f][c].value = numerominas;
                                tabla_bide[f][c].value = "1";
-                              tabla_bide[f][c].innerHTML = "1";
+                            //  tabla_bide[f][c].innerHTML = "1";
                          }
                          //La celda de abajo
                          if (((f - 1) >= 0) && (tabla_bide[f - 1][c].value == "*")) {
                               tabla_bide[f][c].value = "1";
-                              tabla_bide[f][c].innerHTML = "1";
+                             // tabla_bide[f][c].innerHTML = "1";
                              //numerominas++;
                              //tabla_bide[f][c].innerHTML = numerominas;
                              //tabla_bide[f][c].value = numerominas;
                          }
                          //La celda de la izquierda
                          if (((c + 1) <= this.columna - 1) && (tabla_bide[f][c + 1].value == "*")) {
-                             tabla_bide[f][c].innerHTML = "1";
+                           //  tabla_bide[f][c].innerHTML = "1";
                               tabla_bide[f][c].value = "1";
                              //numerominas++;
                              //tabla_bide[f][c].innerHTML = numerominas;
@@ -137,13 +137,14 @@ class Tabla {
                          }
                          //La celda de arriba
                          if (((f + 1) <= this.fila - 1) && (tabla_bide[f + 1][c].value == "*")) {
-                             tabla_bide[f][c].innerHTML = "1";
+                            // tabla_bide[f][c].innerHTML = "1";
                               tabla_bide[f][c].value = "1";
                             //numerominas++;
                              //tabla_bide[f][c].value = numerominas;
                              //tabla_bide[f][c].innerHTML = numerominas;
      
                          }
+                         
                      }
                     
                    //  tabla_bide[f][c] = numerominas;

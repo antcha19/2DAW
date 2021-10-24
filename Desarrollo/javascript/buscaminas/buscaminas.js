@@ -15,6 +15,7 @@ window.onload = function () {
     var principante = document.getElementById("principiante");
     var intermedio = document.getElementById("intermedio");
     var avanzado = document.getElementById("avanzado");
+    var p_perdida = document.getElementById("perder");
 
 
 
@@ -80,7 +81,7 @@ window.onload = function () {
             varia_tabla.minas();
         }
         if (avanzado.checked) {
-            avanzado.innerText = "sdfasdfg";
+            
             varia_tabla = new Tabla(31, 16, 99);
             //genero la tabla
             varia_tabla.creartabla();
@@ -108,11 +109,22 @@ window.onload = function () {
 
             tds[i].addEventListener('click', () => {
                 console.log("click en la celda" + tds[i].value);
+                //partida perdida 
                 if (tds[i].value == "*") {
+                    console.log("has perdido");
+                    p_perdida.innerHTML = "Has perdido, espero un momento para volver a jugar";
+                    id_imagen.innerHTML = "<img src=perder.png id=pperdida >";
+                    setTimeout(function(){
+                        pintartabla();
+                        mos_tabla();
+                        id_imagen.innerHTML = "<img src=smile2.jpeg class=imagensmile >";
+                        p_perdida.style.display ="none";
+                    },3000);
                     //has hecho un click en una mina asi que has perdido
                     for (let f = 0; f < tds.length; f++) {
                         if (tds[f].value == "*") {
                             tds[f].innerHTML = "<img src=mina_perdida.png id=bomba >";
+
                         }
                     }
                 }

@@ -76,3 +76,17 @@ p{
 #bomba{
  width: 100%;
 }
+
+
+/*partida perdida*/
+#perder{
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+    color: rgb(47, 56, 53);
+}
+
+#pperdida{
+    width: 5%;
+    margin: auto;
+}
