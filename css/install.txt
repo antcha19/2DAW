@@ -1,0 +1,7 @@
+ubuntu
+
+sudo apt install ruby-dev
+
+compass create
+
+compass watch
