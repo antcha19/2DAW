@@ -4,5 +4,12 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 //@import "compass/reset";
-$tamañox: width;
-$tamañox: height;
+$tamañox: 30px;
+$tamañoy: 30px;
+
+
+div{
+    width: $tamañox;
+    height: $tamañoy;
+
+}
