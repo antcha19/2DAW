@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mi empresa</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Rosa Medina">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="./stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="./stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+          <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+      <![endif]-->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Mi empresa </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Albaranes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Fracturas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Estadísticas</a>
+                </li>
+
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <img src="./imgs/logo.png" class="logo">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Perfil</a>
+                        <a class="dropdown-item" href="#">Salir</a>
+
+                    </div>
+                </li>
+            </form>
+        </div>
+    </nav>
+    <!-- formulario-->
+    <div class="container pt-3">
+        <form>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" required readonly>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label>Numero pedido</label>
+                        <input type="text" class="form-control" >
+                    </div>
+                    <div class="col">
+                        <label>Codigo de cliente</label>
+                        <input type="number" class="form-control" >
+                    </div>
+                </div>
+           
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label>Fecha Pedido</label>
+                        <input type="date" id="fecha" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label>Fecha Envio</label>
+                        <input type="date" id="fecha" class="form-control">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Forma de pago</label>
+                <input type="number" class="form-control" value="1" min="1" max="5">
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label><input type="checkbox" value=""> Envasado</label>
+                </div>  
+            </div>
+
+            <div class="form-group">
+                Dirección de envío:
+                <div class="container pt-3">
+                    
+                        <div class="row">
+                            <div class="col">
+                                <label> Calle</label>
+                                <input type="text" id="fecha" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label>número</label>
+                                <input type="text" id="fecha" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label>Codigo Postal</label>
+                                <input type="text" id="fecha" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label>Localidad</label>
+                                <input type="text" id="fecha" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label>Provincia</label>
+                                <input type="text" id="fecha" class="form-control">
+                            </div>
+                        </div>
+                   
+                </div>
+            </div>
+                
+
+            <button type="submit" class="btn btn-primary" id="boton">Confirmar</button>
+            <button type="submit" class="btn btn-primary" id="boton">Cancelar</button>
+        </form>
+    </div>
+
+
+
+
+
+    <div class="container">
+        <!-- Añade un card-deck-->
+        <!-- Cada card ocupará un tamaño de 4, a excepción de pantallas xs que será de 12 (100% del contenedor)-->
+        <div class="row">
+            <div class="card-deck">
+                <div class="card col-sm-4">
+                    <img src="imgs/orbea.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> Bicicletas</h5>
+                        <p class="card-text">Accede a nuestra sección de bicicletas donde podrás encontrar las mejores
+                            de esta temporada</p>
+
+                    </div>
+                </div>
+                <div class="card col-sm-4">
+                    <img src="imgs/accesorios.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Accesorios</h5>
+                        <p class="card-text">Accede a nuestra sección de accesorios para bicicletas donde podrás
+                            encontrar
+                            lo último en el mercado.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="card col-sm-4">
+                    <img src="imgs/componentes.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Componentes</h5>
+                        <p class="card-text">Accede a nuestra sección de componentes donde no te faltará
+                            ningún componente.</p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <!-- Añade el copyright junto con tu nombre -->
+            <p>&#169 Antonio Yépez Chávez</p>
+        </div>
+    </footer>
+    <!-- Inserta el JS de jQuery-->
+    <!-- Inserta el JS de popper-->
+    <!-- Inserta el JS de bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+</body>
+
+
+</html>
