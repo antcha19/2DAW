@@ -1,0 +1,38 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+//@import "compass/reset";
+@import "_fichero_colores.scss";
+
+body{
+    background-color: $color;
+}
+
+
+.botoncon{
+    background-color: $colorcon;
+    font-family: $letrabotones;
+}
+
+.botoncan{
+    background-color: $colorcan;
+    font-family: $letrabotones;
+}
+
+label{
+    font-family: $letralabel;
+    font-weight: bold;
+}
+.logo {
+    width: $tamanologox;
+    height: $tamanologoy;
+  }
+  input{
+    font-family: $tipoletraformulario;
+}
+
+.bg-dark{
+    background-color: $color_navbar;
+}
