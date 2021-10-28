@@ -1,0 +1,12 @@
+.card {
+    width: 300px;
+    border: 2px solid black;
+    align-items: center;
+}
+
+/*imagen del card*/
+
+.card-img-top {
+    width: 80%;
+}
+
