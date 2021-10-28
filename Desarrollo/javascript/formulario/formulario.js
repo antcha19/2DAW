@@ -1,11 +1,31 @@
 window.onload = function () {
 
-    comprobarcontraseñas();
+
 
     registrar = document.getElementById("boton");
     contrasena1 = document.getElementById("contrasena");
     contrasena2 = document.getElementById("contrasena2");
     fecha = document.getElementById("fecha");
+
+    contrasena2.addEventListener("input", () => {
+        console.log(contrasena1.value);
+        console.log(contrasena2.value);
+
+
+        if (contrasena1.value != contrasena2.value) {
+            if (!contrasena2.checkValidity()) {
+                contrasena2.setCustomValidity("Las contraseñas deben coincidir");
+                console.log("Las contraseñas deben coincidir");
+            }
+
+        } else if (contrasena1.value == contrasena2.value) {
+            if (!contrasena2.checkValidity()) {
+                contrasena2.setCustomValidity("");
+                console.log("Las contraseñas estan correctas");
+            }
+
+        }
+    })
 
 
     registrar.addEventListener('click', () => {
@@ -16,21 +36,11 @@ window.onload = function () {
 
         console.log(fechaactual);
         console.log(fechaI);
-        if (fechI == fechaIni) {
-            console.log("es mayor la fecha");
-        }
+
+
 
     });
 
 
-    function comprobarcontraseñas() {
-        if (contrasena1.value == contrasena2.value) {
-            contrasena2.setCustomValidity("Las contraseñas deben coincidir");
-            console.log("Las contraseñas deben coincidir");
-        } else {
-            contrasena2.setCustomValidity("");
-        }
-
-    }
 
 }
