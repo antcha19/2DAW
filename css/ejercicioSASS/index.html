@@ -65,6 +65,7 @@
     </nav>
     <!-- formulario-->
     <div class="container pt-3">
+
         <form>
             <div class="form-group">
                 <label>Nombre</label>
@@ -157,106 +158,123 @@
                 </div>
             </div>
 
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="linea-tab" data-bs-toggle="tab" data-bs-target="#home"
-                        type="button" role="tab" aria-controls="idlinea" aria-selected="true">Lineas del Pedido</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="observacion-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                        type="button" role="tab" aria-controls="idobservaciones"
-                        aria-selected="false">Observaciones</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="tabla-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button"
-                        role="tab" aria-controls="idtabla" aria-selected="false">Seguimiento</button>
-                </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="idlinea" role="tabpanel" aria-labelledby="linea-tab">
-                    <div class="container">
-                        <!-- Añade un card-deck-->
-                        <!-- Cada card ocupará un tamaño de 4, a excepción de pantallas xs que será de 12 (100% del contenedor)-->
-                        <div class="row">
-                            <div class="card-deck">
-                                <div class="card col-sm-6">
-                                    <img src="imagenes/cafe.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title"> Cafetera de cápsulas</h5>
-                                        <p class="card-text">Nespresso te obsequia con 14 cápsulas y 20 € de descuento
-                                            directo en café al comprar 100 cápsulas. Descubre la máquina Nespresso más
-                                            pequeña y adorable de todas: la cafetera Krups XN1101 Essenza Mini en color
-                                            blanco. Su tamaño compacto y sus prestaciones te encantarán desde el primer
-                                            café hasta el último. ¡No pierdas la oportunidad de saborear unos cafés
-                                            increíbles!
-                                        </p>
 
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="idlinetab" data-toggle="pill" href="#lineas" role="tab"
+                                    aria-controls="lineas" aria-selected="true">Lineas de pedido</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="idobservacion" data-toggle="pill" href="#obseervacion"
+                              role="tab" aria-controls="obseervacion" aria-selected="false">Observaciones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="idseguimient" data-toggle="pill" href="#seguimiento" role="tab"
+                                    aria-controls="seguimiento" aria-selected="false">Seguimiento</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="lineas" role="tabpanel"
+                                aria-labelledby="idlineatab">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="card-deck">
+                                            <div class="card col-sm-4">
+                                                <img src="imagenes/cafe.png" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"> Cafétera</h5>
+                                                    <p class="card-text">Cafetera superautomática con sistema capuccino,
+                                                        que combina el vapor, la leche y el aire, produciendo una espuma
+                                                        rica y cremosa para conseguir capuccinos perfectos.</p>
+                                                </div>
+                                                <input type="number" class="form-control" placeholder="Cantidad "
+                                                    aria-label="Username" aria-describedby="addon-wrapping" size="3">
+                                                <button type="button" class="btn btn-secondary">Borrar</button>
+                                            </div>
+                                            <div class="card col-sm-4">
+                                                <img src="imagenes/pc.png" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Razer Blade 15 Advanced Model FHD</h5>
+                                                    <p class="card-text">Sigue siendo la mejor computadora portátil para
+                                                        juegos. Las primeras pantallas de 15,6 "FHD de 360 Hz y QHD de
+                                                        240 Hz del mundo.
+                                                    </p>
+
+                                                </div>
+                                                <input type="number" class="form-control" placeholder="Cantidad "
+                                                    aria-label="Username" aria-describedby="addon-wrapping" size="3s">
+                                                <button type="button" class="btn btn-secondary">Borrar</button>
+                                            </div>
+                                            <div class="card col-sm-4">
+                                                <img src="imagenes/movil.png" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Samsung Galaxy A32 5G 4/64GB Blanco Libre
+                                                    </h5>
+                                                    <p class="card-text">Navega en 5G con Samsung Galaxy A32 5G. Con la
+                                                        próxima generación de datos móviles, la velocidad del 5G cambia
+                                                        tu experiencia y la forma en que compartes los contenidos.
+                                                    </p>
+
+                                                </div>
+                                                <input type="number" class="form-control" placeholder="Cantidad "
+                                                    aria-label="Username" aria-describedby="addon-wrapping" size="3s">
+                                                <button type="button" class="btn btn-secondary">Borrar</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="card col-sm-6">
-                                    <img src="imagenes/pc.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Acer A514-53-34TF</h5>
-                                        <p class="card-text">Con una arquitectura completamente nueva y una gran
-                                            cantidad de características avanzadas que llevan el rendimiento y la
-                                            portabilidad al extremo para los clientes que se desplazan, el procesador
-                                            Intel® Core™ i3-1005G1 de 2 núcleos cuenta con una velocidad turbo de 3.40
-                                            GHz con Intel® Turbo Boost.
-                                        </p>
+                            </div>
+                            <div class="tab-pane fade" id="obseervacion" role="tabpanel"
+                                aria-labelledby="idobservacion">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Deja un comentario aquí"
+                                        id="floatingTextarea2" style="height: 100px"></textarea>
+                                    <label for="floatingTextarea2">Comentarios</label>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="seguimiento" role="tabpanel" aria-labelledby="idseguimient">
+                                <div class="container">
+                                    <table class="table table-dark">
+                                        <thead>
+                                            <tr>
+                                                <th>Fecha</th>
+                                                <th>Estado</th>
+                                                <th>Observaciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>21/10/2021</td>
+                                                <td>Pendiente</td>
+                                                <td>En el almacen</td>
+                                            </tr>
+                                            <tr>
+                                                <td>30/11/2021</td>
+                                                <td>Enviado</td>
+                                                <td>Empresa de reparto</td>
+                                            </tr>
 
-                                    </div>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="tab-pane fade" id="idobservaciones" role="tabpanel" aria-labelledby="observacion-tab">
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here"
-                            id="floatingTextarea"></textarea>
-                        <label for="floatingTextarea">Comments</label>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="idtabla" role="tabpanel" aria-labelledby="tabla-tab">
-                    <table class="table table-striped table-dark">
-                        <thead>
-                            <tr>
-                                <th scope="col">Fecha</th>
-                                <th scope="col">Estado</th>
-                                <th scope="col">Observaciones</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>20/11/2021</td>
-                                <td>Enviado</td>
-                                <td>Seguiimiento</td>
-                            </tr>
-                            <tr>
-                                <td>20/12/2021</td>
-                                <td>Con retraso</td>
-                                <td>Paquete perdido</td>
-                            </tr>
-                            <tr>
-                                <td>26/10/2021</td>
-                                <td>Recibido</td>
-                                <td>Sin observaciones</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
+
             <button type="submit" class="botoncon">Confirmar</button>
             <button type="submit" class="botoncan">Cancelar</button>
 
-           
+
         </form>
 
     </div>
 
-    
+
 
 
 
@@ -264,10 +282,10 @@
 
 
     <footer class="footer">
-        <div class="container">
+        <!-- <div class="container"> -->
             <!-- Añade el copyright junto con tu nombre -->
             <p>&#169 Antonio Yépez Chávez</p>
-        </div>
+        <!-- </div> -->
     </footer>
     <!-- Inserta el JS de jQuery-->
     <!-- Inserta el JS de popper-->
