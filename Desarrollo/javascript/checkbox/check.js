@@ -2,13 +2,16 @@ var namegroup = document.getElementsByName("deporte");
 var lbel = document.getElementById("label");
 var comprobar = document.getElementById("comprobar");
 var contador = 0;
+var opcion ="";
+var opcion2 ="";
+var opcion3 ="";
 
 
-for (let i = 0; i < namegroup.length; i++) {
+/*for (let i = 0; i < namegroup.length; i++) {
     namegroup[i].addEventListener('click', () => {
         if (namegroup[i].checked) {
 
-            if (contador < 3) {
+            if (contador < 2) {
                 contador++
                 //   lbel.innerHTML = "has selecionado "+ contador;
 
@@ -24,9 +27,9 @@ for (let i = 0; i < namegroup.length; i++) {
         }
 
     })
-}
+}*/
 
-comprobar.addEventListener('click', () => {
+
     for (let i = 0; i < namegroup.length; i++) {
         //si esta selecionado , me nuestar el value
         if (namegroup[i].checked) {
@@ -36,4 +39,3 @@ comprobar.addEventListener('click', () => {
 
 
     }
-})

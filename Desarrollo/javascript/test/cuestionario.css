@@ -1,3 +1,12 @@
+#pregunta>h2{
+   
+    text-align: center;
+}
 body{
-    background-color: cornsilk;
+    background-color:blanchedalmond;
+}
+
+#pregunta{
+    width: 80%;
+    background-color: blue;
 }
