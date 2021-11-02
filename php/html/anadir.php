@@ -1,22 +1,46 @@
 <?php
-
-
+//importo los articulos
+$articulos = include 'articulos.php';
 ?>
 
-<!doctype html>
-<html lang="en">
 
-<head>
-    <title>Tienda</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
 
 <body>
+
+    <form method="get" enctype="multipart/form-data">
+        <?php
+        //get de productos es lo que me pasa de href  ejemplo http://localhost/anadir.php?producto=3
+        $idarticulo = $_GET['producto'];
+
+        if (isset($idarticulo)) {
+            echo " <div class=container>
+            <div class=row>";
+            //var_dump($idarticulo);
+            foreach ($articulos as $cat => $value) {
+                if ($idarticulo == $cat) {
+                    $nombre_articulo = $value['nombre'];
+                    $imagen = $value['imagen'];
+                    $precio = $value['precio'];
+                    echo "  <div class=card-deck>
+                                            <div class=card col-sm-4>
+                                            <h3 class=card-title> " . $nombre_articulo . "</h3>
+                                                <img class=card-img-top src=" . $imagen . ">                                                            <div class=card-body>
+                                                <p class=card-text>" . $precio . "€</p>
+                                                <input type=number >
+                                                <input type=submit value=Añadir>
+                                                </div>
+                                        </div>
+                                    
+
+                                <br>
+                                ";
+                }
+            }
+            echo "  </div>
+            </div> ";
+        }
+        ?>
+    </form>
 
 
 
