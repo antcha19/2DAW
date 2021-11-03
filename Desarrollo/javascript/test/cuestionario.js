@@ -29,9 +29,8 @@ window.onload = function () {
         ["Auriculares", "Monitores o altavoces"],
         ["¡SI!", "No"],
         ["En casa", "En eventos"],
-        ["Pop", "Country", "Clásica", "Rap/Hip-Hop","Rock", "Dance"],
+        ["Pop", "Country", "Clásica", "Rap/Hip-Hop", "Rock", "Dance"],
         ["Si", "NO"],
-        ["Respuesta A7", "Respuesta B4", "Respuesta C4", "Respuesta D4"],
     ];
 
     const valuerespuestas = ["A",
@@ -70,6 +69,7 @@ window.onload = function () {
     labeldiv.innerHTML = sacarpregunta;
     //funcion de mostrar las respuestas
     pasar_checkbox(cont_preg);
+    
 
     //boton siguiente
     botonsiguiente();
@@ -85,7 +85,6 @@ window.onload = function () {
             console.log(sacarpregunta);
             labeldiv.innerHTML = sacarpregunta;
             pasar_checkbox(cont_preg);
-
         });
     }
 
@@ -98,6 +97,10 @@ window.onload = function () {
             console.log(sacarpregunta);
             labeldiv.innerHTML = sacarpregunta;
             pasar_checkbox(cont_preg);
+           
+            
+           
+            
 
         });
     }
@@ -108,13 +111,26 @@ window.onload = function () {
         cont_value = 0;
         /*muestro los checkbox */
         for (let i = 0; i < arrayrespuestas[cont_preg].length; i++) {
-
             console.log("respuestas " + arrayrespuestas[cont_preg][i]);
-            check.innerHTML += "<div><input name='" + cont_preg + "' type='checkbox' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i]+"</div>";
-            cont_value++;
+            check.innerHTML += "<input name='" + cont_preg + "' type='checkbox' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+            cont_value++; 
+            console.log(cont_preg);
+            let grupocheck = document.getElementsByName(cont_preg);
+            for (let i = 0; i < grupocheck.length; i++) {
+                /*si el esta seleccionado*/
+                //console.log(grupocheck[i].value);
+                if (grupocheck[i].checked) {
+                    console.log(grupocheck[i].value);
+                }
+            }  
         }
+
     }
 
+    /*funcion para saber cual tengo selecionado */
+    function seleccionado(cont_preg) {
+        
+    }
 
 
 
