@@ -17,20 +17,20 @@ window.onload = function () {
     var siguiente = document.getElementById("idsiguiente");
 
     //array de preguntas
-    const arraypreguntas = ["¿Pregunta 1?",
-        "¿Pregunta 2?",
-        "¿Pregunta 3?",
-        "¿Pregunta 5?",
-        "¿Pregunta 6?",
-        "¿Pregunta 7?",
+    const arraypreguntas = ["¿Cuántas veces escuchas música?",
+        "¿Prefieres usar auriculares o monitores/ altavoces para escuchar música?",
+        "¿Te gusta bailar cuando estás en eventos, conciertos, y/o clubes?",
+        "¿Prefieres escuchar música en casa o en eventos en vivo?",
+        "¿Cuál es tu género musical favorito?",
+        "¿Alguna vez usas o has usado la música para tu regulación emocional?",
     ];
     const arrayrespuestas = [
-        ["Respuesta A", "Respuesta B", "Respuesta C", "Respuesta D"],
-        ["Respuesta A2", "Respuesta B2", "Respuesta C2", "Respuesta D2"],
-        ["Respuesta A3", "Respuesta B3", "Respuesta C3", "Respuesta D3"],
-        ["Respuesta A4", "Respuesta B4", "Respuesta C4", "Respuesta D4"],
-        ["Respuesta A5", "Respuesta B4", "Respuesta C4", "Respuesta D4"],
-        ["Respuesta A6", "Respuesta B4", "Respuesta C4", "Respuesta D4"],
+        ["Entre una y tres veces por semana", "Des tres a cinco veces por semana  ", "Todos los dias", "Ningún dia"],
+        ["Auriculares", "Monitores o altavoces"],
+        ["¡SI!", "No"],
+        ["En casa", "En eventos"],
+        ["Pop", "Country", "Clásica", "Rap/Hip-Hop","Rock", "Dance"],
+        ["Si", "NO"],
         ["Respuesta A7", "Respuesta B4", "Respuesta C4", "Respuesta D4"],
     ];
 
@@ -38,6 +38,9 @@ window.onload = function () {
         "B",
         "C",
         "D",
+        "E",
+        "F",
+        "G",
     ];
 
     //contador de preguntas
@@ -107,7 +110,7 @@ window.onload = function () {
         for (let i = 0; i < arrayrespuestas[cont_preg].length; i++) {
 
             console.log("respuestas " + arrayrespuestas[cont_preg][i]);
-            check.innerHTML += "<input name='" + cont_preg + "' type='checkbox' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i];
+            check.innerHTML += "<div><input name='" + cont_preg + "' type='checkbox' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i]+"</div>";
             cont_value++;
         }
     }

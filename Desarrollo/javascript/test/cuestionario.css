@@ -37,6 +37,11 @@ body {
 }
 /*label de las preguntas*/
 #check{
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+}
+/*btones*/
+.botones{
+    padding-bottom: 3%;
 }
