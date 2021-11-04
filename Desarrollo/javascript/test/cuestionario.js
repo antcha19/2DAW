@@ -1,14 +1,6 @@
 window.onload = function () {
 
     //declaracion de los gurpos 
-    var group1 = document.getElementsByName("respuestas");
-    var group2 = document.getElementsByName("respuestas2");
-    var group3 = document.getElementsByName("respuestas3");
-    var group4 = document.getElementsByName("respuestas4");
-    var resultadobtn = document.getElementById("resultadobtn");
-    var labelrespuesta = document.getElementById("resultado");
-    var empezarcues = document.getElementById("empezar");
-    var divformulario = document.getElementById("divformulario");
     //label para las preguntas
     var labeldiv = document.getElementById("labeldiv");
     var check = document.getElementById("check");
@@ -46,21 +38,9 @@ window.onload = function () {
     var cont_preg = 0;
     //contador delos valores de las repsuestas
     var cont_value = 0;
+    //contadores para las respuestas finales
 
-    //contador a cero
-    var contador = 0;
-    var contador2 = 0;
-    var contador3 = 0;
-    var contador4 = 0;
-    //resultado segun las preguntas
-    var contador_respuestasA = 3;
-    var contador_respuestasB = 3;
-    var contador_respuestasC = 2;
-    //respuesta en texto
-    var respuestas = "Respuesta 1";
-    var respuestas2 = "Respuesta 2";
-    var respuestas3 = "Respuesta 3";
-    var respuestas4 = "Respuesta 4";
+    var contadorres = [0, 0, 0, 0, 0, 0];
 
 
     /*muestro la primer pregunta*/
@@ -69,7 +49,7 @@ window.onload = function () {
     labeldiv.innerHTML = sacarpregunta;
     //funcion de mostrar las respuestas
     pasar_checkbox(cont_preg);
-    
+
 
     //boton siguiente
     botonsiguiente();
@@ -80,9 +60,13 @@ window.onload = function () {
     function btonvolver() {
         volver.addEventListener("click", () => {
             var sacarpregunta = "";
+            /*funcion para saber cual tengo selecionado */
+            valueselect();
+            
             cont_preg--;
             sacarpregunta = arraypreguntas[cont_preg];
             console.log(sacarpregunta);
+            
             labeldiv.innerHTML = sacarpregunta;
             pasar_checkbox(cont_preg);
         });
@@ -92,16 +76,15 @@ window.onload = function () {
     function botonsiguiente() {
         siguiente.addEventListener("click", () => {
             var sacarpregunta = "";
+            /*funcion para saber cual tengo selecionado */
+            valueselect();
+
+            //contador de preguntas
             cont_preg++;
             sacarpregunta = arraypreguntas[cont_preg];
             console.log(sacarpregunta);
             labeldiv.innerHTML = sacarpregunta;
             pasar_checkbox(cont_preg);
-           
-            
-           
-            
-
         });
     }
 
@@ -109,164 +92,92 @@ window.onload = function () {
     function pasar_checkbox(cont_preg) {
         check.innerHTML = "";
         cont_value = 0;
-        /*muestro los checkbox */
+        /*muestro los checkbox y los radios */
         for (let i = 0; i < arrayrespuestas[cont_preg].length; i++) {
-            console.log("respuestas " + arrayrespuestas[cont_preg][i]);
-            check.innerHTML += "<input name='" + cont_preg + "' type='checkbox' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
-            cont_value++; 
-            console.log(cont_preg);
-            let grupocheck = document.getElementsByName(cont_preg);
-            for (let i = 0; i < grupocheck.length; i++) {
-                /*si el esta seleccionado*/
-                //console.log(grupocheck[i].value);
-                if (grupocheck[i].checked) {
-                    console.log(grupocheck[i].value);
-                }
-            }  
+            /*a las preguntas de la posicion del array
+            1,2,3,5  las respuestas las creo un input de tipo  radio*/
+            if (cont_preg == 1) {
+                console.log(cont_preg);
+                console.log("respuestas " + arrayrespuestas[cont_preg][i]);
+                check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+
+            } else if (cont_preg == 2) {
+                console.log(cont_preg);
+                console.log("respuestas " + arrayrespuestas[cont_preg][i]);
+                check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+
+            } else if (cont_preg == 3) {
+                console.log(cont_preg);
+                console.log("respuestas " + arrayrespuestas[cont_preg][i]);
+                check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+
+            } else if (cont_preg == 5) {
+                console.log(cont_preg);
+                console.log("respuestas " + arrayrespuestas[cont_preg][i]);
+                check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+
+            } else {
+                console.log("respuestas " + arrayrespuestas[cont_preg][i]);
+                check.innerHTML += "<input name='" + cont_preg + "' type='checkbox' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+            }
+            cont_value++;
+
+
         }
 
     }
 
-    /*funcion para saber cual tengo selecionado */
-    function seleccionado(cont_preg) {
-        
-    }
+    function valueselect() {
+        //obtengo el name del input de laca pregunta 
+        let grupo = document.getElementsByName(cont_preg);
 
-
-
-
-
-    //bton btn resultado
-    btnresultado();
-
-    function btnresultado() {
-
-        resultadobtn.addEventListener('click', () => {
-            //funciones de los check
-            checkpreguntas1();
-            checkpreguntas2();
-            checkpregunta3();
-            checkpregunta4();
-
-
-
-            //resultado dependiendo las respuestas
-            if (contador == contador_respuestasA) {
-                console.log(respuestas + "contiene " + contador + "sleccionados");
-
-            }
-            if (contador2 == contador_respuestasB) {
-
-                console.log(respuestas2 + "contiene " + contador2 + "sleccionados");
-            }
-
-        })
-    }
-
-
-    function checkpreguntas1() {
-        for (let i = 0; i < group1.length; i++) {
-            //si esta selecionado , me nuestar el value
-            if (group1[i].checked) {
-
-                if (group1[i].value == "a") {
-                    contador++;
-                    console.log(group1[i].value);
-                    console.log("contador A tiene" + contador);
+        for (let i = 0; i < grupo.length; i++) {
+            //si esta seleccionada me saca el valor 
+            if (grupo[i].checked) {
+                console.log("valores " + grupo[i].value);
+                if (grupo[i].value == "A") {
+                    console.log("valores " + grupo[i].value);
+                    contadorres[0]++;
                 }
-                if (group1[i].value == "b") {
-                    contador2++;
-                    console.log(group1[i].value);
-                    console.log("contador B tiene " + contador2);
+                if (grupo[i].value == "B") {
+                    console.log("valores " + grupo[i].value);
+                    contadorres[1]++;
                 }
-                if (group1[i].value == "c") {
-                    contador3++;
-                    console.log(group1[i].value);
-                    console.log("contador C tiene" + contador3);
+                if (grupo[i].value == "C") {
+                    console.log("valores " + grupo[i].value);
+                    contadorres[2]++;
+                }
+                if (grupo[i].value == "D") {
+                    console.log("valores " + grupo[i].value);
+                    contadorres[3]++;
+                }
+                if (grupo[i].value == "E") {
+                    console.log("valores " + grupo[i].value);
+                    contadorres[4]++;
+                }
+                if (grupo[i].value == "F") {
+                    console.log("valores " + grupo[i].value);
+                    contadorres[5]++;
+                }
+                if (grupo[i].value == "G") {
+                    console.log("valores " + grupo[i].value);
+                    contadorres[6]++;
                 }
             }
 
         }
+        console.log(contadorres);
+
+
     }
 
-    function checkpreguntas2() {
-        for (let j = 0; j < group2.length; j++) {
-            if (group2[j].checked) {
+    function validar() {
 
-                if (group2[j].value == "a") {
-                    contador++;
-                    console.log(group2[j].value);
-                    console.log("contador A2 tiene" + contador);
 
-                }
-                if (group2[j].value == "b") {
-                    contador2++;
-                    console.log(group2[j].value);
-                    console.log("contador B2 tiene" + contador2);
-
-                }
-                if (group2[j].value == "c") {
-                    contador3++;
-                    console.log(group2[j].value);
-
-                    console.log("contador C2 tiene " + contador3);
-
-                }
-            }
-
-        }
     }
 
-    function checkpregunta3() {
 
-        for (let k = 0; k < group3.length; k++) {
-            if (group3[k].checked) {
 
-                if (group3[k].value == "a") {
-                    contador++;
-                    console.log(group3[k].value);
 
-                    console.log("contador A3 tiene" + contador);
-
-                }
-                if (group3[k].value == "b") {
-                    contador2++;
-                    console.log(group3[k].value);
-                    console.log("contador B3 tiene" + contador2);
-
-                }
-                if (group3[k].value == "c") {
-                    contador3++;
-                    console.log(group3[k].value);
-                    console.log("contador C3 tiene " + contador3);
-
-                }
-            }
-
-        }
-    }
-
-    function checkpregunta4() {
-        for (let l = 0; l < group4.length; l++) {
-
-            if (group4[l].checked) {
-                if (group4[l].value == "a") {
-                    contador++;
-                    console.log(group4[l].value);
-                    console.log("contador A4 tiene" + contador);
-                }
-                if (group4[l].value == "b") {
-                    contador2++;
-                    console.log(group4[l].value);
-                    console.log("contador B4 tiene" + contador2);
-                }
-                if (group4[l].value == "c") {
-                    contador3++;
-                    console.log(group4[l].value);
-                    console.log("contador C4 tiene" + contador3);
-                }
-            }
-        }
-    }
 
 }
