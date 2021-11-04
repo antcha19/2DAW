@@ -45,6 +45,7 @@ window.onload = function () {
 
     /*muestro la primer pregunta*/
     sacarpregunta = arraypreguntas[0];
+  
     console.log(sacarpregunta);
     labeldiv.innerHTML = sacarpregunta;
     //funcion de mostrar las respuestas
@@ -66,6 +67,11 @@ window.onload = function () {
             cont_preg--;
             sacarpregunta = arraypreguntas[cont_preg];
             console.log(sacarpregunta);
+            console.log(cont_preg);
+            if (cont_preg >0) {
+            console.log("dfgfd");
+                
+            }
             
             labeldiv.innerHTML = sacarpregunta;
             pasar_checkbox(cont_preg);
