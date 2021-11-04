@@ -7,6 +7,7 @@ window.onload = function () {
     //botones siguietne y atras
     var volver = document.getElementById("idvolver");
     var siguiente = document.getElementById("idsiguiente");
+    var validarbtn = false;
 
     //array de preguntas
     const arraypreguntas = ["¿Cuántas veces escuchas música?",
@@ -140,6 +141,10 @@ window.onload = function () {
         for (let i = 0; i < grupo.length; i++) {
             //si esta seleccionada me saca el valor 
             if (grupo[i].checked) {
+                validarbtn = true;
+                console.log("seleccionado"+validarbtn);
+                //si esta selecionado suma una pregunta
+                
                 console.log("valores " + grupo[i].value);
                 if (grupo[i].value == "A") {
                     console.log("valores " + grupo[i].value);
@@ -169,10 +174,12 @@ window.onload = function () {
                     console.log("valores " + grupo[i].value);
                     contadorres[6]++;
                 }
+            }else{
+                console.log("seleccionado " + validarbtn)
             }
 
         }
-        console.log(contadorres);
+        console.log( contadorres);
 
 
     }
