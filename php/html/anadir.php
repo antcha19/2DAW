@@ -1,17 +1,12 @@
 <?php
 //importo los articulos
 $articulos = include 'articulos.php';
+require 'tienda_cabecera.php';
 ?>
-
-
-
-<body>
-
     <form method="get" enctype="multipart/form-data">
         <?php
         //get de productos es lo que me pasa de href  ejemplo http://localhost/anadir.php?producto=3
         $idarticulo = $_GET['producto'];
-
         if (isset($idarticulo)) {
             echo " <div class=container>
             <div class=row>";
@@ -27,11 +22,10 @@ $articulos = include 'articulos.php';
                                                 <img class=card-img-top src=" . $imagen . ">                                                            <div class=card-body>
                                                 <p class=card-text>" . $precio . "€</p>
                                                 <input type=number >
-                                                <input type=submit value=Añadir>
+                                                <br>
+                                                <input type=submit value=Añadir name=anadir>
                                                 </div>
                                         </div>
-                                    
-
                                 <br>
                                 ";
                 }
@@ -39,10 +33,9 @@ $articulos = include 'articulos.php';
             echo "  </div>
             </div> ";
         }
+
         ?>
     </form>
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
