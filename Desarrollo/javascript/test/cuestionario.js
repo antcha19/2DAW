@@ -7,6 +7,9 @@ window.onload = function () {
     //botones siguietne y atras
     var volver = document.getElementById("idvolver");
     var siguiente = document.getElementById("idsiguiente");
+    var empezar = document.getElementById("empezar");
+    var formulario = document.getElementById("formularioprueba");
+    var resultado = document.getElementById("resultado");
     var validarbtn = false;
 
     //array de preguntas
@@ -18,7 +21,7 @@ window.onload = function () {
         "¿Alguna vez usas o has usado la música para tu regulación emocional?",
     ];
     const arrayrespuestas = [
-        ["Entre una y tres veces por semana", "Des tres a cinco veces por semana  ", "Todos los dias", "Ningún dia"],
+        ["Entre una y tres veces por semana", "Des tres a cinco veces por semana  ", "Todos los dias"],
         ["Auriculares", "Monitores o altavoces"],
         ["¡SI!", "No"],
         ["En casa", "En eventos"],
@@ -43,15 +46,22 @@ window.onload = function () {
 
     var contadorres = [0, 0, 0, 0, 0, 0];
 
+    formulario.style.display = "none";
+    btnempezar();
+    /*cuando pulse empezar se mostrara el formulario*/
+    function btnempezar() {
+        empezar.addEventListener('click', () => {
+            formulario.style.display = "inline";
+        });
+    }
+
 
     /*muestro la primer pregunta*/
     sacarpregunta = arraypreguntas[0];
-  
     console.log(sacarpregunta);
     labeldiv.innerHTML = sacarpregunta;
     //funcion de mostrar las respuestas
     pasar_checkbox(cont_preg);
-
 
     //boton siguiente
     botonsiguiente();
@@ -64,20 +74,16 @@ window.onload = function () {
             var sacarpregunta = "";
             /*funcion para saber cual tengo selecionado */
             valueselect();
-            
+
             cont_preg--;
             sacarpregunta = arraypreguntas[cont_preg];
             console.log(sacarpregunta);
             console.log(cont_preg);
-            if (cont_preg >0) {
-            console.log("dfgfd");
-                
-            }
-            
             labeldiv.innerHTML = sacarpregunta;
             pasar_checkbox(cont_preg);
         });
     }
+    resultadofinal();
 
     /*function del boton siguiente */
     function botonsiguiente() {
@@ -90,8 +96,12 @@ window.onload = function () {
             cont_preg++;
             sacarpregunta = arraypreguntas[cont_preg];
             console.log(sacarpregunta);
+            console.log("array de respuestas " + arrayrespuestas.length);
+            console.log("contador de preguntas " + cont_preg);
             labeldiv.innerHTML = sacarpregunta;
             pasar_checkbox(cont_preg);
+
+
         });
     }
 
@@ -99,38 +109,47 @@ window.onload = function () {
     function pasar_checkbox(cont_preg) {
         check.innerHTML = "";
         cont_value = 0;
-        /*muestro los checkbox y los radios */
-        for (let i = 0; i < arrayrespuestas[cont_preg].length; i++) {
-            /*a las preguntas de la posicion del array
-            1,2,3,5  las respuestas las creo un input de tipo  radio*/
-            if (cont_preg == 1) {
-                console.log(cont_preg);
-                console.log("respuestas " + arrayrespuestas[cont_preg][i]);
-                check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+        //
+        if (cont_preg == arrayrespuestas.length) {
+            console.log("fin de las preguntas");
+            resultadofinal();
 
-            } else if (cont_preg == 2) {
-                console.log(cont_preg);
-                console.log("respuestas " + arrayrespuestas[cont_preg][i]);
-                check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
 
-            } else if (cont_preg == 3) {
-                console.log(cont_preg);
-                console.log("respuestas " + arrayrespuestas[cont_preg][i]);
-                check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+        } else {
+            /*muestro los checkbox y los radios */
+            for (let i = 0; i < arrayrespuestas[cont_preg].length; i++) {
+                /*a las preguntas de la posicion del array
+                1,2,3,5  las respuestas las creo un input de tipo  radio*/
+                if (cont_preg == 1) {
+                    console.log(cont_preg);
+                    console.log("respuestas " + arrayrespuestas[cont_preg][i]);
+                    check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
 
-            } else if (cont_preg == 5) {
-                console.log(cont_preg);
-                console.log("respuestas " + arrayrespuestas[cont_preg][i]);
-                check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+                } else if (cont_preg == 2) {
+                    console.log(cont_preg);
+                    console.log("respuestas " + arrayrespuestas[cont_preg][i]);
+                    check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + "<label for='idinput'>" + arrayrespuestas[cont_preg][i] + "</label>" + "<br>";
 
-            } else {
-                console.log("respuestas " + arrayrespuestas[cont_preg][i]);
-                check.innerHTML += "<input name='" + cont_preg + "' type='checkbox' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+                } else if (cont_preg == 3) {
+                    console.log(cont_preg);
+                    console.log("respuestas " + arrayrespuestas[cont_preg][i]);
+                    check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+
+                } else if (cont_preg == 5) {
+                    console.log(cont_preg);
+                    console.log("respuestas " + arrayrespuestas[cont_preg][i]);
+                    check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+
+                } else {
+                    console.log("respuestas " + arrayrespuestas[cont_preg][i]);
+                    check.innerHTML += "<input name='" + cont_preg + "' type='checkbox' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+                }
+                cont_value++;
+
+
             }
-            cont_value++;
-
-
         }
+
 
     }
 
@@ -141,10 +160,11 @@ window.onload = function () {
         for (let i = 0; i < grupo.length; i++) {
             //si esta seleccionada me saca el valor 
             if (grupo[i].checked) {
+
                 validarbtn = true;
-                console.log("seleccionado"+validarbtn);
+                console.log("seleccionado" + validarbtn);
                 //si esta selecionado suma una pregunta
-                
+
                 console.log("valores " + grupo[i].value);
                 if (grupo[i].value == "A") {
                     console.log("valores " + grupo[i].value);
@@ -174,17 +194,82 @@ window.onload = function () {
                     console.log("valores " + grupo[i].value);
                     contadorres[6]++;
                 }
-            }else{
-                console.log("seleccionado " + validarbtn)
+            } else {
+                console.log("seleccionado " + validarbtn);
+
             }
 
         }
-        console.log( contadorres);
+        console.log(contadorres);
+        console.log(contadorres[0]);
 
 
     }
 
-    function validar() {
+    function resultadofinal() {
+        console.log(contadorres);
+        console.log(contadorres[0]);
+        //cuanto tenga mas de 4 valores "A";
+        if (contadorres[0] >= 4) {
+            console.log("Te gusta mucho la musica");
+            formulario.innerHTML =
+                "TIenes el autoestima alto, eres creativ@ , extrovetid@ y  con gusto";
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        }
+        if (contadorres[2] >= 1 && contadorres[1] >= 4 &&contadorres[6] >= 1) {
+            console.log("Te gusta mucho la musica");
+            formulario.innerHTML =
+                "TIenes el  autoestima alta , creativ@ y gentil";
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        }
+        if (contadorres[1] >= 4 && contadorres[2] >= 1 &&contadorres[5] >= 1) {
+            console.log("Te gusta mucho la musica");
+            formulario.innerHTML =
+                "TIenes el  autoestima alta , creativ@ y gentil";
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        }
+        if (contadorres[0] >= 2 && contadorres[1] >= 3 &&contadorres[3] >= 1) {
+            console.log("Te gusta mucho la musica");
+            formulario.innerHTML =
+                "TIenes el  autoestima alta";
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        }
+        if (contadorres[0] == 2 && contadorres[1] == 3 &&contadorres[3] == 1) {
+            console.log("Te gusta mucho la musica");
+            formulario.innerHTML =
+                "TIenes el  autoestima alta , creativ@ y gentil";
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        }
+        if (contadorres[0] == 3 && contadorres[1] == 3 &&contadorres[3] == 1) {
+            console.log("Te gusta mucho la musica");
+            formulario.innerHTML =
+                "TIenes el  autoestima alta , creativ@ y gentil";
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        }if (contadorres[0] == 3 && contadorres[1] == 3 ) {
+            console.log("Te gusta mucho la musica");
+            formulario.innerHTML =
+                "TIenes el  autoestima alta , creativ@ y gentil";
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        }
+
+
+
+
+//c1 b4 dance
 
 
     }
