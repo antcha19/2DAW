@@ -13,7 +13,7 @@ for (let i = 0; i < namegroup.length; i++) {
 
             if (contador < 2) {
                 contador++
-                //   lbel.innerHTML = "has selecionado "+ contador;
+                   lbel.innerHTML = "has selecionado "+ contador;
 
             } else {
 
