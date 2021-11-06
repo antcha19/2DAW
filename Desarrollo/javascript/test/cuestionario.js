@@ -52,6 +52,7 @@ window.onload = function () {
     function btnempezar() {
         empezar.addEventListener('click', () => {
             formulario.style.display = "inline";
+
         });
     }
 
@@ -119,30 +120,30 @@ window.onload = function () {
             /*muestro los checkbox y los radios */
             for (let i = 0; i < arrayrespuestas[cont_preg].length; i++) {
                 /*a las preguntas de la posicion del array
-                1,2,3,5  las respuestas las creo un input de tipo  radio*/
+                1,2,3,5  las respuestas las creo un input de tipo  radio
+                tambien pongo una id para modificar el aspecto desde Css*/
                 if (cont_preg == 1) {
                     console.log(cont_preg);
                     console.log("respuestas " + arrayrespuestas[cont_preg][i]);
-                    check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+                    check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + "<label id='idinput'>" + arrayrespuestas[cont_preg][i] + "</label>" + "<br>";
 
                 } else if (cont_preg == 2) {
                     console.log(cont_preg);
                     console.log("respuestas " + arrayrespuestas[cont_preg][i]);
-                    check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + "<label for='idinput'>" + arrayrespuestas[cont_preg][i] + "</label>" + "<br>";
+                    check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + "<label id='idinput'>" + arrayrespuestas[cont_preg][i] + "</label>" + "<br>";
 
                 } else if (cont_preg == 3) {
                     console.log(cont_preg);
                     console.log("respuestas " + arrayrespuestas[cont_preg][i]);
-                    check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+                    check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + "<label id='idinput'>" + arrayrespuestas[cont_preg][i] + "</label>" + "<br>";
 
                 } else if (cont_preg == 5) {
                     console.log(cont_preg);
                     console.log("respuestas " + arrayrespuestas[cont_preg][i]);
-                    check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
-
+                    check.innerHTML += "<input name='" + cont_preg + "' type='radio' value='" + valuerespuestas[cont_value] + "'>" + "<label id='idinput'>" + arrayrespuestas[cont_preg][i] + "</label>" + "<br>";
                 } else {
                     console.log("respuestas " + arrayrespuestas[cont_preg][i]);
-                    check.innerHTML += "<input name='" + cont_preg + "' type='checkbox' value='" + valuerespuestas[cont_value] + "'>" + arrayrespuestas[cont_preg][i] + "<br>";
+                    check.innerHTML += "<input name='" + cont_preg + "' type='checkbox' value='" + valuerespuestas[cont_value] + "'>" + "<label id='idinput'>" + arrayrespuestas[cont_preg][i] + "</label>" + "<br>";
                 }
                 cont_value++;
 
@@ -152,6 +153,9 @@ window.onload = function () {
 
 
     }
+
+
+
 
     function valueselect() {
         //obtengo el name del input de laca pregunta 
@@ -163,6 +167,7 @@ window.onload = function () {
 
                 validarbtn = true;
                 console.log("seleccionado" + validarbtn);
+
                 //si esta selecionado suma una pregunta
 
                 console.log("valores " + grupo[i].value);
@@ -194,9 +199,6 @@ window.onload = function () {
                     console.log("valores " + grupo[i].value);
                     contadorres[6]++;
                 }
-            } else {
-                console.log("seleccionado " + validarbtn);
-
             }
 
         }
@@ -208,7 +210,7 @@ window.onload = function () {
 
     function resultadofinal() {
         console.log(contadorres);
-        console.log(contadorres[0]);
+       
         //cuanto tenga mas de 4 valores "A";
         if (contadorres[0] >= 4) {
             console.log("Te gusta mucho la musica");
@@ -217,48 +219,79 @@ window.onload = function () {
             setTimeout(() => {
                 window.location.reload();
             }, 5000);
-        }
-        if (contadorres[2] >= 1 && contadorres[1] >= 4 &&contadorres[6] >= 1) {
+        } else if (contadorres[2] >= 1 && contadorres[1] >= 4 && contadorres[6] >= 1) {
             console.log("Te gusta mucho la musica");
             formulario.innerHTML =
                 "TIenes el  autoestima alta , creativ@ y gentil";
             setTimeout(() => {
                 window.location.reload();
             }, 5000);
-        }
-        if (contadorres[1] >= 4 && contadorres[2] >= 1 &&contadorres[5] >= 1) {
+        } else if (contadorres[1] >= 4 && contadorres[2] >= 1 && contadorres[5] >= 1) {
             console.log("Te gusta mucho la musica");
             formulario.innerHTML =
                 "TIenes el  autoestima alta , creativ@ y gentil";
             setTimeout(() => {
                 window.location.reload();
             }, 5000);
-        }
-        if (contadorres[0] >= 2 && contadorres[1] >= 3 &&contadorres[3] >= 1) {
+        } else if (contadorres[0] >= 2 && contadorres[1] >= 3 && contadorres[3] >= 1) {
             console.log("Te gusta mucho la musica");
             formulario.innerHTML =
                 "TIenes el  autoestima alta";
             setTimeout(() => {
                 window.location.reload();
             }, 5000);
-        }
-        if (contadorres[0] == 2 && contadorres[1] == 3 &&contadorres[3] == 1) {
+        } else if (contadorres[0] == 2 && contadorres[1] == 3 && contadorres[3] == 1) {
             console.log("Te gusta mucho la musica");
             formulario.innerHTML =
                 "TIenes el  autoestima alta , creativ@ y gentil";
             setTimeout(() => {
                 window.location.reload();
             }, 5000);
-        }
-        if (contadorres[0] == 3 && contadorres[1] == 3 &&contadorres[3] == 1) {
-            console.log("Te gusta mucho la musica");
+        } else if (contadorres[0] == 3 && contadorres[1] == 3 && contadorres[3] == 1) {
+           
+            formulario.innerHTML =
+                "Te gusta mucho la musica";
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        } else if (contadorres[0] == 3 && contadorres[1] == 2 && contadorres[2] == 1) {
+            
             formulario.innerHTML =
                 "TIenes el  autoestima alta , creativ@ y gentil";
             setTimeout(() => {
                 window.location.reload();
             }, 5000);
-        }if (contadorres[0] == 3 && contadorres[1] == 3 ) {
-            console.log("Te gusta mucho la musica");
+        } else if (contadorres[0] == 3 && contadorres[1] == 3) {
+            
+            formulario.innerHTML =
+                "TIenes el  autoestima alta , creativ@ y gentil";
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        } else if (contadorres[0] == 2 && contadorres[1] == 3 && contadorres[2] == 1) {
+           
+            formulario.innerHTML =
+                "TIenes el  autoestima alta , creativ@ y gentil";
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        }
+        else if (contadorres[0] == 2 && contadorres[1] == 2 && contadorres[2] == 2) {
+           
+            formulario.innerHTML =
+                "TIenes el  autoestima alta , creativ@ y gentil";
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        } else if (contadorres[0] == 0 && contadorres[1] == 0 && contadorres[2] == 0 && contadorres[3] == 1 && contadorres[4] == 0 && contadorres[5] == 0) {
+            
+            formulario.innerHTML =
+                "TIenes el  autoestima alta , creativ@ y gentil";
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        }else if (contadorres[0] == 1 && contadorres[1] == 3 && contadorres[2] == 2 ) {
+            
             formulario.innerHTML =
                 "TIenes el  autoestima alta , creativ@ y gentil";
             setTimeout(() => {
@@ -266,10 +299,7 @@ window.onload = function () {
             }, 5000);
         }
 
-
-
-
-//c1 b4 dance
+        //c1 b4 dance
 
 
     }

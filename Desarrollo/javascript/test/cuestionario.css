@@ -19,7 +19,7 @@ body {
 
     width: 100%;
     height: 100%;
-
+    margin: auto;
     background-color: rgb(163, 74, 74);
 }
 
@@ -60,5 +60,11 @@ body {
     font-size: 30px;
 }
 body{
-    background: url(musica.jpg) ;
+    background: url(musica\ \(1\).jpeg) ;
+}
+
+
+/*Color de las respuestas check y radio*/
+#idinput{
+    color: rgb(255, 255, 255);
 }
