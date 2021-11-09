@@ -1,0 +1,58 @@
+/* XHTML y CSS con AMAYA
+   BartolomÃ© Sintes Marco
+   http://www.mclibre.org
+
+   CSS ejercicio: Leyes de Murphy
+   25 de noviembre de 2003
+*/
+
+body { 
+  background-color: lightgrey; 
+  font-family: sans-serif;
+}
+
+h2, h1{ 
+  text-align: center; 
+}
+
+p { 
+  font-size: 150%; 
+  padding: 10px; 
+}
+
+div#main{
+	position:absolute;
+	top:50px;
+	left:30%;
+	width:40%;
+
+}
+
+
+
+div#clasif,div#m1{
+  position: absolute; 
+  height: 355px; 
+  left: 31%; 
+  top: 30%; 
+  width: 550px; 
+
+
+
+}
+div#m1 { 
+  background-color: #DBC9A6; 
+  border: #9B8F76 2px solid;
+  padding: 10px; 
+  text-align: center;
+  overflow:hidden;
+}
+img{
+  padding-top: 30%;
+}
+#botones_galeria{
+  padding-top: 70%;
+}
+
+
+
