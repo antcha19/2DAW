@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo selectores hijos directos</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+	<script type="text/javascript">
+	$(function() 
+	{
+      $("p > span").css("color", "red");
+	});
+	</script>
+  </head>
+<body>
+  <p>El texto <span>rojo</span> lo marco con span </p>
+  <p><strong><span>Esto no es rojo</span></strong></p>
+</body>
+</html>

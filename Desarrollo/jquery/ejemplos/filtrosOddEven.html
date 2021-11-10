@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Filtros odd y even</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function() 
+	  {
+        $('tr:even').css('background','#dedede');
+        $('tr:odd').css('background','#ffffff');
+      }); 
+    </script>
+  </head>
+<body>
+  <table>
+    <tr>
+      <th>Producto</th><th>Descripción</th><th>Precio</th>
+      </tr>
+    <tr>
+      <td>Estuche de pinturas</td>
+      <td>Pinturas de varios colores</td>
+      <td>18,99 </td>
+    </tr>
+    <tr>
+      <td>Compás</td>
+      <td>De diferentes tamaños</td>
+      <td>16,99 </td>
+    </tr>
+    <tr>
+      <td>Folios</td>
+      <td>Paquete de 500 folios</td>
+      <td>5,99 </td>
+    </tr>
+    <tr>
+      <td>Cartulina</td>
+      <td>Tamaño din A2</td>
+      <td>2,99 </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>selector de atributos *=</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function() 
+	  {
+        $("a[href*='gva.es']").css("text-decoration", "none");
+      }); 
+    </script>
+  </head>
+<body>
+  <ul>
+    <li><a href="http://www.edu.gva.es">Consellería de educación</a></li>
+    <li><a href="http://www.google.es">Buscador Google</a></li>
+    <li><a href="http://cefire.edu.gva.es">Moodle del cefire</a></li>
+  </ul>
+</body>
+</html>

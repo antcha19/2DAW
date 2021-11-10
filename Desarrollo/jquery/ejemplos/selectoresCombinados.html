@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo selectores combinados</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+	<script type="text/javascript">
+	$(function() 
+	{
+      $(".libro.inactivo").css("display","none");
+      $("li.libro").css("line-height", "3em");
+	});
+	</script>
+  </head>
+<body>
+  <h1>Lista de libros</h1>
+  <ul>
+    <li class="libro">La isla del tesoro</li>
+    <li class="libro">Los miserables</li>
+    <li class="libro inactivo">El traidor</li>
+    <li class="libro">Canción de cuna</li>
+  </ul>
+</body>
+</html>
