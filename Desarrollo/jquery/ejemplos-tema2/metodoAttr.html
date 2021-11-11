@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Método .attr()</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function() 
+	  {
+        $("#titulo").text($("img").attr("alt"));
+      });
+    </script>
+  </head>
+<body>
+  <div>
+    <img src="playa.jpg" alt="Imagen de la playa de Isla Saona" /> 
+  </div>
+  <div id="titulo"></div>
+</body>
+</html>

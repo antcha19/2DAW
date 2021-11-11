@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>método .end()</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function() 
+      {
+        $('ul').find('li.coches').css('background-color', 'red')
+		.end().find('li.motos').css('background-color', 'green');
+      });
+    </script>
+  </head>
+<body>
+  <ul>
+    <li class="camiones">Camiones</li>
+    <li class="coches">Coches</li>
+    <li class="motos">Motos</li>
+    <li class="furgonetas">Furgonetas</li>
+  </ul>
+</div>
+</body>
+</html>

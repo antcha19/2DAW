@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>método .parent()</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function() 
+      {
+        $("li.item-a").parent().css("background-color", "red");
+      });
+    </script>
+  </head>
+<body>
+  <ul>
+    <li>coches</li>
+    <li>motos</li>
+    <li>accesorios:
+	  <ul>
+	    <li class="item-a">ruedas</li>
+	    <li>antenas</li>
+	    <li>radiocassettes</li>
+      </ul>
+	</li>
+  </ul>
+</body>
+</html>

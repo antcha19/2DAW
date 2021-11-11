@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Método .remove()</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function() 
+	  {
+        $("p").remove(":contains('Hola')");
+      });
+    </script>
+  </head>
+<body>
+  <div id="contenido">
+    <p>Corro 4 veces a la semana.</p>
+    <p>Hola Hago pesas 3 veces a la semana.</p>
+  </div>
+</body>
+</html>

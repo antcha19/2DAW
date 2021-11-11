@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>método .andself()</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <style>
+      p, div { margin:5px; padding:5px; }
+      .borde { border: 2px solid red; }
+      .fondo { background:yellow; }
+      .izquierda, .derecha { width: 45%; float: left;}
+      .derecha { margin-left:3%; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function() 
+      {
+        $("div.izquierda, div.derecha").find("div, div > p").addClass("borde");
+        // Primer ejemplo
+        $("div.antes-andself").find("p").addClass("fondo");
+        // Segundo ejemplo
+        $("div.despues-andself").find("p").andSelf().addClass("fondo");
+      });
+    </script>
+  </head>
+<body>
+  <div class="izquierda">
+    <p><strong>Antes <code>andSelf()</code></strong></p>
+    <div class="antes-andself">
+      <p>Primer párrafo</p>
+      <p>Segundo párrafo</p>
+    </div>
+  </div>
+  <div class="derecha">
+    <p><strong>Después <code>andSelf()</code></strong></p>
+    <div class="despues-andself">
+      <p>Primer párrafo</p>
+      <p>Segundo párrafo</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>método .nextUntil()</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function() 
+      {
+        $("#term-2").nextUntil("dt").css("background-color", "red");
+      });
+    </script>
+  </head>
+<body>
+  <dl>
+    <dt id="term-1">término 1</dt>
+    <dd>definición 1-a</dd>
+    <dd>definición 1-b</dd>
+    <dd>definición 1-c</dd>
+    <dd>definición 1-d</dd>
+
+    <dt id="term-2">término 2</dt>
+    <dd>definición 2-a</dd>
+    <dd>definición 2-b</dd>
+    <dd>definición 2-c</dd>
+
+    <dt id="term-3">término 3</dt>
+    <dd>definición 3-a</dd>
+    <dd>definición 3-b</dd>
+</dl>
+</body>
+</html>

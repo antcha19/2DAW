@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Método .unwrap()</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<style>
+	  .nuevo { border: blue solid 1px;}
+	  .container {border: red solid 1px;}
+	</style>
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function() 
+	  {
+        $(".inner").unwrap();
+      });		
+    </script>
+  </head>
+<body>
+  <div class="container">
+    <h2>Saludos</h2>
+    <div class="inner">Hola</div>
+    <div class="inner">Adios</div>
+  </div>
+</body>
+</html>
