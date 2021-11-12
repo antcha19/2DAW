@@ -28,18 +28,38 @@ $(function () {
 
   function dobleclick() {
     //doble click
-    $(".item").dblclick(function (event) {
-      //  \d indica que quieres que coja números
-      // /g indica que quieres buscar de manera global en todo el string.
-      var valores = /(\d+)/g;
-
-      //busco dentro del item el strock
-      var stock = $(this).find(".stock").text();
-
-      console.log(stock.match(valores));
-      stock = stock.match(valores);
-      console.log(stock[0]);
+    $(".item").dblclick(function () {
+      //le paso el this;
+      actualizar_stock($(this),1);
     })
+  }
+
+
+  function actualizar_stock($item,valor) {
+    //  \d indica que quieres que coja números
+    // /g indica que quieres buscar de manera global en todo el string.
+    var valores = /(\d+)/g;
+    //busco dentro del item el strock
+    var stock = $item.find(".stock").text();
+    console.log(stock);
+let stocksub = stock.substring(6);
+console.log(stocksub);
+
+    //lo guarda en un array
+    var stock = stock.match(valores);
+    var valorstock = stock[0];
+    console.log(valorstock);
+    if (valorstock >0) {
+      console.log("es mayor que cero");
+      console.log("es mayor que cero");
+      //modificado el stock 
+      $item.find(".stock").text("Stock " +(valorstock -valor) );
+    }
+     if (valorstock == 0){
+      console.log("Esta agotado");
+      $item.find(".stock").addClass("agotado");
+    }
+
   }
 
 })
