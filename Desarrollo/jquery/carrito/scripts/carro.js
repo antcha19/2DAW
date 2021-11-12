@@ -37,7 +37,7 @@ $(function () {
     })
   }
 
-
+//$item es el this del
   function actualizar_stock($item, valor) {
     //busco dentro del item el strock
     $stock = $item.find(".stock");
@@ -46,13 +46,28 @@ $(function () {
     let stocksub = $stocktext.substring(6);
     if (stocksub > 0) {
       console.log("es mayor que cero");
+      var stocknuevo = stocksub - (valor);
       //modificado el stock 
-      $stock.text("Stock " + (stocksub - (valor)));
+      $stock.text("Stock " + stocknuevo);
+     
+      //imcrementamos las compras
+     $("#citem").val(parseInt($("#citem").val()) + 1);
+
+      //sumanos el precio
+      $precio = $item.find(".price").text();
+      let espacio = $precio.indexOf(" ");
+      let precio = $precio.substring(0,espacio);
+     
+      //suma cantidad total de la compras
+      $("#cprice").val(parseInt($("#cprice").val())+parseInt(precio) + " €");
+     
+      $item.clone()
+      .attr("id", "C"+ $item.attr("id"));
+      if (stocknuevo == 0) {
+        $stock.addClass("agotado");
+      }
     }
-   
-    if (stocksub < 2) {
-      $stock.addClass("agotado");
-    }
+
 
   }
 
