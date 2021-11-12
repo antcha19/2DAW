@@ -28,36 +28,30 @@ $(function () {
 
   function dobleclick() {
     //doble click
-    $(".item").dblclick(function () {
+    //cambiar
+    //    $(".item").dblclick(function () {
+
+    $(".item").click(function () {
       //le paso el this;
-      actualizar_stock($(this),1);
+      actualizar_stock($(this), 1);
     })
   }
 
 
-  function actualizar_stock($item,valor) {
-    //  \d indica que quieres que coja números
-    // /g indica que quieres buscar de manera global en todo el string.
-    var valores = /(\d+)/g;
+  function actualizar_stock($item, valor) {
     //busco dentro del item el strock
-    var stock = $item.find(".stock").text();
-    console.log(stock);
-let stocksub = stock.substring(6);
-console.log(stocksub);
-
-    //lo guarda en un array
-    var stock = stock.match(valores);
-    var valorstock = stock[0];
-    console.log(valorstock);
-    if (valorstock >0) {
-      console.log("es mayor que cero");
+    $stock = $item.find(".stock");
+    $stocktext = $stock.text();
+    //numero del stock
+    let stocksub = $stocktext.substring(6);
+    if (stocksub > 0) {
       console.log("es mayor que cero");
       //modificado el stock 
-      $item.find(".stock").text("Stock " +(valorstock -valor) );
+      $stock.text("Stock " + (stocksub - (valor)));
     }
-     if (valorstock == 0){
-      console.log("Esta agotado");
-      $item.find(".stock").addClass("agotado");
+   
+    if (stocksub < 2) {
+      $stock.addClass("agotado");
     }
 
   }
