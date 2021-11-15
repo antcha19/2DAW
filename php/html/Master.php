@@ -7,6 +7,7 @@ class Master
   public $numero_usuarios;
   public $muertos = 0;
   public $tocados = 0;
+  public $vidas = 8;
   function __construct()
   {
     //creo el array vacio
@@ -60,15 +61,16 @@ class Master
 
   function comprobar()
   {
-//reinicio las variables para la siguiente comprobacion
-$this->muertos =0;
-$this->tocados =0;
+    //reinicio las variables para la siguiente comprobacion
+    $this->muertos = 0;
+    $this->tocados = 0;
     //paso a un array para comprobar
     $array_aleatorio = str_split($this->numero_ale);
     //obtenlo los ultimos
     $ultimaposicion = end($this->numero_usuarios);
     //paso a un array 
     $array_numerosintro = str_split($ultimaposicion);
+
     for ($i = 0; $i < count($array_aleatorio); $i++) {
       //echo $array_aleatorio[$i];
       for ($j = 0; $j < count($array_numerosintro); $j++) {
@@ -83,21 +85,30 @@ $this->tocados =0;
           if ($i != $j) {
             $this->tocados++;
           }
+         
         }
       }
     }
+    $this->vidas--;
   }
 
   //muestro los muertos
   function getmuertos()
   {
-    
+
     return $this->muertos;
   }
   //muestro los tocados
   function gettocados()
   {
-    
+
     return $this->tocados;
+  }
+
+  //vidas
+  function getvidas()
+  {
+
+    return $this->vidas;
   }
 }

@@ -17,7 +17,7 @@ if (!isset($_SESSION['master'])) {
 ?>
 <form method="get" enctype="multipart/form-data">
     <div class="centro">
-        <input type="number" name="numero_insertado">
+        <input type="number" name="numero_insertado" >
         <input type="submit" value="comprobar" name="comprobar">
         <br>
     </div>
@@ -31,17 +31,17 @@ if (!isset($_SESSION['master'])) {
             echo  $_SESSION['master']->comprobar() . "<br>";
             echo  "Muertos: " . $_SESSION['master']->getmuertos() . "<br>";
             echo  "Tocados: " . $_SESSION['master']->gettocados() . "<br>";
+            echo  "Vidas: " . $_SESSION['master']->getvidas() . "<br>";
         }
     }
     //imprimo los valores del array
     $valores_array = "";
-    
+
     foreach ($_SESSION['master']->getn_usuarios() as $key => $valores) {
         $valores_array .=  $valores . "<br>";
     }
-    echo "<div>".$valores_array."<div>";
+    echo "<div>" . $valores_array . "<div>";
     //nuestro los numero aleatorios
-    echo "<input type=submit value=Reiniciar name=reiniciar>";
     //cuando gana muestra 
     if ($_SESSION['master']->getmuertos() == 4) {
         echo "<div> Has ganado </div>";
@@ -52,6 +52,7 @@ if (!isset($_SESSION['master'])) {
     if (isset($_GET['reiniciar'])) {
         session_destroy();
         header('Location: index.php');
+        echo "<input type=submit value=Reiniciar name=reiniciar>";
     }
     ?>
 </form>
