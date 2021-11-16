@@ -10,51 +10,72 @@ function __autoload($class)
 //sesion inicada
 session_start();
 if (!isset($_SESSION['master'])) {
+
     $_SESSION['master'] = new Master();
     //funcion numero aletorio;
     $_SESSION['master']->n_aleatorio();
 }
 ?>
 <form method="get" enctype="multipart/form-data">
-    <div class="centro">
-        <input type="number" name="numero_insertado" >
-        <input type="submit" value="comprobar" name="comprobar">
+    <div>
+        <input type="number" name="numero_insertado">
+        <input type="submit" value="Comprobar" name="comprobar" id="Comprobar">
         <br>
     </div>
 
     <?php
+    $varsession = $_SESSION['master'];
     if (isset($_GET['comprobar'])) {
 
         if ($_GET['numero_insertado']) {
             //inserto los numero inotrducidos al array
-            $_SESSION['master']->setn_usuarios($_GET['numero_insertado']);
-            echo  $_SESSION['master']->comprobar() . "<br>";
-            echo  "Muertos: " . $_SESSION['master']->getmuertos() . "<br>";
-            echo  "Tocados: " . $_SESSION['master']->gettocados() . "<br>";
-            echo  "Vidas: " . $_SESSION['master']->getvidas() . "<br>";
+            $varsession->setn_usuarios($_GET['numero_insertado']);
+            echo  $varsession->comprobar() . "<br>";
+            echo  "Muertos: " . $varsession->getmuertos() . "<br>";
+            echo  "Tocados: " . $varsession->getmuertos() . "<br>";
+            echo  "Vidas: " . $varsession->getvidas() . "<br>";
         }
     }
     //imprimo los valores del array
     $valores_array = "";
 
-    foreach ($_SESSION['master']->getn_usuarios() as $key => $valores) {
+    foreach ($varsession->getn_usuarios() as $key => $valores) {
         $valores_array .=  $valores . "<br>";
     }
     echo "<div>" . $valores_array . "<div>";
     //nuestro los numero aleatorios
     //cuando gana muestra 
-    if ($_SESSION['master']->getmuertos() == 4) {
+    if ($varsession->getmuertos() == 4) {
         echo "<div> Has ganado </div>";
-        echo " Numero aleatorio : <br>";
-        echo "<label id=label>" . $_SESSION['master']->getn_aleatorio() . "</label><br>";
+        numeroaletorio($varsession);
+    }
+    //has perdido
+    if ($varsession->getvidas() == 0) {
+        echo "<div> Has perdido </div>";
+        numeroaletorio($varsession);
+        btnreinicar();
     }
     //reiniciar
     if (isset($_GET['reiniciar'])) {
         session_destroy();
         header('Location: index.php');
+        btnreinicar();
+    }
+
+
+    // fuction numero aletario
+    function numeroaletorio($varsession)
+    {
+        echo " Numero : <br>";
+        echo "<label id=label>" . $varsession->getn_aleatorio() . "</label><br>";
+    }
+    //boton reiniciar
+    function btnreinicar()
+    {
         echo "<input type=submit value=Reiniciar name=reiniciar>";
     }
     ?>
+
 </form>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

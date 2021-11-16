@@ -51,7 +51,10 @@ class Master
   //añado los numeros insertados por el usuario
   function setn_usuarios($num_insertado)
   {
-    array_push($this->numero_usuarios, $num_insertado);
+  
+      array_push($this->numero_usuarios, $num_insertado);
+    
+   
   }
   //para mostrar el array 
   function getn_usuarios()
