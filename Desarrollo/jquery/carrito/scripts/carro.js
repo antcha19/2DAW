@@ -31,7 +31,7 @@ $(function () {
     //cambiar
     //    $(".item").dblclick(function () {
 
-    $(".item").click(function () {
+    $(".item").dblclick(function () {
       //le paso el this;
       actualizar_stock($(this), 1);
       add_carrito($(this));
@@ -80,7 +80,7 @@ $(function () {
     //Cambiaremos la propiedad css cursor del elemento
     $clonado.css("cursor", "default");
 
-    var $delete = $('<a  class="delete"></a>');
+    var $delete = $('<a   class="delete"></a>');
     $clonado.prepend($delete);
     //añado a cart_items el clonado
     $("#cart_items").prepend($clonado);
@@ -94,6 +94,7 @@ $(function () {
       //saca el stock  del productos a borrar con la id
       $stock = $("#" + id).find(".stock");
       $s_texto = $stock.text();
+      console.log($s_texto);
       //cantidad del stock
       let stocksub = $s_texto.substring(6);
       let parse = parseInt(stocksub);
@@ -101,13 +102,22 @@ $(function () {
       let suma = parse + 1;
       //cambio el stock
       $stock.text("Stock " + suma);
-
-      if (parse ==0) {
+      //quito la class agoatado
+      if (parse == 0) {
         $stock.removeClass("agotado");
       }
-      
 
-
+      //actuliazamos la compra
+      $("#citem").val(parseInt($("#citem").val()) - 1);
+      //actualizamos el precio $precio esta declarado en actualizar_stock
+      $precio_quitar = $item.find(".price").text();
+      let espacio = $precio_quitar.indexOf(" ");
+      let precio = $precio_quitar.substring(0, espacio);
+      $("#cprice").val(parseInt($("#cprice").val()) - parseInt(precio) + " €");
+      //eliminamos el articulo de la compra
+       $("#C"+$item.attr("id")).remove();
+     
+     // return false;
     })
   }
 
