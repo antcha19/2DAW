@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>método .live()</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js" 
+			type="text/javascript"></script>
+    <script>
+    $(function()
+    {
+      $(".enlace").live("click", function(event)
+      {
+        console.log("Tengo un manejador");
+      });
+      $("body").append("<a class='enlace'> Nuevo enlace </a>");
+    });
+    </script>
+</head>
+<body>
+</body>
+</html>

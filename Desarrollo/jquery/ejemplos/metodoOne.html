@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo método .one()</title>
+    <style type="text/css">
+    .div1 { width : 100px; height : 100px; background-color: blue; }
+	.div2 { width : 100px; height : 100px; background-color: red; }
+    </style>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script>
+    $(function()
+	{
+	  $(".div1").one("click", function()
+	  {
+		$("body").append("<p>clicked div 1 </p>");
+	  });
+	  $(".div2").bind("click", function()
+	  {
+		$("body").append("<p>clicked div 2 </p>");
+	  });
+    });
+    </script>
+</head>
+<body>
+  <div class="div1"></div>
+  <div class="div2"></div>
+</body>
+</html>

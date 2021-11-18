@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo método .offset()</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<style>
+	  p { margin-left:10px; }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+	<script type="text/javascript">
+	$(function() 
+	{
+	  $("p").each(function (i) 
+      {
+	    var pos = $(this).offset();
+	    $(this).html(
+		   $(this).html()+" left: "+pos.left+", top: "+pos.top);
+      });
+	});
+	</script>
+  </head>
+<body>
+  <p>Hola</p><p>2do Párrafo</p>
+</body>
+</html>

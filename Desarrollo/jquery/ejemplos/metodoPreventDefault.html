@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>event.preventDefault</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function() 
+	  {
+        $("a:first").click(function (evento) 
+        {
+			evento.preventDefault();
+			$(this).text("No voy a ningún sitio");
+        });
+      }); 
+    </script>
+  </head>
+<body>
+	<a href="http://www.google.es">Google con preventDefault</a><br />
+	<a href="http://www.google.es">Google sin preventDefault</a>
+</body>
+</html>

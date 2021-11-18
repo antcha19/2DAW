@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo método .on()</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script>
+    $(function()
+    {
+      $("body").on("click", "p", function()
+      {
+        console.log('AYYY!!!');
+      }).css("color", "green");
+    });
+    </script>
+  </head>
+<body>
+  <p>Púlsame!</p>
+</body>
+</html>

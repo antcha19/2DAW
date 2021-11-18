@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo método .on()</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script>
+    $(function()
+    {
+      $("#aDiv").on("click", function()
+      {
+        console.log("Manejador 1");
+      });
+      $("#aDiv").on("click", function()
+      {
+        console.log("Manejador 2");
+      });
+    });
+    </script>
+</head>
+<body>
+  <div id="aDiv">Púlsame!</div>
+</body>
+</html>

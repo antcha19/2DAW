@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function () {
 
 
 
@@ -83,44 +83,43 @@ $(function () {
     //añado a cart_items el clonado
     $("#cart_items").prepend($clonado);
 
-    
-$delete.on("click", function(){
-  console.log("click con ON")
-})
-    $delete.click(function () {
-      //elemento pardre del enlace
-      var idpadre = $(this).parent().attr("id");
-      //id de la lista arituclos original
-      var id = idpadre.substring(1);
 
-      //saca el stock  del productos a borrar con la id
-      $stock = $("#" + id).find(".stock");
-      $s_texto = $stock.text();
-
-      //cantidad del stock
-      let stocksub = $s_texto.substring(6);
-      let parse = parseInt(stocksub);
-      //hago la suma
-      let suma = parse + 1;
-      //cambio el stock
-      $stock.text("Stock " + suma);
-      //quito la class agoatado
-      if (parse == 0) {
-        $stock.removeClass("agotado");
-      }
-
-      //actuliazamos la compra
-      $("#citem").val(parseInt($("#citem").val()) - 1);
-      //actualizamos el precio $precio esta declarado en actualizar_stock
-      $precio_quitar = $item.find(".price").text();
-      let espacio = $precio_quitar.indexOf(" ");
-      let precio = $precio_quitar.substring(0, espacio);
-      $("#cprice").val(parseInt($("#cprice").val()) - parseInt(precio) + " €");
-      //eliminamos el articulo de la compra
-      $("#C" + $item.attr("id")).remove();
-      return false;
+    $delete.on("click", function () {
+      console.log("click con ON")
+        //elemento pardre del enlace
+        var idpadre = $(this).parent().attr("id");
+        //id de la lista arituclos original
+        var id = idpadre.substring(1);
+  
+        //saca el stock  del productos a borrar con la id
+        $stock = $("#" + id).find(".stock");
+        $s_texto = $stock.text();
+  
+        //cantidad del stock
+        let stocksub = $s_texto.substring(6);
+        let parse = parseInt(stocksub);
+        //hago la suma
+        let suma = parse + 1;
+        //cambio el stock
+        $stock.text("Stock " + suma);
+        //quito la class agoatado
+        if (parse == 0) {
+          $stock.removeClass("agotado");
+        }
+  
+        //actuliazamos la compra
+        $("#citem").val(parseInt($("#citem").val()) - 1);
+        //actualizamos el precio $precio esta declarado en actualizar_stock
+        $precio_quitar = $item.find(".price").text();
+        let espacio = $precio_quitar.indexOf(" ");
+        let precio = $precio_quitar.substring(0, espacio);
+        $("#cprice").val(parseInt($("#cprice").val()) - parseInt(precio) + " €");
+        //eliminamos el articulo de la compra
+        $("#C" + $item.attr("id")).remove();
+        return false;
+      })
     })
-  }
+  
 
 
 })
