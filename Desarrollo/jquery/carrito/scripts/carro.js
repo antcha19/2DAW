@@ -1,6 +1,8 @@
 $(function () {
 
-  console.log("Script cargado");
+  
+
+  //parte 1
   /* //cambia de color al item es una class
     $(".item").css('background-color','#cecece' );
     $("#cart_items").css('border','4px solid black');
@@ -23,14 +25,13 @@ $(function () {
 
 
 
+
+    //parte 2
   dobleclick();
 
-
   function dobleclick() {
-    //doble click
-    //cambiar
-    //    $(".item").dblclick(function () {
-
+   
+    //doble click al elemento
     $(".item").dblclick(function () {
       //le paso el this;
       actualizar_stock($(this), 1);
@@ -61,12 +62,9 @@ $(function () {
       if (stocknuevo == 0) {
         $stock.addClass("agotado");
       }
-
       //suma cantidad total de la compras
       $("#cprice").val(parseInt($("#cprice").val()) + parseInt(precio) + " €");
     }
-
-
   }
 
   function add_carrito($item) {
@@ -80,7 +78,7 @@ $(function () {
     //Cambiaremos la propiedad css cursor del elemento
     $clonado.css("cursor", "default");
 
-    var $delete = $('<a   class="delete"></a>');
+    var $delete = $('<a  href="" class="delete"></a>');
     $clonado.prepend($delete);
     //añado a cart_items el clonado
     $("#cart_items").prepend($clonado);
@@ -115,9 +113,8 @@ $(function () {
       let precio = $precio_quitar.substring(0, espacio);
       $("#cprice").val(parseInt($("#cprice").val()) - parseInt(precio) + " €");
       //eliminamos el articulo de la compra
-       $("#C"+$item.attr("id")).remove();
-     
-     // return false;
+      $("#C" + $item.attr("id")).remove();
+      return false;
     })
   }
 
