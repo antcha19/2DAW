@@ -28,11 +28,15 @@ $(document).ready(function () {
 
   //parte 2
   dobleclick();
+  boton_clear();
+  boton_next();
+  boton_prev();
 
   function dobleclick() {
 
     //doble click al elemento
-    $(".item").dblclick(function () {
+
+    $(".item").bind("dblclick", function () {
       //le paso el this;
       actualizar_stock($(this), 1);
       add_carrito($(this));
@@ -78,7 +82,7 @@ $(document).ready(function () {
     //Cambiaremos la propiedad css cursor del elemento
     $clonado.css("cursor", "default");
 
-    var $delete = $('<a  href="" class="delete"></a>');
+    $delete = $('<a  href="" class="delete"></a>');
     $clonado.prepend($delete);
     //añado a cart_items el clonado
     $("#cart_items").prepend($clonado);
@@ -120,6 +124,28 @@ $(document).ready(function () {
     })
 
   }
+
+  function boton_clear() {
+    $("#btn_clear").bind("click", function () {
+      $(".delete").trigger("click");
+    });
+  }
+
+  function boton_prev() {
+    $("#btn_prev").bind("click", function () {
+      console.log("pppp");
+
+
+    });
+  }
+
+  function boton_next() {
+    $("#btn_next").bind("click", function () {
+      console.log("aaaa")
+
+    });
+  }
+
 
 
 })
