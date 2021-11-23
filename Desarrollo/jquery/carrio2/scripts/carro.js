@@ -23,14 +23,40 @@ $(document).ready(function () {
     $("img[src*='camiseta']").css('border-color','green');
    */
 
+  //parte 3
+  $(function () {
+    //para poner el div alado del otro
 
+    $(".cart_toolbar").css('background-color', 'white');
+
+    $("#btn_clear").bind("click", function () {
+      //click a todos las class .delete
+      $(".delete").trigger("click");
+    })
+
+    $("#btn_prev").bind("click", function () {
+      var $car = $("#cart_items");
+      var pos = $car.offset();
+      pos.left += 50;
+      $car.offset(pos);
+    });
+
+
+    $("#btn_next").bind("click", function () {
+      var $car = $("#cart_items");
+      var pos = $car.offset();
+      pos.left -= 50;
+      $car.offset(pos);
+    });
+
+
+
+  })
 
 
   //parte 2
   dobleclick();
-  boton_clear();
-  boton_next();
-  boton_prev();
+
 
   function dobleclick() {
 
@@ -52,6 +78,12 @@ $(document).ready(function () {
     //numero del stock
     let stocksub = $stocktext.substring(6);
     if (stocksub > 0) {
+      var numArticulosCarrito = $("#cart_items").children().length
+      console.log(numArticulosCarrito);
+      if (numArticulosCarrito > 3) {
+        $("#cart_items").width($("#cart_items").width() + 120);
+
+      }
 
       var stocknuevo = stocksub - (valor);
       //modificado el stock 
@@ -83,9 +115,9 @@ $(document).ready(function () {
     $clonado.css("cursor", "default");
 
     $delete = $('<a  href="" class="delete"></a>');
-    $clonado.prepend($delete);
+    $clonado.append($delete);
     //añado a cart_items el clonado
-    $("#cart_items").prepend($clonado);
+    $("#cart_items").append($clonado);
 
 
     $delete.on("click", function () {
@@ -124,28 +156,5 @@ $(document).ready(function () {
     })
 
   }
-
-  function boton_clear() {
-    $("#btn_clear").bind("click", function () {
-      $(".delete").trigger("click");
-    });
-  }
-
-  function boton_prev() {
-    $("#btn_prev").bind("click", function () {
-      console.log("pppp");
-
-
-    });
-  }
-
-  function boton_next() {
-    $("#btn_next").bind("click", function () {
-      console.log("aaaa")
-
-    });
-  }
-
-
 
 })
