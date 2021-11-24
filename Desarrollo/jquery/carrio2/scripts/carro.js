@@ -25,28 +25,52 @@ $(document).ready(function () {
 
   //parte 3
   $(function () {
-    //para poner el div alado del otro
-
-    $(".cart_toolbar").css('background-color', 'white');
+    var $car = $("#cart_toolbar");
+    var pos = $car.offset();
+    //guardo en una variable la posicion izquierda
+    var pos_izquierda = pos.left;
+    console.log("izquierda " + pos_izquierda);
+    // sumanos el pos_izquierda mas el ancho del div
+    var pos_derecha = pos_izquierda + $car.width();
+    console.log("derecha " + pos_derecha);
 
     $("#btn_clear").bind("click", function () {
       //click a todos las class .delete
       $(".delete").trigger("click");
+
+      var $cart_items = $("#cart_items");
+      var pos = $cart_items.offset();
+      //iguala la posicion 
+      pos.left = pos.left;
+      $cart_items.offset(pos);
+
+
+
     })
 
     $("#btn_prev").bind("click", function () {
       var $car = $("#cart_items");
       var pos = $car.offset();
-      pos.left += 50;
-      $car.offset(pos);
+      console.log(pos_izquierda);
+      console.log(pos.left);
+      if (pos_izquierda >= pos.left) {
+        pos.left += 50;
+        $car.offset(pos);
+      }
+
     });
 
 
     $("#btn_next").bind("click", function () {
-      var $car = $("#cart_items");
-      var pos = $car.offset();
+
+      var $cart_items = $("#cart_items");
+      var pos = $cart_items.offset();
+
       pos.left -= 50;
-      $car.offset(pos);
+      $cart_items.offset(pos);
+
+
+
     });
 
 
@@ -78,8 +102,8 @@ $(document).ready(function () {
     //numero del stock
     let stocksub = $stocktext.substring(6);
     if (stocksub > 0) {
+      //cantidad de productos 
       var numArticulosCarrito = $("#cart_items").children().length
-      console.log(numArticulosCarrito);
       if (numArticulosCarrito > 3) {
         $("#cart_items").width($("#cart_items").width() + 120);
 
@@ -121,7 +145,8 @@ $(document).ready(function () {
 
 
     $delete.on("click", function () {
-      console.log("click con ON")
+      var numArticulosCarrito = $("#cart_items").children().length;
+
       //elemento pardre del enlace
       var idpadre = $(this).parent().attr("id");
       //id de la lista arituclos original
@@ -142,7 +167,6 @@ $(document).ready(function () {
       if (parse == 0) {
         $stock.removeClass("agotado");
       }
-
       //actuliazamos la compra
       $("#citem").val(parseInt($("#citem").val()) - 1);
       //actualizamos el precio $precio esta declarado en actualizar_stock
@@ -152,6 +176,14 @@ $(document).ready(function () {
       $("#cprice").val(parseInt($("#cprice").val()) - parseInt(precio) + " €");
       //eliminamos el articulo de la compra
       $("#C" + $item.attr("id")).remove();
+
+      //borrar 120pix
+      if (numArticulosCarrito > 4) {
+        console.log(numArticulosCarrito);
+        $("#cart_items").width($("#cart_items").width() - 120);
+      }
+
+
       return false;
     })
 
