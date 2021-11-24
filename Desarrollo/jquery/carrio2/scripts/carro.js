@@ -26,15 +26,16 @@ $(document).ready(function () {
   //parte 3
   $(function () {
     var $car = $("#cart_items");
-    var posi = $car.offset();
+    var pos_ori = $car.offset();
+    let ancho_ori = $car.width();
     //guardo en una variable la posicion izquierda
-    var pos_izquierda = posi.left;
+    var pos_izquierda = pos_ori.left;
 
     // sumanos el pos_izquierda mas el ancho del div
     var pos_derecha = pos_izquierda + $car.width();
-    console.log("derecha " + pos_derecha);
+    
     var total = parseInt(pos_derecha) + parseInt(pos_izquierda);
-    console.log(total)
+  
 
     $("#btn_clear").bind("click", function () {
       //click a todos las class .delete
@@ -60,13 +61,13 @@ $(document).ready(function () {
 
 
     $("#btn_next").bind("click", function () {
-      var $cart_items = $("#cart_items");
+      var pos = $("#cart_items").offset();
       var $width = $("#cart_items").width();
-      var pos = $cart_items.offset();
-      let actual = posi.left;
-    
       pos.left -= 50;
-      $cart_items.offset(pos);
+      if ($width + pos.left > pos_ori.left + ancho_ori) {
+        $("#cart_items").offset(pos);
+      }
+
 
     });
 
