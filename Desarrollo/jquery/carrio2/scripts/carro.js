@@ -26,9 +26,9 @@ $(document).ready(function () {
   //parte 3
   $(function () {
     var $car = $("#cart_items");
-    var pos = $car.offset();
+    var posi = $car.offset();
     //guardo en una variable la posicion izquierda
-    var pos_izquierda = pos.left;
+    var pos_izquierda = posi.left;
 
     // sumanos el pos_izquierda mas el ancho del div
     var pos_derecha = pos_izquierda + $car.width();
@@ -63,9 +63,8 @@ $(document).ready(function () {
       var $cart_items = $("#cart_items");
       var $width = $("#cart_items").width();
       var pos = $cart_items.offset();
-      var inicial = pos.left + $width;
-      console.log(inicial);
-      console.log(total)
+      let actual = posi.left;
+    
       pos.left -= 50;
       $cart_items.offset(pos);
 
