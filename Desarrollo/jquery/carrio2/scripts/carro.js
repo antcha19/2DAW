@@ -25,51 +25,49 @@ $(document).ready(function () {
 
   //parte 3
   $(function () {
-    var $car = $("#cart_toolbar");
+    var $car = $("#cart_items");
     var pos = $car.offset();
     //guardo en una variable la posicion izquierda
     var pos_izquierda = pos.left;
-    console.log("izquierda " + pos_izquierda);
+
     // sumanos el pos_izquierda mas el ancho del div
     var pos_derecha = pos_izquierda + $car.width();
     console.log("derecha " + pos_derecha);
+    var total = parseInt(pos_derecha) + parseInt(pos_izquierda);
+    console.log(total)
 
     $("#btn_clear").bind("click", function () {
       //click a todos las class .delete
       $(".delete").trigger("click");
-
       var $cart_items = $("#cart_items");
       var pos = $cart_items.offset();
       //iguala la posicion 
       pos.left = pos.left;
       $cart_items.offset(pos);
-
-
-
     })
+
 
     $("#btn_prev").bind("click", function () {
       var $car = $("#cart_items");
       var pos = $car.offset();
       console.log(pos_izquierda);
       console.log(pos.left);
-      if (pos_izquierda >= pos.left) {
+      if (pos_izquierda > pos.left) {
         pos.left += 50;
         $car.offset(pos);
       }
-
     });
 
 
     $("#btn_next").bind("click", function () {
-
       var $cart_items = $("#cart_items");
+      var $width = $("#cart_items").width();
       var pos = $cart_items.offset();
-
+      var inicial = pos.left + $width;
+      console.log(inicial);
+      console.log(total)
       pos.left -= 50;
       $cart_items.offset(pos);
-
-
 
     });
 
