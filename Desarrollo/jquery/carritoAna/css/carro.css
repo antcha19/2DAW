@@ -1,0 +1,266 @@
+body 
+{
+	font-family: Arial, "Free Sans";
+	margin: 0;
+	padding: 0;
+}
+
+#item_container 
+{
+	width: 610px;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.item 
+{
+	background: #fff;
+	float: left;
+	padding: 5px;
+	margin: 5px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+	box-shadow: 0 1px 2px rgba(0,0,0,.5);
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	z-index: 5;
+	cursor:pointer;
+}
+
+input.cantidad {
+    background-color: #DDDDDD;
+    border: 0 none;
+    border-radius: 3px 3px 3px 3px;
+    float: right;
+	height: 20px;
+    line-height: 20px;
+    margin: 3px 5px 0 0;
+    text-align: center;
+    width: 30px;
+}
+
+.delete
+{
+	background:url(../img/delete.png);
+}
+
+.delete:hover 
+{
+	background-image:url(../img/delete-hover.png);
+}
+
+a.minus, a.add, a.delete {
+	display: block;
+    border: 0 none;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    float: right;
+    margin: 6px 2px 0 0;
+}
+
+a.minus, a.add {
+    float: left;
+}
+
+a.delete {
+    float: right;
+}
+
+.item img
+{
+	display:block;
+	clear:both;
+}
+
+.title, .price 
+{
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	letter-spacing: -1px;
+	font-weight: bold;
+	cursor:pointer;
+}
+
+.title 
+{
+	color: #333;
+}
+
+.price 
+{
+	color: #0099cc;
+	margin-top: 5px;
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+}
+
+.clear 
+{
+	clear: both;
+}
+
+#cart_container 
+{
+	margin: 0 auto;
+	width: 495px;
+}
+
+#cart_title span 
+{
+	border: 8px solid #666;
+	border-bottom-width: 0;
+	background: #333;
+	display: block;
+	float: left;
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 5px 10px;
+	-webkit-border-radius: .5em .5em 0 0;
+	-moz-border-radius: .5em .5em 0 0;
+	border-radius: .5em .5em 0 0;
+}
+
+#cart_toolbar 
+{
+	overflow: hidden;
+	border: 8px solid #666;
+	height: 190px;
+	z-index: -2;
+	width: 483px;
+	-webkit-border-radius: 0 .5em 0 0;
+	-moz-border-radius: 0 .5em 0 0;
+	border-radius: 0 .5em 0 0;
+	background: #ffffff;
+}
+
+#cart_items 
+{
+	height: 190px;
+	width: 483px;
+	position: relative;
+	padding: 0 0 0 2px;
+	z-index: 0;
+	border-width: 0 2px;
+	left: 0px;
+}
+
+.back 
+{
+	background: #e9e9e9;
+}
+
+#navigate 
+{
+	width: 463px;
+	margin: 0 auto;
+	border: 8px solid #666;
+	border-top-width: 0;
+	-webkit-border-radius: 0 0 .5em .5em;
+	-moz-border-radius: 0 0 .5em .5em;
+	border-radius: 0 0 .5em .5em;
+	padding: 10px;
+	font-size: 14px;
+	background: #333;
+	font-weight: bold;
+}
+
+#nav_left 
+{
+	float: left;
+}
+
+#nav_right 
+{
+	float: right;
+}
+
+#nav_right input
+{
+    background-color: #DDDDDD;
+    border: 0 none;
+    border-radius: 3px 3px 3px 3px;
+	height: 20px;
+    line-height: 20px;
+    margin: 3px 5px 0 0;
+    text-align: center;
+    width: 50px;
+}
+
+.sptext 
+{
+	margin-left: 8px;            
+	color: #ffffff;
+}
+
+.stock
+{
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	letter-spacing: -1px;
+	font-weight: bold;
+	cursor:pointer;
+}
+
+.agotado
+{
+	text-decoration: line-through;
+}
+
+#form_enviar  input
+{
+	width:270px; text-align:left; 
+	padding: 9px; font-weight:bold;
+	border: solid 1px  #A4D1FF;
+	font: normal 0.9em Verdana, Tahoma, sans-serif;
+	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-webkit-border-radius: 5px 5px 5px 5px;-moz-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;
+	margin-bottom: 20px;
+	float:left;
+}
+
+#form_enviar  input:focus 
+{
+	outline: 0;
+	box-shadow: 0 0 10px #9F9FFF;
+	-moz-box-shadow: 0 0 10px #9F9FFF;
+	-webkit-box-shadow: 0 0 10px #9F9FFF;
+}
+
+#form_enviar  label
+{
+	float:left; 
+	width:100px; 
+	padding-top:10px;
+}
+
+.drop-active 
+{
+	background: #ffff99;
+}
+.drop-hover 
+{
+	background: #ffff66;
+}
+
+#contenedorError
+{
+	font-size: .7em;
+	display:none;
+}
+
+.iconoError
+{
+	float: left; 
+	margin-right: .3em;
+}

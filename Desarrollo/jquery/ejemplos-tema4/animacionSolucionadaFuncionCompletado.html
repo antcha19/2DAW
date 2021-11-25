@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>animación solucionada función completado</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <style type="text/css">
+      div { position: relative; left: 0px; width:100px; height:100px; background:blue; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function()
+	  {
+        $(document).click( function(event)
+		{
+          $( "div#box" ).animate({ left: '+=100' }, 200, function ()
+		  {
+			$( "div#box" ).html($( "div#box" ).css("left"));
+		  });
+        });
+      });
+    </script>
+</head>
+<body>
+    <div id="box">
+    </div>
+</body>
+</html>
