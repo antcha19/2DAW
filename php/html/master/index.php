@@ -18,7 +18,7 @@ if (!isset($_SESSION['master'])) {
 ?>
 <form method="get" enctype="multipart/form-data">
     <div>
-        <input type="number" name="numero_insertado">
+        <input type="text" name="numero_insertado" maxlength="4">
         <input type="submit" value="Comprobar" name="comprobar" id="Comprobar">
         <br>
     </div>
@@ -28,21 +28,30 @@ if (!isset($_SESSION['master'])) {
     if (isset($_GET['comprobar'])) {
 
         if ($_GET['numero_insertado']) {
-            //inserto los numero inotrducidos al array
-            $varsession->setn_usuarios($_GET['numero_insertado']);
-            echo  $varsession->comprobar() . "<br>";
-            echo  "Muertos: " . $varsession->getmuertos() . "<br>";
-            echo  "Tocados: " . $varsession->getmuertos() . "<br>";
-            echo  "Vidas: " . $varsession->getvidas() . "<br>";
+            //input minimo de 4 caractreres
+            if (strlen($_GET['numero_insertado']) == 4) {
+                //inserto los numero inotrducidos al array
+                $varsession->setn_usuarios($_GET['numero_insertado']);
+                echo  $varsession->comprobar() . "<br>";
+                echo  "Muertos: " . $varsession->getmuertos() . "<br>";
+                echo  "Tocados: " . $varsession->getmuertos() . "<br>";
+                echo  "Vidas: " . $varsession->getvidas() . "<br>";
+            } else {
+                echo "Tienes que introducir minimo 4 caracteres";
+            }
         }
     }
+
+
     //imprimo los valores del array
     $valores_array = "";
 
     foreach ($varsession->getn_usuarios() as $key => $valores) {
         $valores_array .=  $valores . "<br>";
     }
+
     echo "<div>" . $valores_array . "<div>";
+
     //nuestro los numero aleatorios
     //cuando gana muestra 
     if ($varsession->getmuertos() == 4) {

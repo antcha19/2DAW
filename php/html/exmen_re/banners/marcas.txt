@@ -1,0 +1,5 @@
+audi,audi.jpg,http://www.audi.com
+apple,apple.png,http://www.apple.com
+cocacola,cocacola.png,http://www.cocacola.com
+nike,nike.jpg,http://www.nike.com
+tesla,tesla.jpg,http://www.tesla.com

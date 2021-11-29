@@ -51,10 +51,8 @@ class Master
   //añado los numeros insertados por el usuario
   function setn_usuarios($num_insertado)
   {
-  
-      array_push($this->numero_usuarios, $num_insertado);
-    
-   
+
+    array_push($this->numero_usuarios, $num_insertado);
   }
   //para mostrar el array 
   function getn_usuarios()
@@ -73,7 +71,6 @@ class Master
     $ultimaposicion = end($this->numero_usuarios);
     //paso a un array 
     $array_numerosintro = str_split($ultimaposicion);
-
     for ($i = 0; $i < count($array_aleatorio); $i++) {
       //echo $array_aleatorio[$i];
       for ($j = 0; $j < count($array_numerosintro); $j++) {
@@ -88,7 +85,6 @@ class Master
           if ($i != $j) {
             $this->tocados++;
           }
-         
         }
       }
     }
