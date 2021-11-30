@@ -1,21 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$bdatos = "blog";
+require 'conexiondb.php';
+$db=conectadb();
 
+$usuid =3;
 
-try {
-    $db = new PDO("mysql:host=$servername;dbname=".$bdatos, $username, $password);
-    // set the PDO error mode to exception
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
-
-
-$sql = "SELECT * from entradasx";
+$sql = "SELECT * from entradasx where id=".$db->quote($usuid);
 
   // output data of each row
  foreach ($db->query($sql)->fetchAll() as $row) {

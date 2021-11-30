@@ -1,0 +1,34 @@
+<?php
+
+function conectadb()
+{
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $bdatos = "blog";
+    try {
+        $db = new PDO("mysql:host=$servername;dbname=" . $bdatos, $username, $password);
+        // set the PDO error mode to exception
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "Connected successfully";
+    } catch (PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+    }
+    return $db;
+}
+
+//comprueba usuario. devuelve sus datos si es ok , o falso 
+//no existe o la contraseña no es correcta
+function login($usuario, $password)
+{
+    $db = conectadb();
+    //constraseña md5
+    $password = md5($password);
+    $sql = "SELECT * from usuarios where usuario=" . $db->quote($usuario) .
+        " and password=" . $db->quote($password);
+    echo $sql;
+    
+     if ($db->query($sql)->fetch()) {
+        echo $usuario;
+     }
+}
