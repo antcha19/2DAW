@@ -61,23 +61,23 @@ $(document).ready(function () {
 
  
 
-    /*$("#btn_next").mouseout(function () {
-      pos.left -= 50;
+    $("#btn_next").mouseout(function () {
+    
       $("#cart_items").animate({
         left: '-=50'
-      }, 1000)
+      }, 500)
     }).mouseout(function () {
       $("#cart_items").stop(true, false);
-    })*/
+    })
 
-      $("#btn_next").bind("click", function () {
+    /*  $("#btn_next").bind("click", function () {
         var pos = $("#cart_items").offset();
         var $width = $("#cart_items").width();
         pos.left -= 50;
         if ($width + pos.left > pos_ori.left + ancho_ori) {
           $("#cart_items").offset(pos);
         }
-      });
+      });*/
 
 
     //oculto la barra comprar
