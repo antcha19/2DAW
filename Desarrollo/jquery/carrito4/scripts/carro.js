@@ -59,15 +59,25 @@ $(document).ready(function () {
       }
     });
 
+ 
 
-    $("#btn_next").bind("click", function () {
-      var pos = $("#cart_items").offset();
-      var $width = $("#cart_items").width();
+    /*$("#btn_next").mouseout(function () {
       pos.left -= 50;
-      if ($width + pos.left > pos_ori.left + ancho_ori) {
-        $("#cart_items").offset(pos);
-      }
-    });
+      $("#cart_items").animate({
+        left: '-=50'
+      }, 1000)
+    }).mouseout(function () {
+      $("#cart_items").stop(true, false);
+    })*/
+
+      $("#btn_next").bind("click", function () {
+        var pos = $("#cart_items").offset();
+        var $width = $("#cart_items").width();
+        pos.left -= 50;
+        if ($width + pos.left > pos_ori.left + ancho_ori) {
+          $("#cart_items").offset(pos);
+        }
+      });
 
 
     //oculto la barra comprar
@@ -95,6 +105,7 @@ $(document).ready(function () {
 
   //$item es el this del
   function actualizar_stock($item, valor) {
+    var velocidad = 600;
     //busco dentro del item el strock
     $stock = $item.find(".stock");
     $stocktext = $stock.text();
@@ -122,12 +133,22 @@ $(document).ready(function () {
       if (stocknuevo == 0) {
         $stock.addClass("agotado");
       }
+      //animacion stock al añadir();
+      $item.find(".stock").hide();
+      $item.find(".stock").fadeIn(velocidad);
+      $item.find(".stock").show();
+
+      //animacion compras y precio
+      $("#nav_right").hide();
+      $("#nav_right").fadeIn(velocidad);
+      $("#nav_right").show();
+
       //suma cantidad total de la compras
       $("#cprice").val(parseInt($("#cprice").val()) + parseInt(precio) + " €");
       //mostramos botones 
-  
+
       if ($value_cantidad > 0) {
-       
+
         $("#btn_comprar").show();
         $("#btn_clear").show();
       }
@@ -143,20 +164,33 @@ $(document).ready(function () {
     //Le añadiremos la clase icart a la copia creada
     $clonado.addClass("icart");
     //elemento de la clase stock
-    $clonado.find(".stock").hide();
+    //$clonado.find(".stock").hide();
 
     //Cambiaremos la propiedad css cursor del elemento
     $clonado.css("cursor", "default");
 
     $delete = $('<a  href="" class="delete"></a>');
-    $clonado.append($delete);
+    $clonado.prepend($delete);
     //añado a cart_items el clonado
     $("#cart_items").append($clonado);
+    //oculto el clonado
+    $clonado.hide();
+    //añado a cart_items el clonado
+    $("#cart_items").append($clonado);
+    //animamos
+    $clonado.animate({
+      width: "toggle"
+    });
+    var numArticulosCarrito = $("#cart_items").children().length;
+
+    if (numArticulosCarrito > 4) {
+      $("#btn_prev").show();
+      $("#btn_next").show();
+    }
 
 
     $delete.on("click", function () {
       var numArticulosCarrito = $("#cart_items").children().length;
-
       //elemento pardre del enlace
       var idpadre = $(this).parent().attr("id");
       //id de la lista arituclos original
@@ -177,6 +211,14 @@ $(document).ready(function () {
       if (parse == 0) {
         $stock.removeClass("agotado");
       }
+
+
+      //animacion stock al quitar();
+      $item.find(".stock").hide();
+      $item.find(".stock").fadeIn(1000);
+      $item.find(".stock").show();
+
+
       //actuliazamos la compra
       $("#citem").val(parseInt($("#citem").val()) - 1);
       //actualizamos el precio $precio esta declarado en actualizar_stock
@@ -186,19 +228,19 @@ $(document).ready(function () {
       $("#cprice").val(parseInt($("#cprice").val()) - parseInt(precio) + " €");
       //eliminamos el articulo de la compra
       $("#C" + $item.attr("id")).remove();
-      
+
       //borrar 120pix
-      if (numArticulosCarrito  > 4) {
-        
+      if (numArticulosCarrito > 4) {
         $("#cart_items").width($("#cart_items").width() - 120);
       }
-
-       numArticulosCarrito = $("#cart_items").children().length;
-       console.log(numArticulosCarrito);
+      numArticulosCarrito = $("#cart_items").children().length;
+      console.log(numArticulosCarrito);
+      //si no tiene nada  me oculta los botones
       if (numArticulosCarrito == 0) {
         ocultarbotones();
-      }else if (numArticulosCarrito < 4 ) {
-        
+      } else if (numArticulosCarrito < 4) { //si hay menos de 4 articulos se oculta os botones
+        $("#btn_prev").hide();
+        $("#btn_next").hide();
       }
       return false;
     })
