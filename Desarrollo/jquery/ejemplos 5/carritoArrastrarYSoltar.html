@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mini carrito de la compra</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css"
+			href="http://code.jquery.com/ui/1.10.2/themes/black-tie/jquery-ui.min.css" />
+	<style type="text/css">
+		.carro { border : transparent solid 2px; }
+		.hover { border-color : red; }
+		#libros {width:400px; height: 100px; border: solid thin black;}
+		#libros img {margin: 10px;}
+	</style>
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.min.js" 
+			type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function()
+	{
+		$("div#libros img").draggable(
+		{
+			revert : "invalid"
+		});
+		$("div#carro img.carro").droppable(
+		{
+			hoverClass : "hover",
+			drop : function (event, ui)
+			{
+				$("div#carro").append (ui.draggable);
+				$(ui.draggable).css ({ position:"relative", top:"0px", left:"0px", margin: "10px" })
+				.addClass ("comprado");
+			}
+		});
+		$("div#libros").droppable (
+		{
+			accept : ".comprado",
+			drop : function (event, ui)
+			{
+				$("div#libros").append (ui.draggable);
+				$(ui.draggable).css ({ position:"relative", top:"0px", left:"0px", margin: "10px" })
+				.removeClass ("comprado");
+			}
+		});	
+	});
+    </script>
+</head>
+<body>
+	<h2> Arrastra las libros al carro </h2>
+	<div id="libros">
+		<img src="el-invierno-del-mundo.jpg" height="80" alt="El invierno del mundo" />
+		<img src="cincuenta-sombras-de-grey.jpg" height="80" alt="cincuenta sombras de Grey" />
+		<img src="la-reina-descalza.jpg" height="80" alt="La reina descalza" />
+		<img src="mision-olvido.jpg" height="80" alt="Misión olvido" />
+	</div>
+	<hr />
+	<h2> Carro: </h2>
+	<div id="carro">
+		<img src="carrito.jpg" height="300" class="carro" alt="Suelta aquí tus compras" />
+	</div>
+</body>
+</html>

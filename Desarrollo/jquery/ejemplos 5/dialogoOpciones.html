@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>método .dialog() con opciones</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css"
+			href="http://code.jquery.com/ui/1.10.2/themes/black-tie/jquery-ui.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" 
+			type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.min.js" 
+			type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function()
+	{
+		var $contenido = $('<div id="dialog" title="Dialog Title">¿Cuál es tu respuesta?</div>');
+		$("body").append($contenido);
+		$("#dialog").dialog(
+		{ 
+			modal: true, 
+			show: {effect: "bounce", duration: 1000}, 
+			hide: {effect: "explode", duration: 1000}, 
+			title: "Dialogo con opciones", 
+			closeOnEscape: false, 
+			buttons: 
+			{ 
+				"Sí": function() 
+				{ 
+					$("body").append($("<p>Se ha pulsado Sí</p>"));
+					$(this).dialog( "close" ); 
+				}, 
+				"No": function ()
+				{
+					$("body").append($("<p>Se ha pulsado No</p>"));
+					$(this).dialog("close"); 
+				}
+			},
+			close: function(evento)
+			{
+				$("body").append($("<p>Adios</p>"));
+			}
+		});	
+	});
+    </script>
+</head>
+<body>
+</body>
+</html>
