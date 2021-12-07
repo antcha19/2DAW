@@ -48,7 +48,17 @@
 
                         </form>
                     </div>
-                    <a href="#" class="btn btn-primary">Generar codigo Html</a>
+                    <div>
+                        <a href="#" class="btn btn-primary" id="codigohtml">Generar codigo Html</a>
+                       <br>
+                       <br>
+                       <br>
+                        <textarea name="" id="areahtml" cols="30" rows="10"></textarea>
+
+                        <div id="dialogo" title="Título del diálogo">Tienes que añadir por lo menos un</div>
+                    </div>
+                    
+
                 </div>
             </div>
         </div>
@@ -59,56 +69,36 @@
                     <div class="card w-50">
                         <div class="card-body">
                             <h5 class="card-title">Input</h5>
-                            <span id="anadido">
-                                <input type="text" placeholder="Añade el texto ">
-                            </span>
-                           
-                            <br>
-                            <br>
+                            <span class="anadido"><input type="text" id="texto" class="form-control"
+                                placeholder="Añade el texto" ></span>
                         </div>
                         <br>
                     </div>
                     <div class="card w-50">
                         <div class="card-body">
                             <h5 class="card-title">Select</h5>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Selecciona</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
+                            <span class="anadido"><select name="opselect" id="select" class="form-select" >
+                                <option value="select">Selecciona</option>
+                            </select></span>
                         </div>
                     </div>
                     <div class="card w-50">
                         <div class="card-body">
                             <h5 class="card-title">Radio Button</h5>
                             <div class="form-check">
-                                <span id="anadido">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault1">
-                                </span>
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Radio 1
-                                </label>
+                                <span class="anadido"><input type="radio"  id="radio">
+                                    Radio</span>
                             </div>
-                            <div class="form-check" id="anadido">
-                                <span id="anadido">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault2" checked>
-                                </span>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Radio 2
-                                </label>
-                            </div>
+                           
                         </div>
                     </div>
                     <div class="card w-50">
                         <div class="card-body">
                             <h5 class="card-title">Textarea</h5>
                             <div class="form-floating">
-                                <span id="anadido">
-                                    <textarea class="form-control" placeholder="Leave a comment here"></textarea>
-                                </span>
+                                <span class="anadido"> <textarea class="form-control" placeholder="Leave a comment here"  id="textarea">
+                                </textarea>
+                            </span>
 
                             </div>
                         </div>
