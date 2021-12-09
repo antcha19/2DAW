@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html>
 
 <head>
     <title>Title</title>
@@ -10,13 +10,26 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" title="normal" href="css/jquery-ui.theme.min.css" type="text/css" media="screen" />
-    <script src="jquery/jquery.js" type="text/javascript"></script>
 
-    <script src="js/formulario.js" type="text/javascript"></script>
+    <link rel="stylesheet" title="normal" href="css/jquery-ui.theme.min.css" type="text/css" media="screen" />
+
+    <script src="jquery/jquery.js" type="text/javascript"></script>
     <script src="jquery/jquery-ui.min.js" type="text/javascript"></script>
 
+
+    <script src="js/formulario.js" type="text/javascript"></script>
+
+
+
     <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/black-tie/jquery-ui.min.css" />
+
+
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/black-tie/jquery-ui.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.min.js" type="text/javascript"></script>
+
+
+
 </head>
 
 <body>
@@ -50,14 +63,21 @@
                     </div>
                     <div>
                         <a href="#" class="btn btn-primary" id="codigohtml">Generar codigo Html</a>
-                       <br>
-                       <br>
-                       <br>
+                        <br>
+                        <br>
+                        <br>
                         <textarea name="" id="areahtml" cols="30" rows="10"></textarea>
 
-                        <div id="dialogo" title="Título del diálogo">Tienes que añadir por lo menos un</div>
+                        <div id="dialogo" title="Título del diálogo">Tienes que añadir por lo menos un
+                            elemento
+                        </div>
+
+                        <div id="editable">
+
+                        </div>
+
                     </div>
-                    
+
 
                 </div>
             </div>
@@ -70,39 +90,50 @@
                         <div class="card-body">
                             <h5 class="card-title">Input</h5>
                             <span class="anadido"><input type="text" id="texto" class="form-control"
-                                placeholder="Añade el texto" ></span>
+                                    placeholder="Añade el texto"></span>
                         </div>
                         <br>
                     </div>
                     <div class="card w-50">
                         <div class="card-body">
                             <h5 class="card-title">Select</h5>
-                            <span class="anadido"><select name="opselect" id="select" class="form-select" >
-                                <option value="select">Selecciona</option>
-                            </select></span>
+                            <span class="anadido"><select id="select" class="form-select">
+                                    <option value="select">Selecciona</option>
+                                </select></span>
                         </div>
                     </div>
                     <div class="card w-50">
                         <div class="card-body">
                             <h5 class="card-title">Radio Button</h5>
                             <div class="form-check">
-                                <span class="anadido"><input type="radio"  id="radio">
+                                <span class="anadido"><input type="radio" id="radio">
                                     Radio</span>
                             </div>
-                           
+
+                        </div>
+                    </div>
+                    <div class="card w-50">
+                        <div class="card-body">
+                            <h5 class="card-title">Fechas</h5>
+                            <div class="form-floating">
+                                <span class="anadido">
+                                    <input type="date" id="idfecha">
+                                </span>
+                            </div>
                         </div>
                     </div>
                     <div class="card w-50">
                         <div class="card-body">
                             <h5 class="card-title">Textarea</h5>
                             <div class="form-floating">
-                                <span class="anadido"> <textarea class="form-control" placeholder="Leave a comment here"  id="textarea">
+                                <span class="anadido"> <textarea class="form-control" placeholder="Leave a comment here"
+                                        id="textarea">
                                 </textarea>
-                            </span>
-
+                                </span>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
