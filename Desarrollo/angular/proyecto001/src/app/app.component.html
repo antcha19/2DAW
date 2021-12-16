@@ -1,0 +1,46 @@
+<h1 style="text-align: center;">
+Bienvenido a {{ title}}
+</h1>
+
+
+<div>
+  <p>Nombre del Empleado:{{nombre}}</p>
+  <p>Edad:{{edad}}</p>  
+  <p>Los últimos tres sueldos son: {{sueldos[0]}}, {{sueldos[1]}} y {{sueldos[2]}}</p>
+  <p>En los últimos 3 meses ha ganado: {{ultimos3Sueldos()}}</p>
+  <p>{{esActivo()}}</p>
+</div>
+
+<div>
+  <p>Nombre del Empleado:{{nombre}}</p>
+  <p>Edad:{{edad}}</p>  
+  <p *ngIf="edad>=18">Es mayor de edad.</p>
+  <table border="1">
+    <tr>
+      <td>Sueldos</td>
+    </tr>
+    <tr *ngFor="let sueldo of sueldos">
+      <td>{{sueldo}}</td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <p>{{contador}}</p>
+  <button (click)="incrementar()">Sumar 1</button>
+  <button (click)="decrementar()">Restar 1</button>
+</div>
+
+<div>
+  <p>Albumes</p>
+
+  <ul >
+    <li *ngFor="let album of albumes">
+      <span *ngIf="album.userId==1">Id: {{album.userId}}  - {{album.title}}
+        <button (click)="ocultar()">ocultar</button>
+      </span>
+    </li>
+   
+  </ul>
+</div>
+
