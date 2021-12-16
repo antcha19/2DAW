@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ALBUMES } from "../app/mock-album";
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,7 +16,7 @@ export class AppComponent {
   nombre = 'Rodriguez Pablo';
   edad = 40;
   email = 'rpablo@gmail.com';
-  sueldos = [1700, 1600, 1900];
+  sueldos = [750, 760, 650];
   activo = true;
 
   esActivo() {
@@ -42,13 +44,14 @@ export class AppComponent {
   }
 
   ocultar() {
-
-
   }
 
 
 
-  //album
+  userId=0;
+  id=0;
+  titulo="";
+
 
 
 
