@@ -32,20 +32,36 @@ Bienvenido a {{ title}}
 </div>
 
 <div>
-  <p>Ingrese nombre<input type="number" [(ngModel)]="userId"></p>
-  <p>Ingrese apellido<input type="number" [(ngModel)]="id"></p>  
-  <p>Nombre completo:{{userId}},{{id}}</p>
+  <p>Ingrese userid<input type="number" [(ngModel)]="userId"></p>
+  <p>Ingrese id<input type="number" [(ngModel)]="id"></p>  
+  <p>Ingrese titulo:<input type="text" [(ngModel)]="titulo"></p>  
+  <p>Album:{{userId}},{{id}},{{titulo}}</p>
+  <button (click)="anadir()">Añadir</button>
 </div>
+
+
+
+
 <div>
   <p>Albumes</p>
 
+  <h1>sin filtro</h1>
   <ul >
     <li *ngFor="let album of albumes">
-      <span *ngIf="album.userId==1">Id: {{album.userId}}  - {{album.title}}
+      <span >Id: {{album.userId}} -{{album.id}} - {{album.title}}
         <button (click)="ocultar()">ocultar</button>
       </span>
     </li>
-   
   </ul>
+
+<h1>filtrado por userId</h1>
+  <ul >
+    <li *ngFor="let album of albumes">
+      <span *ngIf="album.userId==1">Id: {{album.userId}} -{{album.id}} - {{album.title}}
+        <button (click)="ocultar()">ocultar</button>
+      </span>
+    </li>
+  </ul>
+
 </div>
 

@@ -9,7 +9,7 @@ import { ALBUMES } from "../app/mock-album";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Proyecto001';
+  title = '';
 
   albumes = ALBUMES;
 
@@ -51,6 +51,27 @@ export class AppComponent {
   userId=0;
   id=0;
   titulo="";
+  anadir(){
+    let existe = false;
+    for (let i = 0; i < this.albumes.length; i++) {
+      console.log(this.albumes[i].userId)
+      console.log("userid"+this.userId)
+      console.log("userid"+this.titulo)
+      if (this.albumes[i].userId == this.userId && this.albumes[i].id == this.id &&  this.albumes[i].title == this.titulo ) {
+        existe = true;
+      }
+      //
+      if (existe = true) {
+        alert("existe")
+      }else{
+       
+      }
+      
+    }
+  }
+
+
+
 
 
 
