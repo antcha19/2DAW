@@ -10,16 +10,14 @@ export class AppComponent {
   title = 'proyecto002';
   articulos = ARTICULO;
 
+  //mensaje
+  mensaje="";
+
   //input
   
     inputcodigo= 0
     inputdescripcion= "";
     inputprecio= 0
-  
-
-
-
-
   agregar() {
     for (let i = 0; i < this.articulos.length; i++) {
       if (this.articulos[i].codigo == this.inputcodigo) {
@@ -40,13 +38,17 @@ export class AppComponent {
 
   }
   modificar() {
+  let variable = false;
     for (let i = 0; i < this.articulos.length; i++) {
       if (this.articulos[i].codigo == this.inputcodigo) {
         this.articulos[i].descripcion = this.inputdescripcion;
         this.articulos[i].precio = this.inputprecio;
         return;
       }
-      console.log("no existe el codigo")
+      if (variable = true) {
+        this.mensaje ="no existe código de articulo"
+      }
+     
     }
   }
   //si existen articulos los devuelve
