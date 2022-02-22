@@ -10,6 +10,7 @@
 	  {
         $("div").each(function (i) 
         {
+          console.log(this.style.color);
           if (this.style.color != "blue")
             this.style.color = "blue";
         });
