@@ -1,0 +1,120 @@
+@charset "UTF-8";
+body {
+  background: #040017;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+.navbar-brand.navbar-center {
+  position: relative;
+  margin: auto;
+  left: 50%;
+  transform: translatex(-50%);
+  font-size: 60px;
+  font-family: 'Oswald', sans-serif;
+    background: linear-gradient(
+    to right, 
+    hsl(98 100% 62%), 
+    hsl(204 100% 59%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.btn-shine {
+
+  color: #ffffff;
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  text-decoration: none;
+  white-space: nowrap;
+  }
+  @keyframes shine {
+    0%{
+      background-position: 0;
+    }
+    60% {
+      background-position: 760px;
+    }
+    100% {
+      background-position: 760px;
+      }
+    }
+
+.color {
+      position: absolute;
+      left: 50%;
+      transform: translatex(-50%);
+    }
+  
+.navbar-collapse {
+      height: 80px;
+    }
+
+#items {
+  color: ivory;
+  background-color: #27253a;
+  padding: 15px;
+}
+
+#contenedor {
+  color: ivory;
+  background-color: #27253a;
+  padding: 10px;
+}
+
+.btn {
+  color: ivory;
+  background-color: #27253a;
+  margin-left: 5%;
+}
+
+.codigo {
+  color: ivory;
+  background-color: #27253a;
+  margin-top: 2%;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btn:hover {
+  color: ivory;
+}
+
+#resultado {
+  color: ivory;
+  background-color: #27253a;
+  padding: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#tamaño {
+  width: 230px;
+}
+
+#form > label {
+  border: 1px #040017 solid;
+  border-radius: 7px;
+  padding: 20px;
+}
+
+/*
+Cuando pones el cursor encima del boton, aparece el borde de este de color azul
+*/
+#form > label:hover {
+  border: 2px #37ccac solid;
+  cursor: pointer;
+}
+
+label {
+  display: inline-block;
+}

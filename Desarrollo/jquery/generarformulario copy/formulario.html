@@ -57,6 +57,9 @@
                         <form id="formulariofinal">
                         </form>
                     </div>
+
+                    <div id="editable">
+                    </div>
                     <div>
                         <a href="#" class="btn btn-primary" id="codigohtml">Generar codigo Html</a>
                         <br>
@@ -67,11 +70,13 @@
                         <div id="dialogo" title="Título del diálogo">Tienes que añadir por lo menos un
                             elemento
                         </div>
-                        <div id="editable">
+                        <div id="dialog" title="Título del diálogo">
+                            ¿Quieres eliminar este elemento?
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
+                    
                     <h5 class="card-title">Formulario</h5>
                     <div>
                         <form id="formfinal">
@@ -88,25 +93,21 @@
                     <div class="card w-50">
                         <div class="card-body">
                             <h5 class="card-title">Input</h5>
-                            <span class="anadido"><input type="text" id="texto" class="form-control"
-                                    placeholder="Añade el texto"></span>
+                                    <input type="button" id="input" value="Input"></input>
                         </div>
                         <br>
                     </div>
                     <div class="card w-50">
                         <div class="card-body">
                             <h5 class="card-title">Select</h5>
-                            <span class="anadido"><select id="select" class="form-select">
-                                    <option value="select">Selecciona</option>
-                                </select></span>
+                                <input type="button" id="select" value="Select"></input>
                         </div>
                     </div>
                     <div class="card w-50">
                         <div class="card-body">
                             <h5 class="card-title">Radio Button</h5>
                             <div class="form-check">
-                                <span class="anadido"><input type="radio" id="radio">
-                                    Radio</span>
+                                    <input type="button" id="radio" value="Radio"></input>
                             </div>
 
                         </div>
@@ -115,9 +116,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Fechas</h5>
                             <div class="form-floating">
-                                <span class="anadido">
-                                    <input type="date" id="idfecha">
-                                </span>
+                                <input type="button" id="fecha" value="Fecha"></input>
+
                             </div>
                         </div>
                     </div>
@@ -125,9 +125,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Textarea</h5>
                             <div class="form-floating">
-                                <span class="anadido"> <textarea class="form-control" placeholder="Leave a comment here"
-                                        id="textarea">
-                                </textarea>
+                                <input type="button" id="textarea" value="textarea"></input>
                                 </span>
                             </div>
                         </div>

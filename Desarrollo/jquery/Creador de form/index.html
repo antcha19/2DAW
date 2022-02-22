@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Creador Formularios</title>
+    <link rel="stylesheet" type="text/css"href="https://code.jquery.com/ui/1.11.4/themes/dot-luv/jquery-ui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js" type="text/javascript"></script>
+	<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="navbar-collapse collapse">
+          <div class="color">
+            <a class="nav navbar-brand navbar-center navbar-red btn-shine">CREADOR FORMULARIOS</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      
+          </div>
+        </div>
+      </nav>
+        <div class="container-fluid mt-4">
+            <div class="row d-flex justify-content-center">
+                <div id="items" class="col-3 rounded mr-1">
+                    <!--Botones para añadir-->
+                    <div id="botones" class="text-center">
+                        <h3>Items</h3>
+                            <div type="button" id="text" class="col-5 mr-1 mb-1 btn boton">Texto</div>
+                            <div type="button" id="number" class="col-5 mb-1 btn boton">Number</div>
+                            <div type="button" id="radio" class="col-5 mr-1 mb-1 btn boton">Radio</div>
+                            <div type="button" id="checkbox" class="col-5 mb-1 btn boton">Checkbox</div>
+                            <div type="button" id="date" class="col-5 mr-1 mb-1 btn boton">Date</div>
+                            <div type="button" id="select" class="col-5 mb-1 btn boton">Select</div>
+                    </div>
+                    <!--Seleccion de diseño del botón-->
+                    <div id="editar" class="text-center">
+                        <h3>Propiedades</h3>
+                        <form id="propiedades">
+                            <label for="titulo">
+                                Titulo:
+                                <input id="titulo" class="form-control" type="text" required>
+                            </label><br>
+                            <label for="tamaño">
+                                Selecciona el tamaño: 
+                                <select id="tamaño"  class="form-control">
+                                    <option value="50">Grande</option> 
+                                    <option value="25" selected>Medio</option>
+                                    <option value="12">Pequeño</option>
+                                </select>
+                            </label>
+                            <button type="submit" id="guardar" class="btn">Añadir</button>
+                        </form>
+                    </div>
+                    <!--Edicion de un control una vez creado, por ejemplo, una vez creado un select, que se pueda eliminar o modificar-->
+                    <div id="editar2" class="text-center">
+                        <h3>Edición del botón</h3>
+                        <form id="propiedades2">
+                            <label for="titulo">
+                                Titulo:
+                                <input id="titulo2" class="form-control" type="text" required>
+                            </label><br>
+                            <label for="tamaño">
+                                Selecciona el tamaño: 
+                                <select id="tamaño2" class="form-control">
+                                    <option value="50">Grande</option> 
+                                    <option value="25" selected>Medio</option><!--Por defecto, se marcará esta opcion-->
+                                    <option value="12">Pequeño</option>
+                                </select>
+                            </label><br>
+                            <button type="submit" id="guardar2" class="btn">Añadir</button>
+                        </form>
+                        <button id="trash" class="btn mt-2">Eliminar</button>
+                    </div>
+                </div>
+                
+                <!--Boton para crear el código html de los botones añadidos-->
+                <div class="col-8">
+                    <div id="contenedor" class="h-100 rounded">
+                        <div id="form" class="form-group text-center">
+                            <h3>Formulario</h3>
+                        </div>
+                    </div>
+                    <button type="button" id="crear" class="codigo">CREAR CÓDIGO HTML</button>
+                </div>
+
+                <div id="contenedor2" class="container-fluid mt-4">
+                    <h2>Código en HTML</h2>
+                    <!--Div de resultado-->
+                    <div id="resultado" class="text-center h-100 rounded">
+                        
+                    </div>
+                    <button type="button" id="crear2" class="btn mt-2">EMPEZAR DE NUEVO</button>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

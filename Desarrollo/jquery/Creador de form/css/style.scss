@@ -1,0 +1,47 @@
+body {
+	background: #040017;
+}
+h1 {
+	color: ivory;
+	padding: 15px;
+	background: #27253a;
+}
+#items {
+	color: ivory;
+	background-color: #27253a;
+	padding: 10px;
+}
+#contenedor {
+	color: ivory;
+	background-color: #27253a;
+	padding: 10px;
+}
+.btn {
+	color: ivory;
+	background-color: #27253a;
+	&:hover {
+		color: ivory;
+	}
+}
+#resultado {
+	color: ivory;
+	background-color: #27253a;
+	padding: 10px;
+}
+#tamaño {
+	width: 230px;
+}
+#form {
+	>label {
+		border: 1px #040017 solid;
+		border-radius: 5px;
+		padding: 20px;
+		&:hover {
+			border: 1px #cd4275 solid;
+			cursor: pointer;
+		}
+	}
+}
+label {
+	display: inline-block;
+}
